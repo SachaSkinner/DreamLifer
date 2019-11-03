@@ -1,0 +1,16 @@
+.logoutWrapper {
+    max-width: 450px;
+    margin: 0 auto;
+}
+.logoutButton {
+    margin-top: 10px;
+    background: rgb(224, 55, 55);
+    padding: 15px;
+    color: white;
+    border-radius: 5%;
+    max-width: 15%;
+    position: relative;
+    left: 350px;
+    text-align: center;
+    cursor: pointer;
+}

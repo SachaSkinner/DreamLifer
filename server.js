@@ -1,7 +1,8 @@
 const express = require("express");
-const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const routes = require("./routes");
+const mongoose = require("mongoose");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -13,10 +14,14 @@ if (process.env.NODE_ENV === "production") {
 
 // Define API routes here
 
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
+require("./routes/auth/cookiesauth")(app);
+
+mongoose.connect("mongodb://localhost/dreamLifer", { useNewUrlParser: true });
+
+app.route(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
 app.listen(PORT, () => {
