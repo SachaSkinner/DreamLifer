@@ -6,9 +6,15 @@ import Resourses from "./pages/Resourses";
 import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import CalendarView from './components/CalendarView';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import Logout from './components/Logout';
 
 function App() {
   return (
+
+    <>
 
     <Router>
       <div>
@@ -22,6 +28,15 @@ function App() {
         </Switch>
       </div>
     </Router>
+
+    <div>
+      <CalendarView />
+      <Signup />
+      <Login />
+      <Logout />
+    </div>
+
+    </>
 
   );
 }
