@@ -33,12 +33,13 @@ class Login extends Component {
         }).then(res => {
             this.setState({status: res.data});
             this.refreshState();
-            // this.checkSession();
+            this.checkSession();
         }).catch(err => console.log(err));
     };
 
     checkSession = () => {
         API.checkSession().then(res => {
+            console.log(res);
             if (res.data.bool) {
                 this.setState({currentUser: res.data.firstName}); 
             } else {

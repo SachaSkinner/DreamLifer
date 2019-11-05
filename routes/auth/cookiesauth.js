@@ -132,7 +132,7 @@ app.post('/auth/cookies/logout', (req, res) => {
 //       artist: req.body.artist,
 //       spotifyURI: req.body.spotifyURI,
 //       emotion: req.body.emotion,
-//       UserId: req.session.user.id
+//       UserId: req.session.user._id
 //       }).then(function(newSong) {
 //       res.json(newSong)
 //     });
@@ -145,7 +145,7 @@ app.post('/auth/cookies/logout', (req, res) => {
         res.json({
             bool: true,
             firstName: req.session.user.firstName,
-            id: req.session.user.id
+            id: req.session.user._id
             });
     } else {
         res.json({bool: false});  
