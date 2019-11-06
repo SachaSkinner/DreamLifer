@@ -73,6 +73,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
+          <Nav />
           <div className="App">
             <div size="3" className="logo">
               <img src={logo} width="300" height="115" />
@@ -82,7 +83,7 @@ class App extends Component {
               <br></br>
               <Route
                 exact
-                path="/"
+                path="/dashboard"
                 render={props => (
                   <React.Fragment>
                     <AddTodo addTodo={this.addTodo} />
@@ -98,7 +99,6 @@ class App extends Component {
             </div>
           </div>
           <div>
-            <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/dashboard" component={Dashboard} />
