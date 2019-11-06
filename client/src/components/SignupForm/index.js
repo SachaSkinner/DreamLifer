@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Redirect} from 'react-router-dom';
 import API from '../../utils/API';
 import './style.css';
 
-class Signup extends Component {
+class SignupForm extends Component {
     state = {
         firstName: '',
         lastName: '',
@@ -47,25 +47,13 @@ class Signup extends Component {
         }).catch(err => console.log(err));
     };
 
-    checkSession = () => {
-        API.checkSession().then(res => {
-            if (res.data.bool) {
-                this.setState({currentUser: res.data.firstName}); 
-            } else {
-                console.log('No user logged in');
-            }
-        }).catch(err => console.log(err));
-    };
-
-    // componentDidMount() {
-    //     this.checkSession();
-    // };
-
     render() {
+        if (this.state.status) {
+            return (<Redirect push to='/dashboard' />);
+        } else {
         return (
         <div className='signupWrapper'>
             <h3>{this.state.modalMessage}</h3>
-            {/* {this.state.currentUser.length >= 1 ? (<h4>Welcome, {this.state.currentUser}</h4>) : (<></>)} */}
             <form>
                 <input value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
                 <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
@@ -74,12 +62,10 @@ class Signup extends Component {
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleSignup} className='submitSignup'>sign up</button>
             </form>
-            <Router>
-            <Route render={()=> {this.state.status ? <Redirect to='/dashboard' /> : <Redirect to='/' />}} />
-            </Router>
         </div>
         )
     };
+}
 };
 
-export default Signup;
+export default SignupForm;

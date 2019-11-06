@@ -7,8 +7,8 @@ import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import CalendarView from './components/CalendarView';
-import Signup from './components/Signup';
-import Login from './components/Login';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
 import Logout from './components/Logout';
 
 function App() {
@@ -27,14 +27,14 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </div>
-    </Router>
+      <div>
+        <CalendarView />
+        <SignupForm />
+        <LoginForm />
+        <Logout />
+      </div>
 
-    <div>
-      <CalendarView />
-      <Signup />
-      <Login />
-      <Logout />
-    </div>
+    </Router>
 
     </>
 

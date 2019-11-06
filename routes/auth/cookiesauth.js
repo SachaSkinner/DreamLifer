@@ -62,14 +62,14 @@ app.route('/auth/cookies/signup').get(sessionChecker, (req, res) => {
             }).then(function(newUser) {
               // IMPORTANT!! After the newuser is created, we set the session user to be this new user
               req.session.user = newUser;
-              res.json(`${newUser.firstName} successfully signed up!`);
+              res.json([`${newUser.firstName} successfully signed up!`, true]);
               console.log(newUser);
             });
           });
         });
       } else {
         // this refers to line 47 above, if the current user tries to make a username that is already saved in the DB
-        res.json('User already exists with this email')
+        res.json(['User already exists with this email', false])
       }
     });
 });
@@ -82,16 +82,16 @@ app.route('/auth/cookies/login').get(sessionChecker, (req, res) => {
         db.User.findOne({email: req.body.email}).then(function(user) {
           console.log(user);
             if (user === null) {
-                res.json('No user with this email');
+                res.json(['No user with this email', false]);
             } else {
               // When we find the user, we use bcrypt.compare to check the req.body.password to the user.password saved in the DB
                 bcrypt.compare(req.body.password, user.password, function(err, result) {
                     if (result == true) {
                       // if the password is correct, we set the session user to this user.dataValues, and redirect to '/' page
                       req.session.user = user;
-                      res.json(`Welcome back, ${user.firstName}!`);
+                      res.json([`Welcome back, ${user.firstName}!`, true]);
                     } else if (user.password !== req.body.password) {
-                      res.json('Incorrect password');
+                      res.json(['Incorrect password', false]);
                     }
                 });
             }
