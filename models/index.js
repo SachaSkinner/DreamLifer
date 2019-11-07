@@ -1,4 +1,6 @@
 module.exports = {
-    User: require("./User")
+    User: require("./User"),
+    Todo: require('./Todo'),
+    Image: require('./Image')
   };
   

@@ -74,9 +74,9 @@ class Signup extends Component {
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleSignup} className='submitSignup'>sign up</button>
             </form>
-            <Router>
+            {/* <Router>
             <Route render={()=> {this.state.status ? <Redirect to='/dashboard' /> : <Redirect to='/' />}} />
-            </Router>
+            </Router> */}
         </div>
         )
     };

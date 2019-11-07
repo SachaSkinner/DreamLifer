@@ -12,7 +12,15 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    todo: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Todo'
+    }],
+    image: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Image'
+    }]
 });
 
 const User = mongoose.model('User', userSchema);

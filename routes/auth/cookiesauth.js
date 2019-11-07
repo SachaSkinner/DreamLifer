@@ -63,7 +63,6 @@ app.route('/auth/cookies/signup').get(sessionChecker, (req, res) => {
               // IMPORTANT!! After the newuser is created, we set the session user to be this new user
               req.session.user = newUser;
               res.json([`${newUser.firstName} successfully signed up!`, true]);
-              console.log(newUser);
             });
           });
         });
@@ -74,13 +73,21 @@ app.route('/auth/cookies/signup').get(sessionChecker, (req, res) => {
     });
 });
 
+app.post('/api/todos', (req, res) => {
+  db.Todo.create({
+    body: req.body.text,
+    completed: false
+  }).then(result => {
+    res.json(result);
+  });
+});
+
 // this route is handling user attempts to log in
 app.route('/auth/cookies/login').get(sessionChecker, (req, res) => {
     res.render('login');
 }).post((req, res) => {
       // We search the DB for a user with this inputted username
         db.User.findOne({email: req.body.email}).then(function(user) {
-          console.log(user);
             if (user === null) {
                 res.json(['No user with this email', false]);
             } else {

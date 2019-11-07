@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Define API routes here
 
-// require("./routes/apiRoutes")(app);
+require("./routes/api/apiRoutes")(app);
 require("./routes/auth/cookiesauth")(app);
 
 mongoose.connect("mongodb://localhost/dreamLifer", { useNewUrlParser: true });
