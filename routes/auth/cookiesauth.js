@@ -98,18 +98,6 @@ app.route('/auth/cookies/login').get(sessionChecker, (req, res) => {
         });
 });
 
-app.get('/allusers', (req, res) => {
-  db.User.find({}).then(users => {
-    res.json(users);
-  });
-});
-
-app.delete('/allusers', (req, res) => {
-  db.User.remove({}).then(removed => {
-    res.json(removed);
-  })
-});
-
 // This route handles a user logout
 app.post('/auth/cookies/logout', (req, res) => {
     // we check to make sure that there IS a session user in express-session && that the cookies.user_seshID exists in the browser
@@ -121,22 +109,6 @@ app.post('/auth/cookies/logout', (req, res) => {
         res.json('Noone to log out!');
     }
 });
-
-
-// The rest of the code below is pretty much specific to the app that I worked on for project 2, so we don't have to worry much about it.
-// This is how we saved songs specific to the user in the DB.
-// app.post("/api/users/songs", function(req, res) {
-//   // Create a new song in the DB based on the model we defined, and then attached a UserID property with the req.session.user.id from session
-//     db.Song.create({
-//       title: req.body.title,
-//       artist: req.body.artist,
-//       spotifyURI: req.body.spotifyURI,
-//       emotion: req.body.emotion,
-//       UserId: req.session.user._id
-//       }).then(function(newSong) {
-//       res.json(newSong)
-//     });
-//   });
 
 // We used this route to get express-session data on the User into the front-end.
   app.get("/auth/cookies/checksession", function(req, res) {

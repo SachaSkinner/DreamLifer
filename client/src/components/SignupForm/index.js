@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 import './style.css';
 
@@ -23,16 +23,6 @@ class SignupForm extends Component {
         });
     };
 
-    checkSession = () => {
-        API.checkSession().then(res => {
-            this.setState({status: res.data.bool})
-        }).catch(err => console.log(err));
-    };
-
-    componentDidMount(){
-        this.checkSession()
-    };
-
     handleInputChange = event => {
         const {name, value} = event.target;
         this.setState({
@@ -51,14 +41,12 @@ class SignupForm extends Component {
             password: this.state.password
         }).then(res => {
             this.refreshState();
-            this.setState({status: res.data[1], headerMessage: res.data[0]});
+            this.setState({ headerMessage: res.data[0] });
         }).catch(err => console.log(err));
     };
 
     render() {
-        if (this.state.status) {
-            return (<Redirect push to='/dashboard' />);
-        } else {
+
         return (
         <div className='signupWrapper'>
             <h3>{this.state.headerMessage}</h3>
@@ -74,7 +62,7 @@ class SignupForm extends Component {
         </div>
         )
     };
-}
+
 };
 
 export default SignupForm;
