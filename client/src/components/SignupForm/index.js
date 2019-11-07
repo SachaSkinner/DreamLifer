@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {BrowserRouter as Redirect} from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import API from '../../utils/API';
 import './style.css';
 
@@ -10,8 +10,7 @@ class SignupForm extends Component {
         email: '',
         phone: '',
         password: '',
-        status: false,
-        modalMessage: 'Sign up below!'
+        headerMessage: 'Sign up below!'
     };
 
     refreshState = () => {
@@ -22,6 +21,16 @@ class SignupForm extends Component {
             phone: '',
             password: ''
         });
+    };
+
+    checkSession = () => {
+        API.checkSession().then(res => {
+            this.setState({status: res.data.bool})
+        }).catch(err => console.log(err));
+    };
+
+    componentDidMount(){
+        this.checkSession()
     };
 
     handleInputChange = event => {
@@ -41,9 +50,8 @@ class SignupForm extends Component {
             phone: this.state.phone,
             password: this.state.password
         }).then(res => {
-            this.setState({status: res.data[1], modalMessage: res.data[0]});
             this.refreshState();
-            // this.checkSession();
+            this.setState({status: res.data[1], headerMessage: res.data[0]});
         }).catch(err => console.log(err));
     };
 
@@ -53,7 +61,7 @@ class SignupForm extends Component {
         } else {
         return (
         <div className='signupWrapper'>
-            <h3>{this.state.modalMessage}</h3>
+            <h3>{this.state.headerMessage}</h3>
             <form>
                 <input value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
                 <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
@@ -62,6 +70,7 @@ class SignupForm extends Component {
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleSignup} className='submitSignup'>sign up</button>
             </form>
+            <h4>Already have an account? <Link to='/login'><button>Log in</button></Link></h4>
         </div>
         )
     };
