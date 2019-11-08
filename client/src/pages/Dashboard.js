@@ -9,7 +9,7 @@ import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
-
+import '../index.css';
 
 class Dashboard extends Component {
     state = {
@@ -44,6 +44,7 @@ class Dashboard extends Component {
                             <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                             'Welcome!'}</h1>
                             <h2>{this.state.calendarDate}</h2>
+
                             <QuotesRequest />
 
                             <RandomQuestions>
@@ -55,23 +56,23 @@ class Dashboard extends Component {
                                 <button onClick={this.loadQuestions}>Random Questions</button>
                             </RandomQuestions>
 
-                            <ReactUploadImage User={this.props.User}></ReactUploadImage>
                         </Jumbotron>
                     </Col>
                 </Row>
                 <Row>
-                    <Col size='md-12'>
+                    <div className='conty'>
+                    <Col size='4'>
                         <CalendarView handleDashState={this.handleDashState} />
                     </Col>
-                    <Col size='md-12'>
+                    <Col size='4'>
+                        <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                        <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
                         <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                     </Col>
-                </Row>
-                <Row>
-                    <Col size='md-12'>
-                    <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                    <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                    <Col size='4'>
+                        <ReactUploadImage User={this.props.User}></ReactUploadImage>
                     </Col>
+                    </div>
                 </Row>
             </Container>
 
