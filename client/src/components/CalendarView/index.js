@@ -7,12 +7,15 @@ class CalendarView extends Component {
   state = {
     date: new Date(),
     niceDate: '',
-  }
+  };
 
-  onChange = date => this.setState({ date })
+  onChange = date => {
+    this.setState({ date });
+  }
 
   getNiceDate = (value) =>{
     this.setState({niceDate: `${value}`});
+    this.props.handleDashState('calendarDate', (`${value}`).slice(0,15))
   };
 
   render() {
@@ -26,13 +29,10 @@ class CalendarView extends Component {
           tileClassName='tiles'
         />
       </div>
-      <div>
-        {this.state.niceDate.slice(0, 15)}
-      </div>
       </>
     );
   };
   
-}
+};
 
 export default CalendarView;

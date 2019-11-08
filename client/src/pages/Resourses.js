@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
-function Home() {
+function Resources() {
   return (
     <Container fluid>
       <Row>
@@ -14,6 +14,6 @@ function Home() {
       </Row>
     </Container>
   );
-}
+};
 
-export default Home;
+export default Resources;
