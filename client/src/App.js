@@ -17,16 +17,14 @@ class App extends Component {
   };
   componentDidUpdate(){
     this.checkSession();
-  }
+  };
 
 
   render() {
     return (
-
       <Navigator currentUser={this.state.currentUser} status={this.state.status} />
-
     );
-  }
-}
+  };
+};
 
 export default App;

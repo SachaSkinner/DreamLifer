@@ -70,7 +70,7 @@ app.route('/auth/cookies/signup').get(sessionChecker, (req, res) => {
       } else {
         // this refers to line 47 above, if the current user tries to make a username that is already saved in the DB
         res.json(['User already exists with this email', false])
-      }
+      };
     });
 });
 
@@ -92,9 +92,9 @@ app.route('/auth/cookies/login').get(sessionChecker, (req, res) => {
                       res.json([`Welcome back, ${user.firstName}!`, true]);
                     } else if (user.password !== req.body.password) {
                       res.json(['Incorrect password', false]);
-                    }
+                    };
                 });
-            }
+            };
         });
 });
 
@@ -107,7 +107,7 @@ app.post('/auth/cookies/logout', (req, res) => {
         res.json('Logged out');
     } else {
         res.json('Noone to log out!');
-    }
+    };
 });
 
 // We used this route to get express-session data on the User into the front-end.
@@ -121,7 +121,7 @@ app.post('/auth/cookies/logout', (req, res) => {
             });
     } else {
         res.json({bool: false});  
-    }
+    };
   });
 
 app.use(function (req, res, next) {

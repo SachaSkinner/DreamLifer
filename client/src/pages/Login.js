@@ -15,6 +15,6 @@ function Login() {
       </Row>
     </Container>
   );
-}
+};
 
 export default Login;

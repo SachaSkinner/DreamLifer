@@ -14,6 +14,6 @@ function Community() {
       </Row>
     </Container>
   );
-}
+};
 
 export default Community;

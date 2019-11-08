@@ -8,9 +8,9 @@ class CalendarView extends Component {
   state = {
     date: new Date(),
     niceDate: '',
-  }
+  };
 
-  onChange = date => this.setState({ date })
+  onChange = date => this.setState({ date });
 
   getNiceDate = (value) =>{
     this.setState({niceDate: `${value}`});
@@ -34,6 +34,6 @@ class CalendarView extends Component {
     );
   };
   
-}
+};
 
 export default CalendarView;

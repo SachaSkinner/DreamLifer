@@ -15,7 +15,7 @@ module.exports = function(app) {
       });
       
     // Add a Todo for the specific user, decided by :id
-    app.post('/api//users/:id/todos', function(req, res) {
+    app.post('/api/users/:id/todos', function(req, res) {
         db.Todo.create(req.body).then(function(newTodo) {
             return db.User.findOneAndUpdate(
                 {_id: req.params.id}, 

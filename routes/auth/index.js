@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const cookiesAuth = require("./cookiesauth");
+// const router = require("express").Router();
+// const cookiesAuth = require("./cookiesauth");
 
-router.use("/cookies", cookiesAuth);
+// router.use("/cookies", cookiesAuth);
 
-module.exports = router;
+// module.exports = router;

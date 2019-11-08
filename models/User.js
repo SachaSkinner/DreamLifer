@@ -17,7 +17,7 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Todo'
     }],
-    image: [{
+    url: [{
         type: Schema.Types.ObjectId,
         ref: 'Image'
     }]

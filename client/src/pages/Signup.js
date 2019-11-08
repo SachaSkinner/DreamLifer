@@ -15,6 +15,6 @@ function Signup() {
       </Row>
     </Container>
   );
-}
+};
 
 export default Signup;

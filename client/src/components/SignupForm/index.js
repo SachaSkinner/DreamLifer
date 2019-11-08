@@ -60,7 +60,7 @@ class SignupForm extends Component {
             </form>
             <h4>Already have an account? <Link to='/login'><button>Log in</button></Link></h4>
         </div>
-        )
+        );
     };
 
 };

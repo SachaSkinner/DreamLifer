@@ -45,8 +45,8 @@ class LoginForm extends Component {
                 <button onClick={this.handleLogin} className='submitLogin'>sign in</button>
             </form>
         </div>
-        )
-    }
+        );
+    };
 };
 
 export default LoginForm;

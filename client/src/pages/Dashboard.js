@@ -24,7 +24,7 @@ function Dashboard(props) {
                 </Row>
             </Container>
         );
-    }
+    };
 
 
 
