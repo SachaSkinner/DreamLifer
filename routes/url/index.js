@@ -4,7 +4,7 @@ const router = require("express").Router();
 
 router.post('/addUrl/:id/:url', (req, res) => {
    
-    db.User.findOneAndUpdate({ _id: req.params.id }, { "$set": { "url": req.params.url}}).exec(function(err, updatedUser){
+    db.User.findOneAndUpdate({ _id: req.params.id }, { "$set": { "url": req.params.url}}).then(function(err, updatedUser){
       if(err) {
           console.log(err);
           res.status(500).send(err);
