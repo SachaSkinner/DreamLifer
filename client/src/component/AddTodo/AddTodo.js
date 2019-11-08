@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types'
+import API from "../../utils/API";
+// import API from '../../utils/API'
 
 export class AddTodo extends Component {
     state ={
@@ -11,6 +13,7 @@ export class AddTodo extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
+        API.addTodo()
         this.props.addTodo(this.state.title);
         this.setState({ title: ''});
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 function Header() {
@@ -14,10 +14,10 @@ function Header() {
     )
 }
 
-const linkStyle = {
-    color: '#663399',
-    textDecoration: 'none'
-}
+// const linkStyle = {
+//     color: '#663399',
+//     textDecoration: 'none'
+// }
 
 const headerStyle = {
     background: '#315a78',

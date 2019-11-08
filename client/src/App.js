@@ -1,4 +1,3 @@
-//<<<<<<< Updated upstream
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
@@ -10,7 +9,7 @@ import CalendarView from "./components/CalendarView";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
-
+import API from "../../client/src/utils/API"
 //~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
 import React, { Component } from "react";
 import logo from "./assets/images/logo.png";
@@ -19,7 +18,7 @@ import AddTodo from "./component/AddTodo/AddTodo";
 import MyList from "./component/Pages/MyList";
 import Header from "./component/Layout/Header";
 import axios from "axios";
-// import uuid from "uuid";
+import uuid from "uuid";
 import "./App.css";
 
 class App extends Component {
@@ -34,40 +33,48 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos?_limit=3")
-      .then(res => this.setState({ todos: res.data }));
-  }
-  //toggle
-  markComplete = id => {
-    this.setState({
-      todos: this.state.todos.map(todo => {
-        if (todo.id === id) {
-          todo.completed = !todo.completed;
-        }
-        return todo;
-      })
-    });
-  };
+		API
+			.getTodos()
+      .then((res) => this.setState({ todos: res.data }))
+      .catch(err => console.log(err));
+	}
 
-  //Delete Todo
-  delTodo = id => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
-      this.setState({
-        todos: [...this.state.todos.filter(todo => todo.id !== id)]
-      })
-    );
-  };
+	// Toggle Complete
+	markComplete = (id) => {
+		this.setState({
+			todos: this.state.todos.map((todo) => {
+				if (todo.id === id) {
+					todo.completed = !todo.completed;
+				}
+				return todo;
+			})
+		});
+	};
 
-  //Add to do
-  addTodo = title => {
-    axios
-      .post("https://jsonplaceholder.typicode.com/todos", {
-        title,
-        completed: false
-      })
-      .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
-  };
+	// Delete Todo
+	delTodo = (id) => {
+		axios
+			.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+			.then((res) =>
+				this.setState({
+					todos: [...this.state.todos.filter((todo) => todo.id !== id)]
+				})
+			);
+	};
+
+	// Add Todo
+	addTodo = (title) => {
+		axios
+			.post('https://jsonplaceholder.typicode.com/todos', {
+				title,
+				completed: false
+			})
+			.then((res) => {
+				res.data.id = uuid.v4();
+				this.setState({ todos: [...this.state.todos, res.data] });
+			});
+	};
+
 
   render() {
     return (
@@ -76,7 +83,7 @@ class App extends Component {
           <Nav />
           <div className="App">
             <div size="3" className="logo">
-              <img src={logo} width="300" height="115" />
+              <img src={logo} alt="logo" width="300" height="115" />
             </div>
             <div className="container">
               <Header className="app-moto" />
@@ -99,6 +106,7 @@ class App extends Component {
             </div>
           </div>
           <div>
+          {/* ^Anand's stuff ends here^ */}
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/dashboard" component={Dashboard} />
@@ -118,9 +126,9 @@ class App extends Component {
       </React.Fragment>
     );
 
-    //=======
+
   }
-  //>>>>>>> Stashed changes
+
 }
 
 export default App;
