@@ -59,15 +59,12 @@ class Signup extends Component {
         }).catch(err => console.log(err));
     };
 
-    // componentDidMount() {
-    //     this.checkSession();
-    // };
+  
 
     render() {
         return (
         <div className='signupWrapper'>
             <h3>{this.state.status}</h3>
-            {/* {this.state.currentUser.length >= 1 ? (<h4>Welcome, {this.state.currentUser}</h4>) : (<></>)} */}
             <form>
                 <input value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
                 <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>

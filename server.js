@@ -24,7 +24,8 @@ app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
   useUnifiedTopology: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+   useFindAndModify: false 
 });
 
 

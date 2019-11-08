@@ -16,7 +16,7 @@ export default {
   },
  
   updateUrl: function(id, urlData) {
-    return axios.post("/url/addUrl/" + id + urlData);
+    return axios.post("/url/addUrl/" + id + "/" + urlData);
   },
   getQuestions: function() {
     return axios.get("/api/questions")

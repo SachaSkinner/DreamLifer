@@ -6,22 +6,18 @@ import Resourses from "./pages/Resourses";
 import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-// import API from "./utils/API";
+
 
 
 class App extends React.Component {
   state = {
     User: {}
   }
-  // changeUrl = (id, url) => {
-
-  //   API.updateUrl(id, url).then(res => console.log(res))
-  //     .catch(err => console.log(err));
-  // }
+  
   handleGlobalState = (state, value) => {
     this.setState({ [state]: value })
     console.log(this.state.User)
-    // this.changeUrl(this.state.User.Id, this.state.User.Url)
+    
   }
 
   render() {

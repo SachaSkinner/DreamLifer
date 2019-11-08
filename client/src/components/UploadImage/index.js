@@ -16,6 +16,13 @@ class ImageUpload extends Component {
 
         }
     }
+    addUrl = (id, url) => {
+        API.updateUrl(id, url)
+         
+            .then(res => this.loadPicture(res))
+            .catch(err => console.log(err));
+
+    }
 
     componentDidMount() {
         
@@ -62,14 +69,8 @@ class ImageUpload extends Component {
                     this.props.User.url = this.state.url; 
                     
                     console.log(this.props.User)
-
-                    API.updateUrl({
-                        // this.props.User.url
-                        url: this.state.url,
-
-                    })
-                        .then(res => this.loadPicture(res))
-                        .catch(err => console.log(err));
+             
+                    this.addUrl(this.props.User.id, this.props.User.url)
 
                 })
 
