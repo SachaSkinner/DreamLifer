@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const todoSchema = new Schema({
-    body: String,
+    message: String,
+    date: String,
     completed: Boolean
 });
 

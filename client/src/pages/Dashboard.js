@@ -5,6 +5,8 @@ import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
 import { RandomQuestions, QuestionItem } from "../components/RandomQuestions";
+import Todo from '../components/ToDoSubmit';
+import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
 
@@ -63,6 +65,12 @@ class Dashboard extends Component {
                     </Col>
                     <Col size='md-12'>
                         <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size='md-12'>
+                    <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                    <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
                     </Col>
                 </Row>
             </Container>

@@ -14,10 +14,14 @@ const router = require("express").Router();
       });
       
     // Add a Todo for the specific user, decided by :id
-    router.post('/users/:id/todos', function(req, res) {
-        db.Todo.create(req.body).then(function(newTodo) {
+    router.post('/users/todos', function(req, res) {
+        db.Todo.create({
+            message: req.body.message,
+            date: req.body.date,
+            completed: false
+        }).then(function(newTodo) {
             return db.User.findOneAndUpdate(
-                {_id: req.params.id}, 
+                {_id: req.body.id}, 
                 {
                     '$push': {
                         todo: newTodo._id
@@ -25,19 +29,25 @@ const router = require("express").Router();
                 }, 
                 {new: true});
         }).then(function(updatedTodo) {
-            res.json(updatedTodo);
+            res.json('Successfully added your progress');
         }).catch(function(err) {
-            res.json(err);
+            console.log(err);
+            res.json('There was an error trying to update your progress');
         });
     });
 
     // Get a user's information, whichData takes 'todo' or 'image' and will populate
     // the response with the User's todos or images
-    router.get('/users/:id/:whichData', function(req, res) {
-        db.User.findOne({_id: req.params.id}).populate(req.params.whichData).then(function(userAndTodos) {
+    router.get('/users/items/:item/:id/:date', function(req, res) {
+        console.log(req.body);
+        db.User.findOne({_id: req.params.id}).populate({
+            path: req.params.item,
+            match: { date: req.params.date } 
+        }).then(function(userAndTodos) {
             res.json(userAndTodos);
         }).catch(function(err) {
-            res.json(err);
+            res.json('No data to fetch on this date ... ');
+            console.log(err);
         });
     });
 

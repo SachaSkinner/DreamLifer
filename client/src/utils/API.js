@@ -19,5 +19,11 @@ export default {
   },
   getQuestions: function() {
     return axios.get("/api/questions")
+  },
+  submitTodo: function(message, id, date) {
+    return axios.post('/api/users/todos', {message: message, id: id, date: date})
+  },
+  getItems: function(item, id, date) {
+    return axios.get(`/api/users/items/${item}/${id}/${date}`);
   }
 };

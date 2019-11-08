@@ -18,6 +18,10 @@ class CalendarView extends Component {
     this.props.handleDashState('calendarDate', (`${value}`).slice(0,15))
   };
 
+  componentDidMount() {
+    this.getNiceDate(this.state.date);
+  };
+
   render() {
     return (
       <>
