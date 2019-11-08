@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import API from './utils/API';
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Resourses from "./pages/Resourses";
@@ -17,6 +18,19 @@ class App extends React.Component {
   handleGlobalState = (state, value) => {
     this.setState({ [state]: value })
   }
+
+  componentDidMount() {
+    this.checkSession();
+  };
+
+  checkSession = () => {
+    API.checkSession().then(res => {
+      console.log(res);
+        if (res.data.bool) {
+            this.handleGlobalState("User", res.data)
+        }
+    }).catch(err => console.log(err));
+  };
 
   render() {
     return (

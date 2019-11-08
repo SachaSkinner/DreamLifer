@@ -33,7 +33,6 @@ import Jumbotron from "../components/Jumbotron";
 class Home extends Component {
   render() {
   return (
-    console.log(this.props.User),
     <Container fluid>
       <Row>
         <Col size="md-12">

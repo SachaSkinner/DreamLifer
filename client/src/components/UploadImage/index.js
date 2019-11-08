@@ -51,12 +51,11 @@ class ImageUpload extends Component {
                     this.setState({ url });
                     this.props.User.url = this.state.url; 
 
-                    let APIid = (this.props.User.id);
-                    let APIurl = (this.props.User.url);
+                    console.log(this.props.User.id, this.props.User.url);
 
-                    API.updateUrl(APIid, APIurl)
-                        .then(res => console.log(APIid, APIurl))
-                        .catch(err => console.log(err));
+                    API.updateUrl(this.props.User.id, this.props.User.url)
+                    .then(res => console.log('uploaded'))
+                    .catch(err => console.log(err));
 
                 });
 
@@ -80,8 +79,6 @@ class ImageUpload extends Component {
                 <button onClick={this.handleUpload}>Upload</button>
                 <br />
                 <img src={this.state.url} alt="Uploaded images" height="150" width="150" />
-
-
             </div>
         )
     }
