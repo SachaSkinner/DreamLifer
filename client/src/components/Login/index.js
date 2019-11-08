@@ -7,8 +7,10 @@ class Login extends Component {
         email: '',
         password: '',
         status: 'Log in here',
-        currentUser: ''
+        currentUser: '',
+        id: ''
     };
+  
 
     refreshState = () => {
         this.setState({
@@ -32,6 +34,7 @@ class Login extends Component {
             password: this.state.password
         }).then(res => {
             this.setState({status: res.data});
+            // console.log(res.data);
             this.refreshState();
             this.checkSession();
         }).catch(err => console.log(err));
@@ -39,24 +42,24 @@ class Login extends Component {
 
     checkSession = () => {
         API.checkSession().then(res => {
-            console.log(res);
+            // console.log(res.data.bool)
             if (res.data.bool) {
+                this.props.handleGlobalState("User", res.data)
                 this.setState({currentUser: res.data.firstName}); 
+                this.setState({id: res.data.id})
+                
             } else {
                 console.log('No user logged in');
             }
         }).catch(err => console.log(err));
     };
 
-    // componentDidMount() {
-    //     this.checkSession();
-    // };
+   
 
     render() {
         return (
         <div className='loginWrapper'>
             <h3>{this.state.status}</h3>
-            {/* {this.state.currentUser.length >= 1 ? (<h4>Welcome, {this.state.currentUser}</h4>) : (<></>)} */}
             <form>
                 <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>

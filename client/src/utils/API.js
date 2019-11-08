@@ -1,9 +1,7 @@
 import axios from "axios";
 
 export default {
-  getBooks: function() {
-    return axios.get("/api/books");
-  },
+ 
   signupUser: function(userData) {
     return axios.post("/auth/cookies/signup", userData);
   },
@@ -16,7 +14,11 @@ export default {
   checkSession: function() {
     return axios.get('/auth/cookies/checksession');
   },
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+ 
+  updateUrl: function(id, urlData) {
+    return axios.post("/url/addUrl/" + id + urlData);
+  },
+  getQuestions: function() {
+    return axios.get("/api/questions")
   }
 };
