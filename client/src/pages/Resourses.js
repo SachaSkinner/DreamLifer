@@ -8,7 +8,8 @@ function Home() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>Cool resourses! Check it out!</h1>
+            <h1>Cool resources! Check it out!</h1>
+           
           </Jumbotron>
         </Col>
       </Row>

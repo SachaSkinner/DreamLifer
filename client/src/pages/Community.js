@@ -9,6 +9,8 @@ function Community() {
         <Col size="md-12">
           <Jumbotron>
             <h1>Welcome to our community!</h1>
+            <h2> Coming soon..</h2>
+            <img src={require('../images/dreamlifer1.jpg')} />
           </Jumbotron>
         </Col>
       </Row>
