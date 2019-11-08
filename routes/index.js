@@ -4,14 +4,14 @@ const router = require("express").Router();
 const authRoutes = require('./auth');
 const urlRoutes = require('./url');
 const questionsRoutes = require('./questions')
+const todoRoutes = require('./todo');
 // const questionsController = require("../../controllers/questionsController");
 
 // router.use("/api", apiRoutes);
 router.use('/auth', authRoutes);
 router.use('/url', urlRoutes);
 router.use("/api", questionsRoutes);
-
-
+router.use('/api', todoRoutes);
 
 router.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));

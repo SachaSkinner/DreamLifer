@@ -18,14 +18,12 @@ class CalendarView extends Component {
   render() {
     return (
       <>
-      <div>
         <Calendar
           onChange={this.onChange}
           value={this.state.date}
           onClickDay={this.getNiceDate}
           tileClassName='tiles'
-        />
-      </div>
+        /> 
       <div>
         {this.state.niceDate.slice(0, 15)}
       </div>

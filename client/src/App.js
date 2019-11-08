@@ -6,13 +6,18 @@ import Resourses from "./pages/Resourses";
 import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-// import API from "./utils/API";
+//~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
+import Logout from '../src/components/Logout';
+import logo from "./assets/images/logo.png";
+import Header from "./component/Layout/Header";
+import "./App.css";
+
 
 
 class App extends React.Component {
   state = {
-    User: {}
-  }
+    User: {},
+  };
   // changeUrl = (id, url) => {
 
   //   API.updateUrl(id, url).then(res => console.log(res))
@@ -22,16 +27,26 @@ class App extends React.Component {
     this.setState({ [state]: value })
     console.log(this.state.User)
     // this.changeUrl(this.state.User.Id, this.state.User.Url)
-  }
+  };
+
 
   render() {
-
     return (
-
-
-      <Router>
-        <div>
+      <React.Fragment>
+        <Router>
           <Nav />
+          <Logout />
+          <div className="App">
+            <div size="3" className="logo">
+              <img src={logo} alt="logo" width="300" height="115" />
+            </div>
+            <div className="container">
+              <Header className="app-moto" />
+              <br></br>
+              {/* <Route exact path="/mylist" component={MyList} /> */}
+            </div>
+          </div>
+          <div>
           <Switch>
             <Route exact path="/" render={() => <Home User={this.state.User} handleGlobalState={this.handleGlobalState} />} />
             <Route exact path="/dashboard" render={() => <Dashboard User={this.state.User} />} />
@@ -39,14 +54,14 @@ class App extends React.Component {
             <Route exact path="/community" component={Community} />
             <Route component={NoMatch} />
           </Switch>
-        </div>
-      </Router>
-
-
-
-
+          </div>
+        </Router>
+      </React.Fragment>
     );
+
+
   }
+
 }
 
 export default App;

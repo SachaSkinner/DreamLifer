@@ -15,9 +15,9 @@ class Home extends React.Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>This is our home!</h1>
+            </Jumbotron>
               <Signup handleGlobalState={this.props.handleGlobalState}></Signup>
               <Login handleGlobalState={this.props.handleGlobalState}></Login>
-            </Jumbotron>
           </Col>
 
         </Row>

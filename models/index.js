@@ -1,5 +1,6 @@
 module.exports = {
     User: require("./User"),
-    Question: require("./Question")
+    Question: require("./Question"),
+    Todo: require("./TodoModel")
   };
   

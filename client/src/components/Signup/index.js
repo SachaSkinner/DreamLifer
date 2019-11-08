@@ -68,13 +68,13 @@ class Signup extends Component {
         <div className='signupWrapper'>
             <h3>{this.state.status}</h3>
             {/* {this.state.currentUser.length >= 1 ? (<h4>Welcome, {this.state.currentUser}</h4>) : (<></>)} */}
-            <form>
+            <form className="form-group">
                 <input value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
                 <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
                 <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
                 <input value={this.state.phone} name='phone' onChange={this.handleInputChange} placeholder='phone'></input>
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
-                <button onClick={this.handleSignup} className='submitSignup'>sign up</button>
+                <button onClick={this.handleSignup} className='submitSignup btn btn-outline-dark'>sign up</button>
             </form>
         </div>
         )

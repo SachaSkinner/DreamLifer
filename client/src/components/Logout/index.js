@@ -15,7 +15,7 @@ function Logout(props) {
 
   return (
       <div className='logoutWrapper'>
-        <div onClick={handleLogout} className='logoutButton'>
+        <div onClick={handleLogout} className='logoutButton btn btn-danger'>
             Logout
         </div>
       </div>

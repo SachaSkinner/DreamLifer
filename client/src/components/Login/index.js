@@ -63,7 +63,7 @@ class Login extends Component {
             <form>
                 <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
-                <button onClick={this.handleLogin} className='submitLogin'>sign in</button>
+                <button onClick={this.handleLogin} className='submitLogin btn btn-outline-dark'>sign in</button>
             </form>
         </div>
         )

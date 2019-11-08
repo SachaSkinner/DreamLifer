@@ -16,19 +16,15 @@ app.use(routes);
 
 // Define API routes here
 
-// require("./routes/apiRoutes")(app);
-// require("./routes/auth/cookiesauth")(app);
+// require('./routes/todo/tododb')(app)
+// app.use(routes)
 
-// require("./routes/questions")(app);
-// require("./routes/url")(app)
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+require("./routes/apiRoutes")(app);
+require("./routes/auth/cookiesauth")(app);
 
 
 
+mongoose.connect("mongodb://localhost/dreamLifer", { useNewUrlParser: true });
 
 app.route(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
