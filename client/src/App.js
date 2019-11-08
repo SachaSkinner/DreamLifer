@@ -6,39 +6,47 @@ import Resourses from "./pages/Resourses";
 import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import CalendarView from './components/CalendarView';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import Logout from './components/Logout';
+// import API from "./utils/API";
 
-function App() {
-  return (
 
-    <>
+class App extends React.Component {
+  state = {
+    User: {}
+  }
+  // changeUrl = (id, url) => {
 
-    <Router>
-      <div>
-        <Nav/>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/resourses" component={Resourses} />
-          <Route exact path="/community" component={Community} />
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    </Router>
+  //   API.updateUrl(id, url).then(res => console.log(res))
+  //     .catch(err => console.log(err));
+  // }
+  handleGlobalState = (state, value) => {
+    this.setState({ [state]: value })
+    console.log(this.state.User)
+    // this.changeUrl(this.state.User.Id, this.state.User.Url)
+  }
 
-    <div>
-      <CalendarView />
-      <Signup />
-      <Login />
-      <Logout />
-    </div>
+  render() {
 
-    </>
+    return (
 
-  );
+
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path="/" render={() => <Home User={this.state.User} handleGlobalState={this.handleGlobalState} />} />
+            <Route exact path="/dashboard" render={() => <Dashboard User={this.state.User} />} />
+            <Route exact path="/resourses" component={Resourses} />
+            <Route exact path="/community" component={Community} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+      </Router>
+
+
+
+
+    );
+  }
 }
 
 export default App;

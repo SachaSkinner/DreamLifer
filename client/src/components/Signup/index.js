@@ -19,7 +19,8 @@ class Signup extends Component {
             lastName: '',
             email: '',
             phone: '',
-            password: ''
+            password: '',
+            url: ''
         });
     };
 
@@ -38,7 +39,8 @@ class Signup extends Component {
             lastName: this.state.lastName,
             email: this.state.email,
             phone: this.state.phone,
-            password: this.state.password
+            password: this.state.password,
+            url: ""
         }).then(res => {
             this.setState({status: res.data});
             this.refreshState();
@@ -49,6 +51,7 @@ class Signup extends Component {
     checkSession = () => {
         API.checkSession().then(res => {
             if (res.data.bool) {
+                this.props.handleGlobalState("User", res.data);
                 this.setState({currentUser: res.data.firstName}); 
             } else {
                 console.log('No user logged in');
