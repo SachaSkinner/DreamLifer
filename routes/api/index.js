@@ -39,7 +39,6 @@ const router = require("express").Router();
     // Get a user's information, whichData takes 'todo' or 'image' and will populate
     // the response with the User's todos or images
     router.get('/users/items/:item/:id/:date', function(req, res) {
-        console.log(req.body);
         db.User.findOne({_id: req.params.id}).populate({
             path: req.params.item,
             match: { date: req.params.date } 

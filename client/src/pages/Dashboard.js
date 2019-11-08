@@ -25,7 +25,7 @@ class Dashboard extends Component {
         API.getQuestions()
             .then(res => {
                 this.setState({ questions: res.data });
-                console.log(this.state.questions);
+                // console.log(this.state.questions);
             })
             .catch(err => console.log(err));
     };

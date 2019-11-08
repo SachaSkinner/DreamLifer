@@ -21,12 +21,17 @@ class TodoStore extends Component {
         }).catch(err => console.log(err));
     };
 
+    loadTodos = () => {
+    let interval = setInterval(()=> {
+        this.grabTodos() }, 1000);
+    return () => clearInterval(interval);
+    }
+
     componentDidMount() {
         this.grabTodos();
+        this.loadTodos();
     };
-    componentDidUpdate(){
-        this.grabTodos();
-    };
+    
 
     render() {
 

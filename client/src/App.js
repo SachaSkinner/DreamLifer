@@ -25,7 +25,6 @@ class App extends React.Component {
 
   checkSession = () => {
     API.checkSession().then(res => {
-      console.log(res);
         if (res.data.bool) {
             this.handleGlobalState("User", res.data)
         }
