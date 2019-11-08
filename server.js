@@ -18,9 +18,8 @@ if (process.env.NODE_ENV === "production") {
 // require('./routes/todo/tododb')(app)
 // app.use(routes)
 
-// require("./routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app);
 require("./routes/auth/cookiesauth")(app);
-//
 
 
 
