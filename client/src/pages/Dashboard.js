@@ -10,6 +10,7 @@ import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
 import '../index.css';
+import GoalTracker from "../components/GoalTracker";
 
 class Dashboard extends Component {
     state = {
@@ -70,9 +71,14 @@ class Dashboard extends Component {
                         <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                     </Col>
                     <Col size='4'>
-                        <ReactUploadImage User={this.props.User}></ReactUploadImage>
+                        <GoalTracker User={this.props.User} />
                     </Col>
                     </div>
+                </Row>
+                <Row>
+                    <Col size='md-12'>
+                    <ReactUploadImage User={this.props.User}></ReactUploadImage>
+                    </Col>
                 </Row>
             </Container>
 

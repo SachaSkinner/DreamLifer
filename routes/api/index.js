@@ -50,6 +50,17 @@ const router = require("express").Router();
         });
     });
 
+    // Route to compare time left until goal
+    router.get('/users/todo/:id/timeleft', (req, res) => {
+        db.User.findOne({_id: req.params.id}).populate('todo')
+            .then(function(userAndTodos) {
+                res.json(userAndTodos);
+            }).catch(function(err) {
+                res.json('No data to fetch on this date ... ');
+                console.log(err);
+            });
+        });
+
     // Very similar to adding Todo to specific user, decided by :id -> user's id
     router.post('/users/:id/images', (req, res) => {
         db.Image.create(req.body).then(function(newImage) {

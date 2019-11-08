@@ -25,5 +25,8 @@ export default {
   },
   getItems: function(item, id, date) {
     return axios.get(`/api/users/items/${item}/${id}/${date}`);
+  },
+  getTodosToCompare: function(id) {
+    return axios.get(`/api/users/todo/${id}/timeleft`);
   }
 };
