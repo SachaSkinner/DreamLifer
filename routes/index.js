@@ -8,7 +8,7 @@ const questionsRoutes = require('./questions')
 
 // router.use("/api", apiRoutes);
 router.use('/auth', authRoutes);
-router.use('/url', urlRoutes);
+router.use("/url", urlRoutes);
 router.use("/api", questionsRoutes);
 
 

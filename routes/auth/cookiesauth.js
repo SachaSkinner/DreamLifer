@@ -5,8 +5,6 @@ var db = require("../../models");
 var bcrypt = require("bcryptjs");
 const router = require('express').Router();
 
-// module.exports = function (app) {
-
 // boilerplate set up for using cookie parser with express-session
 // sets up session middleware, the key in the browser if 'user_seshID', and will expire after 600000 milliseconds
 router.use(cookieParser());
@@ -124,22 +122,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
-
-// The rest of the code below is pretty much specific to the app that I worked on for project 2, so we don't have to worry much about it.
-// This is how we saved songs specific to the user in the DB.
-// app.post("/api/users/songs", function(req, res) {
-//   // Create a new song in the DB based on the model we defined, and then attached a UserID property with the req.session.user.id from session
-//     db.Song.create({
-//       title: req.body.title,
-//       artist: req.body.artist,
-//       spotifyURI: req.body.spotifyURI,
-//       emotion: req.body.emotion,
-//       UserId: req.session.user._id
-//       }).then(function(newSong) {
-//       res.json(newSong)
-//     });
-//   });
-
 // We used this route to get express-session data on the User into the front-end.
 router.get("/checksession", function (req, res) {
   // if the session user exists, we sent their firstname to the front end in a JSON so that we could display their name on the homepage
@@ -157,5 +139,5 @@ router.get("/checksession", function (req, res) {
 router.use(function (req, res, next) {
   res.status(404).send('PAGE CANNOT BE FOUND');
 });
+
 module.exports = router;
-//};

@@ -14,9 +14,8 @@ export default {
   checkSession: function() {
     return axios.get('/auth/cookies/checksession');
   },
- 
-  updateUrl: function(id, urlData) {
-    return axios.post("/url/addUrl/" + id + urlData);
+ updateUrl: function(id, urlData) {
+    return axios.post("/url/addUrl/" + id + '/' + urlData);
   },
   getQuestions: function() {
     return axios.get("/api/questions")

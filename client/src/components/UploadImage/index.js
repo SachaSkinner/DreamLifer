@@ -62,13 +62,12 @@ class ImageUpload extends Component {
                     this.props.User.url = this.state.url; 
                     
                     console.log(this.props.User)
+                    console.log(this.props.User.id);
+                    let APIid = this.props.User.id;
+                    let APIurl = this.props.User.url;
 
-                    API.updateUrl({
-                        // this.props.User.url
-                        url: this.state.url,
-
-                    })
-                        .then(res => this.loadPicture(res))
+                    API.updateUrl(APIid, APIurl)
+                        .then(res => console.log(res))
                         .catch(err => console.log(err));
 
                 })
