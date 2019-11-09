@@ -3,5 +3,6 @@ module.exports = {
     Question: require("./Question"),
     Todo: require('./Todo'),
     Image: require('./Image'),
+    Todoto: require("./TodoModel")
   };
   

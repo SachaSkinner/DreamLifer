@@ -28,5 +28,19 @@ export default {
   },
   getTodosToCompare: function(id) {
     return axios.get(`/api/users/todo/${id}/timeleft`);
-  }
+  },
+//todo 
+
+  // getTodos: function(){
+  //   return axios.get("api/todo");
+  // },
+  // getTodo: function(id){
+  //   return axios.get("api/todo" + id);
+  // },
+  // deleteTodo: function(id) {
+  //   return axios.delete("/api/todo" + id);
+  // },
+  // addTodo: function(titleData) {
+  //   return axios.post("/api/todo/title" + titleData); 
+  // }
 };

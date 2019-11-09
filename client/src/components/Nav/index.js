@@ -5,7 +5,7 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-info">
       <Link to='/' className="navbar-brand">
         Home
       </Link>
@@ -13,7 +13,7 @@ function Nav() {
         Dashboard
       </Link>
       <Link to='/resourses' className="navbar-brand">
-        Sourses
+        Sources
       </Link>
       <Link to='/community' className="navbar-brand">
         Community
