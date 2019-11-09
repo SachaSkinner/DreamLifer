@@ -9,6 +9,7 @@ function Resources() {
         <Col size="md-12">
           <Jumbotron>
             <h1>Cool resourses! Check it out!</h1>
+            <img alt="" src={require('../helpers/back1.jpg')} />
           </Jumbotron>
         </Col>
       </Row>

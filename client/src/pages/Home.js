@@ -38,6 +38,8 @@ class Home extends Component {
         <Col size="md-12">
           <Jumbotron>
             <h1>This is our home!</h1>
+           
+            <img alt="" src={require('../helpers/dreamlifer_1.jpg')} />
           </Jumbotron>
         </Col>
       </Row>
