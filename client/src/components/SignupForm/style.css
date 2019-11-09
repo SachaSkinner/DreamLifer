@@ -22,8 +22,5 @@ input {
     display: block;
 }
 .submitSignup {
-    position: relative;
-    left: 50%;
-    top: -50px;
     cursor: pointer;
 }

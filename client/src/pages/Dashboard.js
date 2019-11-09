@@ -1,63 +1,52 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import axios from 'axios';
-import QuotesApi from "../components/QuotesApi";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
 import { RandomQuestions, QuestionItem } from "../components/RandomQuestions";
+import Todo from '../components/ToDoSubmit';
+import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
+import QuotesRequest from "../helpers/QuotesRequest";
+import '../index.css';
+import GoalTracker from "../components/GoalTracker";
 
 class Dashboard extends Component {
     state = {
-        quoteText: '',
-        quoteAuthor: '',
-        questions: []
+        questions: [],
+        calendarDate: ''
     };
+
+    handleDashState = (state, value) => {
+        this.setState({ [state]: value })
+      }
 
     loadQuestions = () => {
         API.getQuestions()
             .then(res => {
                 this.setState({ questions: res.data });
-                console.log(this.state.questions);
+                // console.log(this.state.questions);
             })
             .catch(err => console.log(err));
     };
 
-
-
     componentDidMount() {
-        // this.loadQuestions();
-        axios.get("http://quotes.rest/qod.json", {
-
-        })
-            .then(res => {
-
-                this.setState({ quoteText: res.data.contents.quotes[0].quote, quoteAuthor: res.data.contents.quotes[0].author });
-                console.log(res.data.contents.quotes[0].quote);
-                console.log(res.data.contents.quotes[0].author);
-            })
-            .catch(err => console.log(err));
+        this.loadQuestions();
     }
+
     render() {
         return (
-
-
             <Container fluid>
+
                 <Row>
                     <Col size="md-12">
                         <Jumbotron>
-                            <h1>User's dashboard is here!!!</h1>
-                            <Logout />
-                            <CalendarView />
+                            <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
+                            'Welcome!'}</h1>
+                            <h2>{this.state.calendarDate}</h2>
 
-                            <QuotesApi key={this.state.quoteText + this.state.quoteAuthor}>
-
-                                <p>{this.state.quoteText}</p>
-                                <p>{this.state.quoteAuthor}</p>
-
-                            </QuotesApi>
+                            <QuotesRequest />
 
                             <RandomQuestions>
                                 {this.state.questions.map(question => (
@@ -68,20 +57,35 @@ class Dashboard extends Component {
                                 <button onClick={this.loadQuestions}>Random Questions</button>
                             </RandomQuestions>
 
-                            <ReactUploadImage User={this.props.User}></ReactUploadImage>
-
                         </Jumbotron>
+                    </Col>
+                </Row>
+                <Row>
+                    <div className='conty'>
+                    <Col size='4'>
+                        <CalendarView handleDashState={this.handleDashState} />
+                    </Col>
+                    <Col size='4'>
+                        <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                        <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                        <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                    </Col>
+                    <Col size='4'>
+                        <GoalTracker User={this.props.User} />
+                    </Col>
+                    </div>
+                </Row>
+                <Row>
+                    <Col size='md-12'>
+                    <ReactUploadImage User={this.props.User}></ReactUploadImage>
                     </Col>
                 </Row>
             </Container>
 
         );
-    }
+    };
+};
 
-
-
-
-}
 
 
 

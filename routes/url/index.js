@@ -1,5 +1,3 @@
-
-
 const db = require("../../models");
 const router = require("express").Router();
 
@@ -12,11 +10,9 @@ router.post('/addUrl', (req, res) =>{
           console.log(err);
           res.status(500).send(err);
       } else {
-               res.status(200).send(updatedUser);
+        res.status(200).send(updatedUser);
       }
    });
-  })
+});
+
   module.exports = router;
-
-
-        

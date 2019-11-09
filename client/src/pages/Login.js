@@ -1,21 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import LoginForm from '../components/LoginForm';
 
-function Community() {
+class Login extends Component {
+  render() {
   return (
     <Container fluid>
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>Welcome to our community!</h1>
-            <h2> Coming soon..</h2>
-            <img src={require('../images/dreamlifer1.jpg')} />
+          <LoginForm handleGlobalState={this.props.handleGlobalState} />
           </Jumbotron>
         </Col>
       </Row>
     </Container>
   );
+  }
 };
 
-export default Community;
+export default Login;

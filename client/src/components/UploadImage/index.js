@@ -12,10 +12,12 @@ class ImageUpload extends Component {
     handleChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0]
-            this.setState(() => ({ image: image }))
+            this.setState(() => ({ image: image }));
+        };
+    };
 
         }
-    }
+    
     addUrl = (id, url) => {
         API.updateUrl(id, url)
          
@@ -27,23 +29,17 @@ class ImageUpload extends Component {
     componentDidMount() {
         
         const images = storage.ref().child('images/');
-
         const image = images.child('befunky_layer.png');
-
         image.getDownloadURL().then((url) => { this.setState({ image: url }) }
         );
-      
-    }
+    };
+
     loadPicture = (urlBack) => {
-        // console.log(urlBack)
         const images = storage.ref().child('images/');
-
         const image = images.child(urlBack);
-
         image.getDownloadURL().then((url) => { this.setState({ image: url }) }
-        );
-        
-    }
+        );  
+    };
 
     handleUpload = () => {
         const { image } = this.state;
@@ -58,13 +54,11 @@ class ImageUpload extends Component {
             (error) => {
                 // error function 
                 console.log(error)
-
             },
             () => {
                 //  complete function
                 storage.ref('images').child(image.name).getDownloadURL().then(url => {
-
-                    
+     
                     this.setState({ url });
                     this.props.User.url = this.state.url; 
                     
@@ -72,12 +66,12 @@ class ImageUpload extends Component {
              
                     this.addUrl(this.props.User.id, this.props.User.url)
 
-                })
+                });
 
             });
-    }
+        };
+
     render() {
-        // console.log(this.props.User.id)
         const style = {
             height: '100vh',
             display: 'flex',
@@ -93,12 +87,10 @@ class ImageUpload extends Component {
                 <input type='file' onChange={this.handleChange} />
                 <button onClick={this.handleUpload}>Upload</button>
                 <br />
-                <img src={this.state.url} alt="Uploaded images" height="300" width="400" />
-
-
+                <img src={this.state.url} alt="Uploaded images" height="150" width="150" />
             </div>
         )
     }
-}
+  }
 
 export default ImageUpload

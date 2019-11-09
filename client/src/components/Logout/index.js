@@ -1,25 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import API from '../../utils/API';
 import './style.css';
 
-function Logout(props) {
+class Logout extends Component {
+  state = {
+    hi: 'hi'
+  };
 
-    let message = '';
-
-  function handleLogout() {
+  handleLogout = () => {
     API.logoutUser().then(res => {
-        message = res.data;
-        console.log(message);
+        console.log(res.data);
+        console.log(this.props.User);
+        this.props.handleGlobalState("User", res.data);
     });
   };
 
-  return (
-      <div className='logoutWrapper'>
-        <div onClick={handleLogout} className='logoutButton'>
-            Logout
+  render() {
+    return (
+        <div className='logoutWrapper'>
+          <div onClick={this.handleLogout} className='logoutButton'>
+              Logout
+          </div>
         </div>
-      </div>
-  );
+    );
+  }
   
 }
 

@@ -1,16 +1,16 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 import './style.css';
 
-class Signup extends Component {
+class SignupForm extends Component {
     state = {
         firstName: '',
         lastName: '',
         email: '',
         phone: '',
         password: '',
-        status: 'Sign up below!',
-        currentUser: ''
+        headerMessage: 'Sign up below!'
     };
 
     refreshState = () => {
@@ -42,9 +42,9 @@ class Signup extends Component {
             password: this.state.password,
             url: ""
         }).then(res => {
-            this.setState({status: res.data});
             this.refreshState();
-            // this.checkSession();
+            this.setState({ headerMessage: res.data[0] });
+            this.checkSession();
         }).catch(err => console.log(err));
     };
 
@@ -52,19 +52,24 @@ class Signup extends Component {
         API.checkSession().then(res => {
             if (res.data.bool) {
                 this.props.handleGlobalState("User", res.data);
-                this.setState({currentUser: res.data.firstName}); 
-            } else {
-                console.log('No user logged in');
             }
         }).catch(err => console.log(err));
     };
 
+<<<<<<< HEAD:client/src/components/Signup/index.js
   
 
+=======
+>>>>>>> 456863cd987408209116651d23a77f892f9f636a:client/src/components/SignupForm/index.js
     render() {
+
         return (
         <div className='signupWrapper'>
+<<<<<<< HEAD:client/src/components/Signup/index.js
             <h3>{this.state.status}</h3>
+=======
+            <h3>{this.state.headerMessage}</h3>
+>>>>>>> 456863cd987408209116651d23a77f892f9f636a:client/src/components/SignupForm/index.js
             <form>
                 <input value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
                 <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
@@ -73,9 +78,11 @@ class Signup extends Component {
                 <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleSignup} className='submitSignup'>sign up</button>
             </form>
+            <h4>Already have an account? <Link to='/login'><button>Log in</button></Link></h4>
         </div>
-        )
+        );
     };
+
 };
 
-export default Signup;
+export default SignupForm;
