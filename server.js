@@ -16,10 +16,12 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+// require("./routes/apiRoutes")(app);
+// require("./routes/auth/cookiesauth")(app);
+
+
+
+mongoose.connect("mongodb://localhost/dreamLifer", { useNewUrlParser: true });
 
 app.route(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));

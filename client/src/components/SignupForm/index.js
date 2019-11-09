@@ -66,8 +66,8 @@ class SignupForm extends Component {
                 <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
                 <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
                 <input value={this.state.phone} name='phone' onChange={this.handleInputChange} placeholder='phone'></input>
-                <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
-                <button onClick={this.handleSignup} className='submitSignup'>sign up</button>
+                <input type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
+                <button onClick={this.handleSignup} className='submitSignup btn btn-outline-dark'>sign up</button>
             </form>
             <h4>Already have an account? <Link to='/login'><button>Log in</button></Link></h4>
         </div>

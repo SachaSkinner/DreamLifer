@@ -11,7 +11,6 @@ import Jumbotron from "../components/Jumbotron";
 
 //     return (
 //       <Container fluid>
-
 //         <Row>
 //           <Col size="md-12">
 //             <Jumbotron>
@@ -20,6 +19,16 @@ import Jumbotron from "../components/Jumbotron";
 //               <Login handleGlobalState={this.props.handleGlobalState}></Login>
 //             </Jumbotron>
 //           </Col>
+// =======
+//         <Row>
+//           <Col size="md-12">
+//             <Jumbotron>
+//               <h1>This is our home!</h1>
+//             </Jumbotron>
+//               <Signup handleGlobalState={this.props.handleGlobalState}></Signup>
+//               <Login handleGlobalState={this.props.handleGlobalState}></Login>
+//           </Col>
+// >>>>>>> nov7
 
 //         </Row>
 
