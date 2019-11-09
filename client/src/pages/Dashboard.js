@@ -10,7 +10,7 @@ import Logout from '../components/Logout';
 // import ReactUploadImage from "../components/UploadImage";
 // import CalendarView from "../components/CalendarView";
 // >>>>>>> nov7
-import { RandomQuestions, QuestionItem } from "../components/RandomQuestions";
+// import { RandomQuestions, QuestionItem } from "../components/RandomQuestions";
 import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
@@ -55,7 +55,7 @@ class Dashboard extends Component {
                          {/* </Jumbotron> */}
 
                             <QuotesRequest />
-
+{/* 
                             <RandomQuestions>
                                 {this.state.questions.map(question => (
                                     <QuestionItem key={question._id} >
@@ -63,7 +63,7 @@ class Dashboard extends Component {
                                 ))}
 
                                 <button onClick={this.loadQuestions}>Random Questions</button>
-                            </RandomQuestions>
+                            </RandomQuestions> */}
 
                     
                     </Col>
