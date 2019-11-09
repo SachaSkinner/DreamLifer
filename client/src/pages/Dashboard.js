@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+// import Jumbotron from "../components/Jumbotron";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
@@ -48,8 +48,9 @@ class Dashboard extends Component {
 
                     <Col size="md-10">
 
-                         <Jumbotron>
-                         
+                         {/* <Jumbotron> */}
+                         <div  style={{ height: 200, clear: "both", paddingTop: 0, textAlign: "center", paddingBottom: 30,}}
+      className="jumbotron">
 
                             <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                                 'Welcome!'}</h1>
@@ -66,8 +67,9 @@ class Dashboard extends Component {
 
                                 <button onClick={this.loadQuestions}>Random Questions</button>
                             </RandomQuestions> */}
+                            </div>
 
-                        </Jumbotron> 
+                        {/* </Jumbotron>  */}
                     </Col>
                 </Row>
                 <Row>
