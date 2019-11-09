@@ -47,12 +47,12 @@ class Dashboard extends Component {
 
                 <Row>
                     <Col size="md-12">
-                        <Jumbotron>
+                        {/* <Jumbotron> */}
                             <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                             'Welcome!'}</h1>
                             <h2>{this.state.calendarDate}</h2>
                            
-                         </Jumbotron>
+                         {/* </Jumbotron> */}
 
                             <QuotesRequest />
 
