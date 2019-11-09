@@ -12,23 +12,14 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+
 app.use(routes);
-
-// Define API routes here
-
-// require("./routes/apiRoutes")(app);
-// require("./routes/auth/cookiesauth")(app);
-
-// require("./routes/questions")(app);
-// require("./routes/url")(app)
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
-
-
-
 
 app.route(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
