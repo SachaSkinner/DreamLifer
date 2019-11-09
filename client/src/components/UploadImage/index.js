@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { storage} from "../../firebase"
 import API from '../../utils/API';
 
+
 class ImageUpload extends Component {
+    
     state = {
         image: null,
         url: '',
@@ -18,8 +20,8 @@ class ImageUpload extends Component {
 
     componentDidMount() {  
         const images = storage.ref().child('images/');
-        const image = images.child('befunky_layer.png');
-        image.getDownloadURL().then((url) => { this.setState({ image: url }) }
+        const image = images.child('profile_p.jpg');
+        image.getDownloadURL().then((url) => { this.setState({ url: url }) }
         );
     };
 
@@ -64,21 +66,33 @@ class ImageUpload extends Component {
 
     render() {
         const style = {
-            height: '100vh',
-            display: 'flex',
+            
+           marginLeft: "5%",
+           marginTop: "5%",
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            display: 'inline-block'
 
         }
+        const input = {
+            marginLeft: 0
+        }
+        const image = {
+            borderRadius: "50%"
+        }
+        
         return (
 
             <div style={style}>
+                <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
+                <br></br>
                 <progress value={this.state.progress} max="100" />
-                <input type='file' onChange={this.handleChange} />
-                <button onClick={this.handleUpload}>Upload</button>
+                <br></br>
+                <input style={input}type='file' onChange={this.handleChange} />
+                <br></br>
+                <button onClick={this.handleUpload}>Upload your profile picture!</button>
                 <br />
-                <img src={this.state.url} alt="Uploaded images" height="150" width="150" />
             </div>
         )
     }
