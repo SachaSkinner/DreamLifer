@@ -19,6 +19,15 @@ class ImageUpload extends Component {
     };
 
     componentDidMount() {  
+        // API.takeUrl(this.props.User.id)
+        //             .then(res => console.log('url was taken'))
+        //             .catch(err => console.log(err));
+        // this.props.User.url=this.state.url;
+
+
+        // console.log(this.props.User.url)
+        // this.setState({url: this.props.User.url});
+        // this.state.url = this.props.User.url;
         const images = storage.ref().child('images/');
         const image = images.child('profile_p.jpg');
         image.getDownloadURL().then((url) => { this.setState({ url: url }) }

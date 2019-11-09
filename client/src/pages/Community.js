@@ -31,7 +31,7 @@ function Community() {
         <Col size="md-12">
         <div style={background}>
           <Jumbotron >
-            <h1>Welcome to our community! <span role="img">&#129488;</span></h1>
+            <h1>Welcome to our community! <span role="img" aria-label="emojie">&#129488;</span></h1>
             <div style={style}>
                 <div > <h2>What helps you to stay motivated? </h2></div>
                 <br></br>

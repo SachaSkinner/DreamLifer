@@ -13,7 +13,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    url: String,
+    url: String, 
     todo: [{
         type: Schema.Types.ObjectId,
         ref: 'Todo'
