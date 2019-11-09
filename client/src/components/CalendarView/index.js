@@ -17,7 +17,7 @@ class CalendarView extends Component {
 
   render() {
     return (
-      <>
+      <div className="calanderDiv">
         <Calendar
           onChange={this.onChange}
           value={this.state.date}
@@ -27,7 +27,7 @@ class CalendarView extends Component {
       <div>
         {this.state.niceDate.slice(0, 15)}
       </div>
-      </>
+      </div>
     );
   };
   

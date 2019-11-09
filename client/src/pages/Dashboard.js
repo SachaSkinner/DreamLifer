@@ -17,12 +17,12 @@ class Dashboard extends Component {
     quoteAuthor: "",
     questions: [],
     todos: [
-        // {
-        //   id: uuid.v4(),
-        //   title: 'Find a new wife',
-        //   complete:false
-        // }
-      ]
+      // {
+      //   id: uuid.v4(),
+      //   title: 'Find a new wife',
+      //   complete:false
+      // }
+    ]
   };
 
   loadQuestions = () => {
@@ -47,54 +47,48 @@ class Dashboard extends Component {
         console.log(res.data.contents.quotes[0].author);
       })
       .catch(err => console.log(err));
+  }
+
+  //   componentDidMount() {
+  // 		API
+  // 			.getTodos()
+  //       .then((res) => this.setState({ todos: res.data }))
+  //       .catch(err => console.log(err));
+  // 	}
+
+  // Toggle Complete
+  markComplete = id => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    });
   };
 
+  // Delete Todo
+  delTodo = id => {
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
+      this.setState({
+        todos: [...this.state.todos.filter(todo => todo.id !== id)]
+      })
+    );
+  };
 
-
-//   componentDidMount() {
-// 		API
-// 			.getTodos()
-//       .then((res) => this.setState({ todos: res.data }))
-//       .catch(err => console.log(err));
-// 	}
-
-	// Toggle Complete
-	markComplete = (id) => {
-		this.setState({
-			todos: this.state.todos.map((todo) => {
-				if (todo.id === id) {
-					todo.completed = !todo.completed;
-				}
-				return todo;
-			})
-		});
-	};
-
-	// Delete Todo
-	delTodo = (id) => {
-		axios
-			.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-			.then((res) =>
-				this.setState({
-					todos: [...this.state.todos.filter((todo) => todo.id !== id)]
-				})
-			);
-	};
-
-	// Add Todo
-	addTodo = (title) => {
-		axios
-			.post('https://jsonplaceholder.typicode.com/todos', {
-				title,
-				completed: false
-			})
-			.then((res) => {
-				res.data.id = uuid.v4();
-				this.setState({ todos: [...this.state.todos, res.data] });
-			});
-	};
-  
-
+  // Add Todo
+  addTodo = title => {
+    axios
+      .post("https://jsonplaceholder.typicode.com/todos", {
+        title,
+        completed: false
+      })
+      .then(res => {
+        res.data.id = uuid.v4();
+        this.setState({ todos: [...this.state.todos, res.data] });
+      });
+  };
 
   render() {
     return (
@@ -104,17 +98,19 @@ class Dashboard extends Component {
             <QuotesApi key={this.state.quoteText + this.state.quoteAuthor}>
               <p>{this.state.quoteText}</p>
               <p>{this.state.quoteAuthor}</p>
-            </QuotesApi><br></br>
+            </QuotesApi>
+            <br></br>
             <Jumbotron>
               <h1>User's dashboard is here!!!</h1>
             </Jumbotron>
             <AddTodo addTodo={this.addTodo} />
-                    <Todos
-                      todos={this.state.todos}
-                      markComplete={this.markComplete}
-                      delTodo={this.delTodo}
-                    />
+            <Todos
+              todos={this.state.todos}
+              markComplete={this.markComplete}
+              delTodo={this.delTodo}
+            /><br></br>
             <CalendarView />
+            
             <RandomQuestions>
               {this.state.questions.map(question => (
                 <QuestionItem key={question._id}>
