@@ -18,6 +18,8 @@ import "./App.css";
 class App extends React.Component {
   state = {
     User: {}
+  
+
   }
 
   handleGlobalState = (state, value) => {
@@ -30,8 +32,10 @@ class App extends React.Component {
 
   checkSession = () => {
     API.checkSession().then(res => {
+      console.log(res.data);
         if (res.data.bool) {
             this.handleGlobalState("User", res.data)
+           
         }
     }).catch(err => console.log(err));
   };

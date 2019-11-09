@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+// import Jumbotron from "../components/Jumbotron";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
