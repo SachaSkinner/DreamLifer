@@ -28,7 +28,11 @@ export default {
   },
   getTodosToCompare: function(id) {
     return axios.get(`/api/users/todo/${id}/timeleft`);
-  },
+  }
+  ,
+  takeUrl: function(id) {
+    return axios.get('/url/takeUrl/' + id);
+  }
 //todo 
 
   // getTodos: function(){
