@@ -33,19 +33,6 @@ class ImageUpload extends Component {
                         }
                     })
                     .catch(err => console.log(err));
-
-
-
-        // this.props.User.url=this.state.url;
-
-
-        // console.log(this.props.User.url)
-        // this.setState({url: this.props.User.url});
-        // this.state.url = this.props.User.url;
-        // const images = storage.ref().child('images/');
-        // const image = images.child('profile_p.jpg');
-        // image.getDownloadURL().then((url) => { this.setState({ url: url }) }
-        // );
     };
 
     loadPicture = (urlBack) => {
@@ -75,11 +62,7 @@ class ImageUpload extends Component {
      
                     this.setState({ url });
                     this.props.User.url = this.state.url; 
-
-                    console.log(this.props.User.id, this.props.User.url);
-
                     API.updateUrl(this.props.User.id, this.props.User.url)
-                    .then(res => console.log('uploaded'))
                     .catch(err => console.log(err));
 
                 });
@@ -104,17 +87,21 @@ class ImageUpload extends Component {
         const image = {
             borderRadius: "50%"
         }
+       
         
         return (
 
             <div style={style}>
                 <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
                 <br></br>
-                <progress value={this.state.progress} max="100" />
+                
+               
+                <progress className="add-picture" value={this.state.progress} max="100" />
+                
                 <br></br>
-                <input style={input}type='file' onChange={this.handleChange} />
+                <input className="add-picture" style={input}type='file' onChange={this.handleChange} />
                 <br></br>
-                <button onClick={this.handleUpload}>Upload your profile picture!</button>
+                <button className="add-picture" onClick={this.handleUpload}>Upload your profile picture!</button>
                 <br />
             </div>
         )
