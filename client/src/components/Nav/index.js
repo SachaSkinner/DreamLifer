@@ -12,9 +12,6 @@ function Nav() {
       <Link to='/dashboard' className="navbar-brand">
         Dashboard
       </Link>
-      <Link to='/resourses' className="navbar-brand">
-        Sources
-      </Link>
       <Link to='/community' className="navbar-brand">
         Community
       </Link>

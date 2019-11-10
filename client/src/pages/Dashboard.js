@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
+
 // =======
 // import axios from "axios";
 // import QuotesApi from "../components/QuotesApi";
@@ -44,7 +45,7 @@ class Dashboard extends Component {
     render() {
         return (
             <Container fluid>
-
+<Logout handleGlobalState={this.state.handleGlobalState} User={this.state.User} />
                 <Row>
                 <Col size='md-12'>
                     <ReactUploadImage User={this.props.User}></ReactUploadImage>

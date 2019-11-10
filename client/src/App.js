@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import API from './utils/API';
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import Resourses from "./pages/Resourses";
+
 import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Logout from '../src/components/Logout';
+
 import logo from '../src/assets/images/logo.png';
 import Header from '../src/component/Layout/Header';
 import "./App.css";
@@ -45,7 +45,7 @@ class App extends React.Component {
       <Router>
         <div>
           <Nav />
-          <Logout handleGlobalState={this.state.handleGlobalState} User={this.state.User} />
+          
           <div className="App">
             <div size="3" className="logo">
               <img src={logo} alt="logo" width="300" height="115" />
@@ -64,7 +64,7 @@ class App extends React.Component {
             <Route exact path="/dashboard" render={() => (<Dashboard handleGlobalState={this.handleGlobalState} User={this.state.User} />)} /> :
             <Route exact path="/dashboard" render={() => (<Signup handleGlobalState={this.handleGlobalState} />)} /> 
             }
-            <Route exact path="/resourses" component={Resourses} />
+           
             <Route exact path="/community" component={Community} />
             {this.state.User.id ? 
             <Route exact path='/signup' render={() => (<Dashboard handleGlobalState={this.handleGlobalState} User={this.state.User} />)} /> :
