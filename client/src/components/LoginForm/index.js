@@ -54,14 +54,9 @@ class LoginForm extends Component {
             <h3>{this.state.headerMessage}</h3>
             <form>
                 <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
-<<<<<<< HEAD
-                <input value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password' type="password"></input>
-                <button onClick={this.handleLogin} className='submitLogin'>sign in</button>
-=======
                 <input type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleLogin} className='submitLogin btn btn-outline-dark'>sign in</button>
 
->>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
             </form>
         </div>
         );

@@ -4,15 +4,12 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
-<<<<<<< HEAD
-=======
 // =======
 // import axios from "axios";
 // import QuotesApi from "../components/QuotesApi";
 // import ReactUploadImage from "../components/UploadImage";
 // import CalendarView from "../components/CalendarView";
 // >>>>>>> nov7
->>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
 // import { RandomQuestions, QuestionItem } from "../components/RandomQuestions";
 import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
@@ -51,21 +48,8 @@ class Dashboard extends Component {
 
 
                 <Row>
-<<<<<<< HEAD
-                    <Col size="md-2">
-                        <ReactUploadImage User={this.props.User}></ReactUploadImage>
-                    </Col>
-
-                    <Col size="md-10">
-
-                         {/* <Jumbotron> */}
-                         <div  style={{ height: 200, clear: "both", paddingTop: 0, textAlign: "center", paddingBottom: 30,}}
-      className="jumbotron">
-
-=======
                     <Col size="md-12">
                         {/* <Jumbotron> */}
->>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
                             <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                                 'Welcome!'}</h1>
                             <h2>{this.state.calendarDate}</h2>
@@ -73,14 +57,8 @@ class Dashboard extends Component {
                          {/* </Jumbotron> */}
 
                             <QuotesRequest />
-<<<<<<< HEAD
-                           
-
-                            {/* <RandomQuestions>
-=======
 {/* 
                             <RandomQuestions>
->>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
                                 {this.state.questions.map(question => (
                                     <QuestionItem key={question._id} >
                                     <li>{question.question}</li></QuestionItem>
@@ -88,14 +66,8 @@ class Dashboard extends Component {
 
                                 <button onClick={this.loadQuestions}>Random Questions</button>
                             </RandomQuestions> */}
-<<<<<<< HEAD
-                            </div>
-
-                        {/* </Jumbotron>  */}
-=======
 
                     
->>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
                     </Col>
                 </Row>
                 <Row>
