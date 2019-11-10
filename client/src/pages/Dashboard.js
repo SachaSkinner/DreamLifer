@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
+
 // =======
 // import axios from "axios";
 // import QuotesApi from "../components/QuotesApi";
@@ -26,7 +27,7 @@ class Dashboard extends Component {
 
     handleDashState = (state, value) => {
         this.setState({ [state]: value })
-      }
+    }
 
     loadQuestions = () => {
         API.getQuestions()
@@ -42,20 +43,34 @@ class Dashboard extends Component {
     }
 
     render() {
+        const style = {
+            display: "inline-block",
+            textAlign: 'center'
+        }
         return (
             <Container fluid>
-
+                <Logout handleGlobalState={this.state.handleGlobalState} User={this.state.User} />
                 <Row>
+                    <Row>
+                        <Col size='md-4'>
+                            <ReactUploadImage User={this.props.User}></ReactUploadImage>
+                            </Col>
+                            <Col size='md-1'></Col>
+                            <Col size='md-7'>
+                            <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
+                                'Welcome!'}</h1>
+                            <br></br>
+                            <h2 style={style}>{this.state.calendarDate}</h2>
+                            </Col>
+                    </Row>
                     <Col size="md-12">
                         {/* <Jumbotron> */}
-                            <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
-                            'Welcome!'}</h1>
-                            <h2>{this.state.calendarDate}</h2>
-                           
-                         {/* </Jumbotron> */}
 
-                            <QuotesRequest />
-{/* 
+
+                        {/* </Jumbotron> */}
+
+                        <QuotesRequest />
+                        {/* 
                             <RandomQuestions>
                                 {this.state.questions.map(question => (
                                     <QuestionItem key={question._id} >
@@ -65,29 +80,27 @@ class Dashboard extends Component {
                                 <button onClick={this.loadQuestions}>Random Questions</button>
                             </RandomQuestions> */}
 
-                    
+
                     </Col>
                 </Row>
                 <Row>
                     <div className='conty'>
-                    <Col size='4'>
-                        <CalendarView handleDashState={this.handleDashState} />
-                    </Col>
-                    <Col size='4'>
-                        <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                        <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                        <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
-                    </Col>
-                    <Col size='4'>
-                        <GoalTracker User={this.props.User} />
-                    </Col>
+                        <Col size='4'>
+                            <CalendarView handleDashState={this.handleDashState} />
+                        </Col>
+                        <Col size='4'>
+                            <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                            <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                            <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                        </Col>
+                        <Col size='4'>
+                            <GoalTracker User={this.props.User} />
+                        </Col>
                     </div>
                 </Row>
-                <Row>
-                    <Col size='md-12'>
-                    <ReactUploadImage User={this.props.User}></ReactUploadImage>
-                    </Col>
-                </Row>
+
+
+
             </Container>
 
         );
@@ -198,7 +211,7 @@ class Dashboard extends Component {
 //               delTodo={this.delTodo}
 //             /><br></br>
 //             <CalendarView />
-            
+
 //             <RandomQuestions>
 //               {this.state.questions.map(question => (
 //                 <QuestionItem key={question._id}>
