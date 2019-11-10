@@ -1,0 +1,9 @@
+.logoutWrapper {
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    margin-right: 2px;
+    right: 10px;
+    top:57px;
+
+}

@@ -1,0 +1,26 @@
+.signupWrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+h3 {
+    background: royalblue;
+    margin: 0;
+    padding: 15px;
+    color: white;
+}
+h4 {
+    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+form {
+    background: lightgray;
+}
+input {
+    margin-left: 35px;
+    display: block;
+}
+.submitSignup {
+    cursor: pointer;
+}
