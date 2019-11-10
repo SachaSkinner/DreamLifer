@@ -32,7 +32,9 @@ class Dashboard extends Component {
     };
 
     componentDidMount() {
+        
         this.loadQuestions();
+       
     }
 
     render() {

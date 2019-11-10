@@ -10,7 +10,8 @@ class SignupForm extends Component {
         email: '',
         phone: '',
         password: '',
-        headerMessage: 'Sign up below!'
+        headerMessage: 'Sign up below!',
+        url: ""
     };
 
     refreshState = () => {

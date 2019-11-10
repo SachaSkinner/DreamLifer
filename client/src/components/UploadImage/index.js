@@ -7,7 +7,7 @@ class ImageUpload extends Component {
     
     state = {
         image: null,
-        url: '',
+        url: 'https://firebasestorage.googleapis.com/v0/b/dreamlifer-36c5e.appspot.com/o/images%2F5.jpg?alt=media&token=3d5fbb2f-3a0c-4b8a-abda-ce9f6f2f1f14',
         progress: 0
     }
 
@@ -19,19 +19,33 @@ class ImageUpload extends Component {
     };
 
     componentDidMount() {  
-        // API.takeUrl(this.props.User.id)
-        //             .then(res => console.log('url was taken'))
-        //             .catch(err => console.log(err));
+        
+        API.takeUrl(this.props.User.id)
+                    .then(res => 
+                        {
+                            console.log(res);
+                        if(!res.data.url){
+                            this.setState({url: "https://firebasestorage.googleapis.com/v0/b/dreamlifer-36c5e.appspot.com/o/images%2Fprofile_p.jpg?alt=media&token=b87d233a-333c-4710-8751-826b8e53d572"}) 
+
+                        }
+                        else{
+                            this.setState({url: res.data.url})
+                        }
+                    })
+                    .catch(err => console.log(err));
+
+
+
         // this.props.User.url=this.state.url;
 
 
         // console.log(this.props.User.url)
         // this.setState({url: this.props.User.url});
         // this.state.url = this.props.User.url;
-        const images = storage.ref().child('images/');
-        const image = images.child('profile_p.jpg');
-        image.getDownloadURL().then((url) => { this.setState({ url: url }) }
-        );
+        // const images = storage.ref().child('images/');
+        // const image = images.child('profile_p.jpg');
+        // image.getDownloadURL().then((url) => { this.setState({ url: url }) }
+        // );
     };
 
     loadPicture = (urlBack) => {
