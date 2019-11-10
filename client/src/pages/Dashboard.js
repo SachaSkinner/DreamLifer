@@ -46,6 +46,9 @@ class Dashboard extends Component {
             <Container fluid>
 
                 <Row>
+                <Col size='md-12'>
+                    <ReactUploadImage User={this.props.User}></ReactUploadImage>
+                    </Col>
                     <Col size="md-12">
                         {/* <Jumbotron> */}
                             <h1>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
@@ -83,11 +86,9 @@ class Dashboard extends Component {
                     </Col>
                     </div>
                 </Row>
-                <Row>
-                    <Col size='md-12'>
-                    <ReactUploadImage User={this.props.User}></ReactUploadImage>
-                    </Col>
-                </Row>
+                
+                   
+               
             </Container>
 
         );

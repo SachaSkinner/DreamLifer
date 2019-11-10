@@ -19,9 +19,13 @@ app.use(routes);
 // require("./routes/apiRoutes")(app);
 // require("./routes/auth/cookiesauth")(app);
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+   useFindAndModify: false 
+});
 
 
-mongoose.connect("mongodb://localhost/dreamLifer", { useNewUrlParser: true });
 
 app.route(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
