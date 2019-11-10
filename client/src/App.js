@@ -9,6 +9,11 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Logout from '../src/components/Logout';
+import logo from '../src/assets/images/logo.png';
+import Header from '../src/component/Layout/Header';
+import "./App.css";
+
 
 class App extends React.Component {
   state = {
@@ -36,6 +41,19 @@ class App extends React.Component {
       <Router>
         <div>
           <Nav />
+          <Logout handleGlobalState={this.state.handleGlobalState} User={this.state.User} />
+          <div className="App">
+            <div size="3" className="logo">
+              <img src={logo} alt="logo" width="300" height="115" />
+            </div>
+            <div className="container">
+              <Header className="app-moto" />
+              <br></br>
+              {/* <Route exact path="/mylist" component={MyList} /> */}
+            </div>
+          </div>
+          </div>
+          <div>
           <Switch>
             <Route exact path="/" render={() => <Home User={this.state.User} />} />
             {this.state.User.id ?
@@ -54,10 +72,13 @@ class App extends React.Component {
             }
             <Route component={NoMatch} />
           </Switch>
-        </div>
-      </Router>
-    );
+          </div>
+        </Router>
+     
+    )
+
   }
+
 }
 export default App;
 // import React, { Component } from "react";

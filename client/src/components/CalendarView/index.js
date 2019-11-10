@@ -25,7 +25,7 @@ class CalendarView extends Component {
   render() {
     return (
       <>
-      <div>
+      <div className="calanderDiv">
         <Calendar
           onChange={this.onChange}
           value={this.state.date}

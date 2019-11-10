@@ -29,7 +29,11 @@ class ImageUpload extends Component {
         // this.setState({url: this.props.User.url});
         // this.state.url = this.props.User.url;
         const images = storage.ref().child('images/');
+<<<<<<< HEAD
         const image = images.child('profile_p.jpg');
+=======
+        const image = images.child('befunky_layer.png');
+>>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
         image.getDownloadURL().then((url) => { this.setState({ url: url }) }
         );
     };
@@ -73,6 +77,7 @@ class ImageUpload extends Component {
             });
         };
 
+<<<<<<< HEAD
     render() {
         const style = {
             
@@ -105,6 +110,38 @@ class ImageUpload extends Component {
             </div>
         )
     }
+=======
+        render() {
+            const style = {
+                
+               marginLeft: "5%",
+               marginTop: "5%",
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                display: 'inline-block'
+            }
+            const input = {
+                marginLeft: 0
+            }
+            const image = {
+                borderRadius: "50%"
+            }
+            
+            return (
+                <div style={style}>
+                    <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
+                    <br></br>
+                    <progress value={this.state.progress} max="100" />
+                    <br></br>
+                    <input style={input}type='file' onChange={this.handleChange} />
+                    <br></br>
+                    <button onClick={this.handleUpload}>Upload your profile picture!</button>
+                    <br />
+                </div>
+            )
+        }
+>>>>>>> 7fff60c504716a5797b370e62adebd5e8a1afd80
 }
 
 export default ImageUpload
