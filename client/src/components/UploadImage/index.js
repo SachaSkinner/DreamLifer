@@ -23,7 +23,7 @@ class ImageUpload extends Component {
         API.takeUrl(this.props.User.id)
                     .then(res => 
                         {
-                            console.log(res);
+                           
                         if(!res.data.url){
                             this.setState({url: "https://firebasestorage.googleapis.com/v0/b/dreamlifer-36c5e.appspot.com/o/images%2Fprofile_p.jpg?alt=media&token=b87d233a-333c-4710-8751-826b8e53d572"}) 
 

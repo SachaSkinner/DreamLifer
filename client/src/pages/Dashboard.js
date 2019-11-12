@@ -18,6 +18,7 @@ import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
 import '../index.css';
 import GoalTracker from "../components/GoalTracker";
+import Emoji from "../components/Emoji";
 
 class Dashboard extends Component {
     state = {
@@ -46,6 +47,10 @@ class Dashboard extends Component {
         const style = {
             display: "inline-block",
             textAlign: 'center'
+        }
+        const emoji = {
+            display: "inline-block",
+            fontSize: "20px"
         }
         return (
             <Container fluid>
@@ -108,7 +113,8 @@ class Dashboard extends Component {
                         <h1>Review your day writing into important sections of your choice! </h1>
 
                         <h2> Cupture the important. Get better and better every day!</h2>
-                        <h2>💕 family 🤸‍♂‍ sport🎨fun/leisure🤝👯‍♂‍ friends🍽food 💼work 🎓study  📋notes ❤️health😴sleep 🙏thanks🌟ideas</h2>
+                        <Row><Emoji style={emoji} symbol="💕"/> <div style={emoji}>Family</div> <Emoji style={emoji} symbol="🤸‍♂‍"/> <div style={emoji}>Sport</div><Emoji style={emoji} symbol="🎨"/> <div style={emoji} >Fun/leisure</div><Emoji style={emoji}  symbol="🤝👯‍"/> <div  style={emoji} >Friends</div><Emoji  style={emoji} symbol=" 🍱 "/> <div  style={emoji} >Food</div><Emoji  style={emoji} symbol="💼"/> <div style={emoji} >Work</div></Row> <Row><Emoji  style={emoji} symbol="🎓"/> <div style={emoji} >Study</div><Emoji  style={emoji} symbol="📋"/> <div style={emoji} >Notes</div><Emoji  style={emoji} symbol="❤️"/> <div style={emoji} >Health/Mood</div><Emoji  style={emoji} symbol="😴"/> <div style={emoji} >Sleep</div><Emoji  style={emoji} symbol="🌟"/> <div style={emoji} >Ideas</div><Emoji style={emoji}  symbol="🙏"/> <div style={emoji} >I am thankful for..</div></Row>
+                        
                         </Col>
                     </div>
                 </Row>
