@@ -110,9 +110,9 @@ class Dashboard extends Component {
                             <CalendarView handleDashState={this.handleDashState} />
                         </Col>
                         <Col size='8'>
-                        <h1>Review your day writing into important sections of your choice! </h1>
+                        <h1>Review your day by filling out important sections of your choice! </h1>
 
-                        <h2> Cupture the important. Get better and better every day!</h2>
+                        <h2> Capture the important. Get better every day!</h2>
                         <Row><Emoji style={emoji} symbol="💕"/> <div style={emoji}>Family</div> <Emoji style={emoji} symbol="🤸‍♂‍"/> <div style={emoji}>Sport</div><Emoji style={emoji} symbol="🎨"/> <div style={emoji} >Fun/leisure</div><Emoji style={emoji}  symbol="🤝👯‍"/> <div  style={emoji} >Friends</div><Emoji  style={emoji} symbol=" 🍱 "/> <div  style={emoji} >Food</div><Emoji  style={emoji} symbol="💼"/> <div style={emoji} >Work</div></Row> <Row><Emoji  style={emoji} symbol="🎓"/> <div style={emoji} >Study</div><Emoji  style={emoji} symbol="📋"/> <div style={emoji} >Notes</div><Emoji  style={emoji} symbol="❤️"/> <div style={emoji} >Health/Mood</div><Emoji  style={emoji} symbol="😴"/> <div style={emoji} >Sleep</div><Emoji  style={emoji} symbol="🌟"/> <div style={emoji} >Ideas</div><Emoji style={emoji}  symbol="🙏"/> <div style={emoji} >I am thankful for..</div></Row>
                         
                         </Col>
