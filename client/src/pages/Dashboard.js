@@ -54,14 +54,14 @@ class Dashboard extends Component {
                     <Row>
                         <Col size='md-4'>
                             <ReactUploadImage User={this.props.User}></ReactUploadImage>
-                            </Col>
-                            <Col size='md-1'></Col>
-                            <Col size='md-7'>
+                        </Col>
+                        <Col size='md-1'></Col>
+                        <Col size='md-7'>
                             <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                                 'Welcome!'}</h1>
                             <br></br>
                             <h2 style={style}>{this.state.calendarDate}</h2>
-                            </Col>
+                        </Col>
                     </Row>
                     <Col size="md-12">
                         {/* <Jumbotron> */}
@@ -87,7 +87,7 @@ class Dashboard extends Component {
                 <Row>
                     <div className='conty'>
                         <Col size='4'>
-                            <CalendarView handleDashState={this.handleDashState} />
+                            <CalendarView  handleDashState={this.handleDashState} />
                         </Col>
                         <Col size='4'>
                             <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
@@ -104,9 +104,12 @@ class Dashboard extends Component {
                         <Col size='4'>
                             <CalendarView handleDashState={this.handleDashState} />
                         </Col>
-                        <Col size='8'></Col>
-                        <h1 style={style}>These are memories</h1>
-                       
+                        <Col size='8'>
+                        <h1>Review your day writing into important sections of your choice! </h1>
+
+                        <h2> Cupture the important. Get better and better every day!</h2>
+                        <h2>💕 family 🤸‍♂‍ sport🎨fun/leisure🤝👯‍♂‍ friends🍽food 💼work 🎓study  📋notes ❤️health😴sleep 🙏thanks🌟ideas</h2>
+                        </Col>
                     </div>
                 </Row>
 
