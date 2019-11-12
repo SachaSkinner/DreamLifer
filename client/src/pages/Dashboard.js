@@ -83,6 +83,7 @@ class Dashboard extends Component {
 
                     </Col>
                 </Row>
+                <Row> <button>Plan my day.</button> <button> Review my day</button></Row>
                 <Row>
                     <div className='conty'>
                         <Col size='4'>
@@ -96,6 +97,16 @@ class Dashboard extends Component {
                         <Col size='4'>
                             <GoalTracker User={this.props.User} />
                         </Col>
+                    </div>
+                </Row>
+                <Row>
+                    <div className='dream'>
+                        <Col size='4'>
+                            <CalendarView handleDashState={this.handleDashState} />
+                        </Col>
+                        <Col size='8'></Col>
+                        <h1 style={style}>These are memories</h1>
+                       
                     </div>
                 </Row>
 
