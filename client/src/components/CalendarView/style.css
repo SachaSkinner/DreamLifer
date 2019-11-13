@@ -2,6 +2,7 @@
     padding: 20px;
 }
 .calanderDiv{
-    margin: auto;
-    width: 350px;
+    position: relative;
+    padding-left: 33px;
+    width: 383px;
 } 

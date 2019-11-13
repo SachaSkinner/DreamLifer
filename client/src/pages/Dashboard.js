@@ -45,8 +45,13 @@ class Dashboard extends Component {
 
     render() {
         const style = {
-            display: "inline-block",
-            textAlign: 'center'
+            // display: "inline-block",
+            textAlign: 'center',
+            color: '#315a78',
+            fontFamily: "fantasy"
+            
+       
+  
         }
         const emoji = {
             display: "inline-block",
@@ -54,7 +59,7 @@ class Dashboard extends Component {
         }
         return (
             <Container fluid>
-                <Logout handleGlobalState={this.state.handleGlobalState} User={this.state.User} />
+                <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                 <Row>
                     <Row>
                         <Col size='md-4'>
@@ -97,7 +102,6 @@ class Dashboard extends Component {
                         <Col size='4'>
                             <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
                             <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                            <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                         </Col>
                         <Col size='4'>
                             <GoalTracker User={this.props.User} />
