@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const DayReviews = new Schema({
+const DayReviewsSchema = new Schema({
     family: String,
     friends: String,
     work: String,
@@ -16,6 +16,6 @@ const DayReviews = new Schema({
     thanks: String
 });
 
-const DayReviews = mongoose.model('DayReviews', DayReviews);
+const DayReviews = mongoose.model('DayReviews', DayReviewsSchema);
 
 module.exports = DayReviews;
