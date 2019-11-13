@@ -193,6 +193,7 @@ class Dashboard extends Component {
 //     });
 //   };
 
+
 //   // Delete Todo
 //   delTodo = id => {
 //     axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>

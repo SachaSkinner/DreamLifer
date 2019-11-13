@@ -23,9 +23,17 @@ export default {
   submitTodo: function(message, id, date) {
     return axios.post('/api/users/todos', {message: message, id: id, date: date})
   },
+  submitReview: function(data) {
+    return axios.post('/api/users/reviews', data)
+
+  },
   getItems: function(item, id, date) {
     return axios.get(`/api/users/items/${item}/${id}/${date}`);
   },
+  getReviews: function(item, id, date) {
+    return axios.get(`/api/users/reviews/${item}/${id}/${date}`);
+  },
+
   getTodosToCompare: function(id) {
     return axios.get(`/api/users/todo/${id}/timeleft`);
   }

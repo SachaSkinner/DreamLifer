@@ -13,7 +13,8 @@ const DayReviewsSchema = new Schema({
     sport: String,
     ideas: String,
     notes: String,
-    thanks: String
+    thanks: String,
+    date: String
 });
 
 const DayReviews = mongoose.model('DayReviews', DayReviewsSchema);

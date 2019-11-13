@@ -18,10 +18,13 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Todo'
     }],
-    image: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Image'
-    }]
+   newreviews: [{
+    type: Schema.Types.ObjectId,
+    // it matches a model
+    ref: 'DayReviews'
+
+   }]
+
 });
 
 const User = mongoose.model('User', userSchema);
