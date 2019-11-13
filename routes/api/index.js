@@ -81,7 +81,7 @@ const router = require("express").Router();
     router.get('/users/items/:item/:id/:date', function(req, res) {
         db.User.findOne({_id: req.params.id}).populate({
             path: req.params.item,
-            match: { date: req.params.date } 
+            match: { date: req.params.date }
         }).then(function(userAndTodos) {
             res.json(userAndTodos);
         }).catch(function(err) {

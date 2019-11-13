@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import API from '../../utils/API';
 // import './style.css';
 import moment from 'moment';
+import Moment from 'moment';
 moment().format();
 
 class GoalTracker extends Component {
@@ -20,7 +21,20 @@ class GoalTracker extends Component {
 
     grabTodos = () => {
         API.getTodosToCompare(this.props.User.id).then(res => {
-            this.setState({ allTodos: res.data.todo });
+            const sortedDates  = res.data.todo.sort((a,b) => new Moment(a.date).format('YYYYMMDD') - new Moment(b.date).format('YYYYMMDD'));
+            this.setState({ allTodos: sortedDates });
+            for (var i = 0; i < sortedDates.length; i++) {
+                if (moment(sortedDates[i].date).isAfter(this.state.now)) {
+                    if (moment(sortedDates[i].date).diff(this.state.now, 'days') === 1) {
+                        if (this.closeDates.length >= 1) {
+                            break;
+                        }
+                        this.closeDates.push(sortedDates[i]);
+                        this.canDisplay++;
+                        this.displayNotification(this.closeDates[0]);
+                    }
+                }
+            }
         }).catch(err => console.log(err));
     };
 
@@ -40,7 +54,14 @@ class GoalTracker extends Component {
         this.loadTodos();
         this.getNowDate();
     };
-    
+
+    closeDates = [];
+
+    displayNotification(date) {
+        return new Notification('DreamLifer', {body: `Hey! Your goal: "${date.message}" 
+is just one day away!! Do your best to finish up!`});
+    }
+
 
     render() {
 
@@ -54,12 +75,13 @@ class GoalTracker extends Component {
                 <p key={element._id}>{element.message} ----- 
                 {
                 moment(element.date).diff(this.state.now, 'days') === 1 ?
-                moment(element.date).diff(this.state.now, 'days') + ' day left!' :
+                (moment(element.date).diff(this.state.now, 'days') + ' day left!') :
                 moment(element.date).diff(this.state.now, 'days') + ' days remaining!'
                 }
                 </p> : null
                 )) : null
                 }
+
             </div>
         </div>
         );
