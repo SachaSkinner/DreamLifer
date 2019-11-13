@@ -73,25 +73,28 @@ class ImageUpload extends Component {
     render() {
         const style = {
             
-           marginLeft: "5%",
-           marginTop: "5%",
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'inline-block'
+        //    marginLeft: "5%",
+        //    marginTop: "5%",
+        //     flexDirection: 'column',
+        //     alignItems: 'center',
+        //     justifyContent: 'center',
+        //     display: 'inline-block'
 
         }
         const input = {
-            marginLeft: 0
+           textAlign: "center",
+           marginLeft: "123px"
         }
+
         const image = {
-            borderRadius: "50%"
+            borderRadius: "50%",
+            Width: "auto",  
         }
        
         
         return (
 
-            <div style={style}>
+            <div className="profilePic" style={style}>
                 <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
                 <br></br>
                 
@@ -101,7 +104,7 @@ class ImageUpload extends Component {
                 <br></br>
                 <input className="add-picture" style={input}type='file' onChange={this.handleChange} />
                 <br></br>
-                <button className="add-picture" onClick={this.handleUpload}>Upload your profile picture!</button>
+                <button className="add-picture" onClick={this.handleUpload}>Upload photo</button>
                 <br />
             </div>
         )
