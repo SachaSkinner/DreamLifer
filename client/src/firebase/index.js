@@ -4,14 +4,14 @@
  require("dotenv").config();
  // Your web app's Firebase configuration
  var firebaseConfig = {
-    // apiKey: process.env.ONE,
+    apiKey: process.env.ONE,
     // authDomain: process.env.TWO,
     // databaseURL: process.env.THREE,
     // projectId: process.env.FOUR,
     // storageBucket: "dreamlifer-36c5e.appspot.com",
     // messagingSenderId: process.env.SIX,
     // appId: process.env.SEVEN
-    apiKey: "AIzaSyAHiI-h-c9rONc5ToeyhFpUeS35oI6RP_g",
+    // apiKey: "AIzaSyAHiI-h-c9rONc5ToeyhFpUeS35oI6RP_g",
     authDomain: "dreamlifer-36c5e.firebaseapp.com",
     databaseURL: "https://dreamlifer-36c5e.firebaseio.com",
     projectId: "dreamlifer-36c5e",
