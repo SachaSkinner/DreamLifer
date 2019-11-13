@@ -12,6 +12,12 @@ const router = require("express").Router();
           res.json(removed);
         })
       });
+
+      router.delete('/user/:id', (req, res) => {
+        db.User.remove({_id: req.params.id}).then(removed => {
+          res.json(removed);
+        })
+      });
       
     // Add a Todo for the specific user, decided by :id
     router.post('/users/todos', function(req, res) {
@@ -33,6 +39,40 @@ const router = require("express").Router();
         }).catch(function(err) {
             console.log(err);
             res.json('There was an error trying to update your progress');
+        });
+    });
+
+
+    // Update user's todo text in the DB
+    router.put('/users/todos/:id', (req, res) => {
+        db.Todo.findOneAndUpdate({_id: req.params.id},
+        {message: req.body.message}).then(newTodo => {
+            res.json(newTodo);
+        }).catch(err => {
+            res.json('No data to fetch on this date ... ');
+            console.log(err);
+        });
+    });
+
+    // Update the todos completed status
+    router.put('/users/todos/:id/complete', (req, res) => {
+        db.Todo.findOneAndUpdate({_id: req.params.id},
+        {completed: req.body.completed}).then(newTodo => {
+            res.json(newTodo);
+            console.log('new todo');
+        }).catch(err => {
+            res.json('No data to fetch on this date ... ');
+            console.log(err);
+        });
+    });
+
+    // Delete a todo, currently does not delete the todo referenced by User
+    router.delete('/users/todos/:id/del', (req, res) => {
+        db.Todo.findById({_id: req.params.id}).then(deletedTodo => {
+            res.json('Successfully deleted');
+        }).catch(err => {
+            res.json('There was an error deleting this item ... ');
+            console.log(err);
         });
     });
 
