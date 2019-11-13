@@ -53,7 +53,6 @@ class App extends React.Component {
             <div className="container">
               <Header className="app-moto" />
               <br></br>
-              {/* <Route exact path="/mylist" component={MyList} /> */}
             </div>
           </div>
           </div>
