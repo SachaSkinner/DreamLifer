@@ -35,6 +35,37 @@ const router = require("express").Router();
             res.json('There was an error trying to update your progress');
         });
     });
+    // to post reviews
+    router.post('/users/reviews', function(req, res) {
+        db.DayReviews.create({
+            family: req.body.family,
+            friends: req.body.friends,
+            work: req.body.work,
+            study: req.body.study,
+            fun: req.body.fun,
+            food: req.body.food,
+            sleep: req.body.sleep,
+            mood: req.body.mood,
+            sport: req.body.sport,
+            ideas: req.body.ideas,
+            notes: req.body.notes,
+            thanks: req.body.thanks
+        }).then(function(newReviews) {
+            return db.User.findOneAndUpdate(
+                {_id: req.body.id}, 
+                {
+                    '$push': {
+                       newreviews : newReviews._id
+                    }
+                }, 
+                {new: true});
+        }).then(function(updatedReviews) {
+            res.json('Successfully added your reviews!');
+        }).catch(function(err) {
+            console.log(err);
+            res.json('There was an error trying to update your reviews');
+        });
+    });
 
     // Get a user's information, whichData takes 'todo' or 'image' and will populate
     // the response with the User's todos or images
@@ -49,6 +80,18 @@ const router = require("express").Router();
             console.log(err);
         });
     });
+// reviews
+router.get('/users/reviews/:item/:id/:date', function(req, res) {
+    db.User.findOne({_id: req.params.id}).populate({
+        path: req.params.item,
+        match: { date: req.params.date } 
+    }).then(function(userAndReviews) {
+        res.json(userAndReviews);
+    }).catch(function(err) {
+        res.json('No data to fetch on this date ... ');
+        console.log(err);
+    });
+});
 
     // Route to compare time left until goal
     router.get('/users/todo/:id/timeleft', (req, res) => {
@@ -60,6 +103,16 @@ const router = require("express").Router();
                 console.log(err);
             });
         });
+        // for reviews
+        router.get('/users/reviews/:id', (req, res) => {
+            db.User.findOne({_id: req.params.id}).populate('newreviews')
+                .then(function(userAndReviews) {
+                    res.json(userAndReviews);
+                }).catch(function(err) {
+                    res.json('No data to fetch on this date ... ');
+                    console.log(err);
+                });
+            });
 
     // Very similar to adding Todo to specific user, decided by :id -> user's id
     router.post('/users/:id/images', (req, res) => {
