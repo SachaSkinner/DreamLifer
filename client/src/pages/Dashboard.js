@@ -44,12 +44,17 @@ class Dashboard extends Component {
 
     render() {
         const style = {
-            display: "inline-block",
-            textAlign: 'center'
+            // display: "inline-block",
+            textAlign: 'center',
+            color: '#315a78',
+            fontFamily: "fantasy"
+            
+       
+  
         }
         return (
             <Container fluid>
-                {/* <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} /> */}
+                <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                 <Row>
                     <Row>
                         <Col size='md-4'>
