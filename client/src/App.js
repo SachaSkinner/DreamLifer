@@ -32,7 +32,7 @@ class App extends React.Component {
 
   checkSession = () => {
     API.checkSession().then(res => {
-      console.log(res.data);
+    
         if (res.data.bool) {
             this.handleGlobalState("User", res.data)
            
@@ -52,9 +52,7 @@ class App extends React.Component {
             </div>
             <div className="container">
               <Header className="app-moto" />
-              <br></br>
-              {/* <Route exact path="/mylist" component={MyList} /> */}
-            </div>
+            </div> <br></br>
           </div>
           </div>
           <div>

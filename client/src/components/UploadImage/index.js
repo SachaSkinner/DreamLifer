@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { storage} from "../../firebase"
 import API from '../../utils/API';
+// import { isNullOrUndefined } from 'util';
+import './style.css';
 
 
 class ImageUpload extends Component {
@@ -23,7 +25,7 @@ class ImageUpload extends Component {
         API.takeUrl(this.props.User.id)
                     .then(res => 
                         {
-                            console.log(res);
+                           
                         if(!res.data.url){
                             this.setState({url: "https://firebasestorage.googleapis.com/v0/b/dreamlifer-36c5e.appspot.com/o/images%2Fprofile_p.jpg?alt=media&token=b87d233a-333c-4710-8751-826b8e53d572"}) 
 
@@ -73,27 +75,29 @@ class ImageUpload extends Component {
     render() {
         const style = {
             
-           marginLeft: "5%",
-           marginTop: "5%",
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'inline-block'
+        //    marginLeft: "5%",
+        //    marginTop: "5%",
+        //     flexDirection: 'column',
+        //     alignItems: 'center',
+        //     justifyContent: 'center',
+        //     display: 'inline-block'
 
         }
         const input = {
-            marginLeft: 0
+           textAlign: "center",
+           marginLeft: "123px"
         }
+
         const image = {
-            borderRadius: "50%"
+            borderRadius: "50%",
+    
         }
        
         
         return (
-
-            <div style={style}>
+        
+            <div className="profilePic" style={style}>
                 <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
-                <br></br>
                 
                
                 <progress className="add-picture" value={this.state.progress} max="100" />
@@ -101,7 +105,7 @@ class ImageUpload extends Component {
                 <br></br>
                 <input className="add-picture" style={input}type='file' onChange={this.handleChange} />
                 <br></br>
-                <button className="add-picture" onClick={this.handleUpload}>Upload your profile picture!</button>
+                <button className="add-picture" onClick={this.handleUpload}>Upload photo</button>
                 <br />
             </div>
         )

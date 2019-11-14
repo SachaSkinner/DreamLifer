@@ -18,6 +18,7 @@ import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
 import '../index.css';
 import GoalTracker from "../components/GoalTracker";
+import Emoji from "../components/Emoji";
 
 class Dashboard extends Component {
     state = {
@@ -44,33 +45,43 @@ class Dashboard extends Component {
 
     render() {
         const style = {
+            // display: "inline-block",
+            textAlign: 'center',
+            color: '#315a78',
+            fontFamily: "san-serif"
+
+
+
+        }
+        const emoji = {
             display: "inline-block",
-            textAlign: 'center'
+            fontSize: "20px"
         }
         return (
-            <Container fluid>
-                <Logout handleGlobalState={this.state.handleGlobalState} User={this.state.User} />
-                <Row>
+            <div className="container">
+                <Container fluid>
+                    <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                     <Row>
-                        <Col size='md-4'>
-                            <ReactUploadImage User={this.props.User}></ReactUploadImage>
+                        <Row>
+                            <Col size='md-4'>
+                                <ReactUploadImage User={this.props.User}></ReactUploadImage>
                             </Col>
                             <Col size='md-1'></Col>
-                            <Col size='md-7'>
-                            <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
-                                'Welcome!'}</h1>
-                            <br></br>
-                            <h2 style={style}>{this.state.calendarDate}</h2>
+                            <Col size='md-5'>
+                                <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
+                                    'Welcome!'}</h1>
+                                <br></br>
+                                <h2 style={style}>{this.state.calendarDate}</h2>
                             </Col>
-                    </Row>
-                    <Col size="md-12">
-                        {/* <Jumbotron> */}
+                        </Row>
+                        <Col size="md-12">
+                            {/* <Jumbotron> */}
 
 
-                        {/* </Jumbotron> */}
+                            {/* </Jumbotron> */}
 
-                        <QuotesRequest />
-                        {/* 
+                            <QuotesRequest />
+                            {/* 
                             <RandomQuestions>
                                 {this.state.questions.map(question => (
                                     <QuestionItem key={question._id} >
@@ -81,27 +92,39 @@ class Dashboard extends Component {
                             </RandomQuestions> */}
 
 
-                    </Col>
-                </Row>
-                <Row>
-                    <div className='conty'>
-                        <Col size='4'>
-                            <CalendarView handleDashState={this.handleDashState} />
                         </Col>
-                        <Col size='4'>
-                            <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                            <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                            <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
-                        </Col>
-                        <Col size='4'>
-                            <GoalTracker User={this.props.User} />
-                        </Col>
-                    </div>
-                </Row>
+                    </Row>
+                    <Row> <button>Plan my day.</button> <button> Review my day</button></Row>
+                    <Row>
+                        <div className='conty'>
+                            <Col size='4'>
+                                <CalendarView handleDashState={this.handleDashState} />
+                            </Col>
+                            <Col size='4'>
+                                <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                                <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                            </Col>
+                            <Col size='4'>
+                                <GoalTracker User={this.props.User} />
+                            </Col>
+                        </div>
+                    </Row>
+                    <Row>
+                        <div className='dream'>
+                            <Col size='4'>
+                                <CalendarView handleDashState={this.handleDashState} />
+                            </Col>
+                            <Col size='8'>
+                                <h1>Review your day by filling out important sections of your choice! </h1>
 
+                                <h2> Capture the important. Get better every day!</h2>
+                                <Row><Emoji style={emoji} symbol="💕" /> <div style={emoji}>Family</div> <Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div><Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div><Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div><Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div><Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div></Row> <Row><Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div><Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div><Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div><Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div><Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div><Emoji style={emoji} symbol="🙏" /> <div style={emoji} >I am thankful for..</div></Row>
 
-
-            </Container>
+                            </Col>
+                        </div>
+                    </Row>
+                </Container>
+            </div>
 
         );
     };
@@ -168,6 +191,7 @@ class Dashboard extends Component {
 //       })
 //     });
 //   };
+
 
 //   // Delete Todo
 //   delTodo = id => {
