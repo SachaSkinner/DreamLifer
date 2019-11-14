@@ -58,6 +58,7 @@ class Dashboard extends Component {
             fontSize: "20px"
         }
         return (
+            <div className="container">
             <Container fluid>
                 <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                 <Row>
@@ -126,6 +127,7 @@ class Dashboard extends Component {
 
 
             </Container>
+            </div>
 
         );
     };

@@ -52,8 +52,7 @@ class App extends React.Component {
             </div>
             <div className="container">
               <Header className="app-moto" />
-              <br></br>
-            </div>
+            </div> <br></br>
           </div>
           </div>
           <div>

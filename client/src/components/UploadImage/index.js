@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { storage} from "../../firebase"
 import API from '../../utils/API';
+import { isNullOrUndefined } from 'util';
+import './style.css';
 
 
 class ImageUpload extends Component {
@@ -88,12 +90,12 @@ class ImageUpload extends Component {
 
         const image = {
             borderRadius: "50%",
-            Width: "auto",  
+    
         }
        
         
         return (
-
+        
             <div className="profilePic" style={style}>
                 <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
                 <br></br>
