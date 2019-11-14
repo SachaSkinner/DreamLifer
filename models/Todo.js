@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const todoSchema = new Schema({
     message: String,
-    date: String,
+    date: {
+        required: true,
+        type: String
+    },
     completed: Boolean
 });
 

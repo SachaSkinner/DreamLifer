@@ -13,6 +13,22 @@ router.delete('/allusers', (req, res) => {
     })
 });
 
+router.post("/users/getDayInfo", async function (req, res) {
+
+    try {
+        const todos = await db.Todo.find({ date: req.body.date });
+        const reviews = await db.DayReviews.find({ date: req.body.date })
+
+        res.send({
+            todos,
+            reviews
+        })
+
+    } catch (error) {
+        res.send(error)
+    }
+})
+
 // Add a Todo for the specific user, decided by :id
 router.post('/users/todos', function (req, res) {
     db.Todo.create({
@@ -49,7 +65,8 @@ router.post('/users/reviews', function (req, res) {
         sport: req.body.sport,
         ideas: req.body.ideas,
         notes: req.body.notes,
-        thanks: req.body.thanks
+        thanks: req.body.thanks,
+        date: req.body.date
     }).then(function (newReviews) {
         return db.User.findOneAndUpdate(
             { _id: req.body.id },
@@ -69,6 +86,7 @@ router.post('/users/reviews', function (req, res) {
 
 // Get a user's information, whichData takes 'todo' or 'image' and will populate
 // the response with the User's todos or images
+// for todos and reviews
 router.get('/users/items/:item/:id/:date', function (req, res) {
     db.User.findOne({ _id: req.params.id }).populate({
         path: req.params.item,
@@ -80,18 +98,7 @@ router.get('/users/items/:item/:id/:date', function (req, res) {
         console.log(err);
     });
 });
-// reviews
-router.get('/users/reviews/:item/:id/:date', function (req, res) {
-    db.User.findOne({ _id: req.params.id }).populate({
-        path: req.params.item,
-        match: { date: req.params.date }
-    }).then(function (userAndReviews) {
-        res.json(userAndReviews);
-    }).catch(function (err) {
-        res.json('No data to fetch on this date ... ');
-        console.log(err);
-    });
-});
+
 
 // Route to compare time left until goal
 router.get('/users/todo/:id/timeleft', (req, res) => {

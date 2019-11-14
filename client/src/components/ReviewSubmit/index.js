@@ -60,7 +60,7 @@ class Review extends Component {
             <h3>{this.state.headerMessage}</h3>
             <form>
                 <div>Family</div>
-                <input value={this.state.family} name='family' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <textarea value={this.state.family} name='family' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></textarea>
                 <div>Friends</div>
                 <input value={this.state.friends} name='friends' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Work</div>
