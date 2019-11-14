@@ -58,18 +58,16 @@ class Dashboard extends Component {
             fontSize: "20px"
         }
         return (
-
-            <Container fluid>
-
-                <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
-                <div className="container">
+            <div className="container">
+                <Container fluid>
+                    <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                     <Row>
                         <Row>
                             <Col size='md-4'>
                                 <ReactUploadImage User={this.props.User}></ReactUploadImage>
                             </Col>
                             <Col size='md-1'></Col>
-                            <Col size='md-6'>
+                            <Col size='md-5'>
                                 <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                                     'Welcome!'}</h1>
                                 <br></br>
@@ -125,11 +123,8 @@ class Dashboard extends Component {
                             </Col>
                         </div>
                     </Row>
-
-
-                </div>
-            </Container>
-
+                </Container>
+            </div>
 
         );
     };
