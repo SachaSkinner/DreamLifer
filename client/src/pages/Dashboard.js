@@ -48,7 +48,7 @@ class Dashboard extends Component {
             // display: "inline-block",
             textAlign: 'center',
             color: '#315a78',
-            fontFamily: "fantasy"
+            fontFamily: "san-serif"
             
        
   
@@ -60,6 +60,7 @@ class Dashboard extends Component {
         return (
             <Container fluid>
                 <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                <div className="container">
                 <Row>
                     <Row>
                         <Col size='md-4'>
@@ -122,9 +123,7 @@ class Dashboard extends Component {
                         </Col>
                     </div>
                 </Row>
-
-
-
+                </div>
             </Container>
 
         );
@@ -192,6 +191,7 @@ class Dashboard extends Component {
 //       })
 //     });
 //   };
+
 
 //   // Delete Todo
 //   delTodo = id => {

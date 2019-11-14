@@ -8,9 +8,11 @@ function Community() {
     <Container fluid>
       <Row>
         <Col size="md-12">
+        <div className="container">
           <Jumbotron>
             <h1>Welcome to our community!</h1>
           </Jumbotron>
+        </div>
         </Col>
       </Row>
     </Container>

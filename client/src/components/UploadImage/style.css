@@ -1,0 +1,13 @@
+ .profilePic{
+  text-align: center; 
+  display: block;  
+  
+ }
+ .profilePic img{
+  object-fit: cover;
+ }
+
+.uploadInputs{
+  text-align: center; 
+  display: block; 
+}
