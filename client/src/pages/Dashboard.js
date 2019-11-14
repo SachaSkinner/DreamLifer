@@ -67,7 +67,7 @@ class Dashboard extends Component {
                             <ReactUploadImage User={this.props.User}></ReactUploadImage>
                         </Col>
                         <Col size='md-1'></Col>
-                        <Col size='md-7'>
+                        <Col size='md-5'>
                             <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
                                 'Welcome!'}</h1>
                             <br></br>
