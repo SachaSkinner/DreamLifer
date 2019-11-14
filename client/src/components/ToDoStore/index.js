@@ -17,6 +17,7 @@ class TodoStore extends Component {
 
     grabTodos = () => {
         API.getItems(this.state.item, this.props.User.id, this.props.calendarDate).then(res => {
+           
             this.setState({ allTodos: res.data.todo });
         }).catch(err => console.log(err));
     };

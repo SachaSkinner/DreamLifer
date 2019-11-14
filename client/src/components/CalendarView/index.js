@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Calendar from 'react-calendar';
+
 import './style.css';
 
 class CalendarView extends Component {
@@ -14,8 +15,8 @@ class CalendarView extends Component {
   }
 
   getNiceDate = (value) =>{
-    this.setState({niceDate: `${value}`});
-    this.props.handleDashState('calendarDate', (`${value}`).slice(0,15))
+   
+    this.props.handleDashState('calendarDate', value)
   };
 
   componentDidMount() {

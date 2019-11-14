@@ -60,29 +60,29 @@ class Review extends Component {
             <h3>{this.state.headerMessage}</h3>
             <form>
                 <div>Family</div>
-                <input value={this.state.message} name='family' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <textarea value={this.state.family} name='family' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></textarea>
                 <div>Friends</div>
-                <input value={this.state.message} name='friends' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.friends} name='friends' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Work</div>
-                <input value={this.state.message} name='work' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.work} name='work' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Study</div>
-                <input value={this.state.message} name='study' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.study} name='study' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Fun</div>
-                <input value={this.state.message} name='fun' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.fun} name='fun' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Food</div>
-                <input value={this.state.message} name='food' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.food} name='food' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Sleep</div>
-                <input value={this.state.message} name='sleep' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.sleep} name='sleep' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Mood</div>
-                <input value={this.state.message} name='mood' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.mood} name='mood' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Sport</div>
-                <input value={this.state.message} name='sport' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.sport} name='sport' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Ideas</div>
-                <input value={this.state.message} name='ideas' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.ideas} name='ideas' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>Notes</div>
-                <input value={this.state.message} name='notes' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.notes} name='notes' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <div>I am thankful for..</div>
-                <input value={this.state.message} name='thanks' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <input value={this.state.thanks} name='thanks' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <button onClick={this.handleSubmit} className='submitSignup'>submit</button>
             </form>
         </div>

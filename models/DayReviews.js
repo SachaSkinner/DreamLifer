@@ -14,7 +14,10 @@ const DayReviewsSchema = new Schema({
     ideas: String,
     notes: String,
     thanks: String,
-    date: String
+    date: {
+        required: true,
+        type: String
+    }
 });
 
 const DayReviews = mongoose.model('DayReviews', DayReviewsSchema);
