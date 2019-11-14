@@ -25,7 +25,7 @@ class ReviewStore extends Component {
 
     loadReviews = () => {
     let interval = setInterval(()=> {
-        this.grabReviews() }, 60000);
+        this.grabReviews() }, 1000);
     return () => clearInterval(interval);
     }
 

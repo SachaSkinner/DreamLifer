@@ -4,8 +4,8 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
-import Todo from '../components/ToDoSubmit';
-import TodoStore from '../components/ToDoStore';
+// import Todo from '../components/ToDoSubmit';
+// import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
 import '../index.css';
@@ -78,8 +78,8 @@ class Dashboard extends Component {
                             <CalendarView  handleDashState={this.handleDashState} />
                         </Col>
                         <Col size='4'>
-                            <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                            <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                            {/* <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                            <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} /> */}
                             <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                         </Col>
                         <Col size='4'>
