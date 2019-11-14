@@ -49,39 +49,39 @@ class Dashboard extends Component {
             textAlign: 'center',
             color: '#315a78',
             fontFamily: "san-serif"
-
-
-
+            
+       
+  
         }
         const emoji = {
             display: "inline-block",
             fontSize: "20px"
         }
         return (
-            <div className="container">
-                <Container fluid>
-                    <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+            <Container fluid>
+                <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                <div className="container">
+                <Row>
                     <Row>
-                        <Row>
-                            <Col size='md-4'>
-                                <ReactUploadImage User={this.props.User}></ReactUploadImage>
-                            </Col>
-                            <Col size='md-1'></Col>
-                            <Col size='md-5'>
-                                <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
-                                    'Welcome!'}</h1>
-                                <br></br>
-                                <h2 style={style}>{this.state.calendarDate}</h2>
-                            </Col>
-                        </Row>
-                        <Col size="md-12">
-                            {/* <Jumbotron> */}
+                        <Col size='md-4'>
+                            <ReactUploadImage User={this.props.User}></ReactUploadImage>
+                        </Col>
+                        <Col size='md-1'></Col>
+                        <Col size='md-7'>
+                            <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
+                                'Welcome!'}</h1>
+                            <br></br>
+                            <h2 style={style}>{this.state.calendarDate}</h2>
+                        </Col>
+                    </Row>
+                    <Col size="md-12">
+                        {/* <Jumbotron> */}
 
 
-                            {/* </Jumbotron> */}
+                        {/* </Jumbotron> */}
 
-                            <QuotesRequest />
-                            {/* 
+                        <QuotesRequest />
+                        {/* 
                             <RandomQuestions>
                                 {this.state.questions.map(question => (
                                     <QuestionItem key={question._id} >
@@ -92,39 +92,39 @@ class Dashboard extends Component {
                             </RandomQuestions> */}
 
 
+                    </Col>
+                </Row>
+                <Row> <button>Plan my day.</button> <button> Review my day</button></Row>
+                <Row>
+                    <div className='conty'>
+                        <Col size='4'>
+                            <CalendarView  handleDashState={this.handleDashState} />
                         </Col>
-                    </Row>
-                    <Row> <button>Plan my day.</button> <button> Review my day</button></Row>
-                    <Row>
-                        <div className='conty'>
-                            <Col size='4'>
-                                <CalendarView handleDashState={this.handleDashState} />
-                            </Col>
-                            <Col size='4'>
-                                <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                                <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                            </Col>
-                            <Col size='4'>
-                                <GoalTracker User={this.props.User} />
-                            </Col>
-                        </div>
-                    </Row>
-                    <Row>
-                        <div className='dream'>
-                            <Col size='4'>
-                                <CalendarView handleDashState={this.handleDashState} />
-                            </Col>
-                            <Col size='8'>
-                                <h1>Review your day by filling out important sections of your choice! </h1>
+                        <Col size='4'>
+                            <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                            <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                        </Col>
+                        <Col size='4'>
+                            <GoalTracker User={this.props.User} />
+                        </Col>
+                    </div>
+                </Row>
+                <Row>
+                    <div className='dream'>
+                        <Col size='4'>
+                            <CalendarView handleDashState={this.handleDashState} />
+                        </Col>
+                        <Col size='8'>
+                        <h1>Review your day by filling out important sections of your choice! </h1>
 
-                                <h2> Capture the important. Get better every day!</h2>
-                                <Row><Emoji style={emoji} symbol="💕" /> <div style={emoji}>Family</div> <Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div><Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div><Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div><Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div><Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div></Row> <Row><Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div><Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div><Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div><Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div><Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div><Emoji style={emoji} symbol="🙏" /> <div style={emoji} >I am thankful for..</div></Row>
-
-                            </Col>
-                        </div>
-                    </Row>
-                </Container>
-            </div>
+                        <h2> Capture the important. Get better every day!</h2>
+                        <Row><Emoji style={emoji} symbol="💕"/> <div style={emoji}>Family</div> <Emoji style={emoji} symbol="🤸‍♂‍"/> <div style={emoji}>Sport</div><Emoji style={emoji} symbol="🎨"/> <div style={emoji} >Fun/leisure</div><Emoji style={emoji}  symbol="🤝👯‍"/> <div  style={emoji} >Friends</div><Emoji  style={emoji} symbol=" 🍱 "/> <div  style={emoji} >Food</div><Emoji  style={emoji} symbol="💼"/> <div style={emoji} >Work</div></Row> <Row><Emoji  style={emoji} symbol="🎓"/> <div style={emoji} >Study</div><Emoji  style={emoji} symbol="📋"/> <div style={emoji} >Notes</div><Emoji  style={emoji} symbol="❤️"/> <div style={emoji} >Health/Mood</div><Emoji  style={emoji} symbol="😴"/> <div style={emoji} >Sleep</div><Emoji  style={emoji} symbol="🌟"/> <div style={emoji} >Ideas</div><Emoji style={emoji}  symbol="🙏"/> <div style={emoji} >I am thankful for..</div></Row>
+                        
+                        </Col>
+                    </div>
+                </Row>
+                </div>
+            </Container>
 
         );
     };
