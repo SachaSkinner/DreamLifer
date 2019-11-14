@@ -4,14 +4,6 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import Logout from '../components/Logout';
-
-// =======
-// import axios from "axios";
-// import QuotesApi from "../components/QuotesApi";
-// import ReactUploadImage from "../components/UploadImage";
-// import CalendarView from "../components/CalendarView";
-// >>>>>>> nov7
-// import { RandomQuestions, QuestionItem } from "../components/RandomQuestions";
 import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
@@ -19,6 +11,8 @@ import QuotesRequest from "../helpers/QuotesRequest";
 import '../index.css';
 import GoalTracker from "../components/GoalTracker";
 import Emoji from "../components/Emoji";
+import Review from "../components/ReviewSubmit";
+import ReviewStore from "../components/ReviewStore"
 
 class Dashboard extends Component {
     state = {
@@ -69,21 +63,10 @@ class Dashboard extends Component {
                         </Col>
                     </Row>
                     <Col size="md-12">
-                        {/* <Jumbotron> */}
-
-
-                        {/* </Jumbotron> */}
+                     
 
                         <QuotesRequest />
-                        {/* 
-                            <RandomQuestions>
-                                {this.state.questions.map(question => (
-                                    <QuestionItem key={question._id} >
-                                    <li>{question.question}</li></QuestionItem>
-                                ))}
-
-                                <button onClick={this.loadQuestions}>Random Questions</button>
-                            </RandomQuestions> */}
+                      
 
 
                     </Col>
@@ -114,7 +97,8 @@ class Dashboard extends Component {
 
                         <h2> Capture the important. Get better every day!</h2>
                         <Row><Emoji style={emoji} symbol="💕"/> <div style={emoji}>Family</div> <Emoji style={emoji} symbol="🤸‍♂‍"/> <div style={emoji}>Sport</div><Emoji style={emoji} symbol="🎨"/> <div style={emoji} >Fun/leisure</div><Emoji style={emoji}  symbol="🤝👯‍"/> <div  style={emoji} >Friends</div><Emoji  style={emoji} symbol=" 🍱 "/> <div  style={emoji} >Food</div><Emoji  style={emoji} symbol="💼"/> <div style={emoji} >Work</div></Row> <Row><Emoji  style={emoji} symbol="🎓"/> <div style={emoji} >Study</div><Emoji  style={emoji} symbol="📋"/> <div style={emoji} >Notes</div><Emoji  style={emoji} symbol="❤️"/> <div style={emoji} >Health/Mood</div><Emoji  style={emoji} symbol="😴"/> <div style={emoji} >Sleep</div><Emoji  style={emoji} symbol="🌟"/> <div style={emoji} >Ideas</div><Emoji style={emoji}  symbol="🙏"/> <div style={emoji} >I am thankful for..</div></Row>
-                        
+                        <Review User={this.props.User} calendarDate={this.state.calendarDate} />
+                            <ReviewStore User={this.props.User} calendarDate={this.state.calendarDate} /> 
                         </Col>
                     </div>
                 </Row>

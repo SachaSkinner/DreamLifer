@@ -23,8 +23,8 @@ export default {
   submitTodo: function(message, id, date) {
     return axios.post('/api/users/todos', {message: message, id: id, date: date})
   },
-  submitReview: function(data) {
-    return axios.post('/api/users/reviews', data)
+  submitReview: function(family, friends, work, study, fun, food, sleep, mood, sport, ideas, notes, thanks,  id, date) {
+    return axios.post('/api/users/reviews', {family: family, friends: friends,work: work, study: study, fun: fun, food: food, sleep: sleep, mood: mood, sport: sport, ideas: ideas, notes: notes, thanks: thanks,  id: id, date: date })
 
   },
   getItems: function(item, id, date) {
