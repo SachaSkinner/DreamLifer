@@ -45,9 +45,11 @@ class Home extends Component {
     <Container fluid>
       <Row>
         <Col size="md-12">
+        <div className="container">
           <Jumbotron>
             <h1>This is our home!</h1>
           </Jumbotron>
+          </div>
         </Col>
       </Row>
     </Container>
