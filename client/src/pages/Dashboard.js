@@ -80,7 +80,7 @@ class Dashboard extends Component {
 
                         {/* </Jumbotron> */}
 
-                        <QuotesRequest />
+                        <QuotesRequest /><br></br>
                         {/* 
                             <RandomQuestions>
                                 {this.state.questions.map(question => (
@@ -94,7 +94,7 @@ class Dashboard extends Component {
 
                     </Col>
                 </Row>
-                <Row> <button>Plan my day.</button> <button> Review my day</button></Row>
+                 <button>Plan my day.</button> <button> Review my day</button>
                 <Row>
                     <div className='conty'>
                         <Col size='4'>

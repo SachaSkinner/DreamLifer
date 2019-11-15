@@ -62,11 +62,11 @@ class SignupForm extends Component {
         <div className='signupWrapper'>
             <h3>{this.state.headerMessage}</h3>
             <form>
-                <input value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
-                <input value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
-                <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
-                <input value={this.state.phone} name='phone' onChange={this.handleInputChange} placeholder='phone'></input>
-                <input type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
+                <input className="signupInput" value={this.state.firstName} name='firstName' onChange={this.handleInputChange} placeholder='first name'></input>
+                <input className="signupInput" value={this.state.lastName} name='lastName' onChange={this.handleInputChange} placeholder='last name'></input>
+                <input className="signupInput" value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
+                <input className="signupInput" value={this.state.phone} name='phone' onChange={this.handleInputChange} placeholder='phone'></input>
+                <input className="signupInput" type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleSignup} className='submitSignup btn btn-outline-dark'>sign up</button>
             </form>
             <h4>Already have an account? <Link to='/login'><button>Log in</button></Link></h4>

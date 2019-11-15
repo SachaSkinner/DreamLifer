@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import API from '../../utils/API';
-// import './style.css';
+import './style.css';
 
 class Todo extends Component {
     state = {
@@ -37,8 +37,8 @@ class Todo extends Component {
         <div className='signupWrapper'>
             <h3>{this.state.headerMessage}</h3>
             <form>
-                <input value={this.state.message} name='message' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <button onClick={this.handleSubmit} className='submitSignup'>submit</button>
+                <input className="todoInput" value={this.state.message} name='message' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <button onClick={this.handleSubmit} className='btn btn-outline-dark submitTodo'>submit</button>
             </form>
         </div>
         );
