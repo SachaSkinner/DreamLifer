@@ -46,7 +46,7 @@ class Home extends Component {
     <Container className="container">
       <Row>
         <Col size="md-12">
-          <Jumbotron>
+          <Jumbotron> 
           <Carousal/>
           </Jumbotron>
         </Col>
@@ -55,9 +55,5 @@ class Home extends Component {
   );
   }
 };
-// >>>>>>> authFormatting
-
-
-
 
 export default Home;

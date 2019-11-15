@@ -10,10 +10,10 @@ class Signup extends Component {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-          <SignupForm handleGlobalState={this.props.handleGlobalState} />
           </Jumbotron>
         </Col>
       </Row>
+      <SignupForm handleGlobalState={this.props.handleGlobalState} />
     </Container>
   );
   }

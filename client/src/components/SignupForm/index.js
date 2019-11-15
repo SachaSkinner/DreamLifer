@@ -69,7 +69,7 @@ class SignupForm extends Component {
                 <input className="signupInput" type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleSignup} className='submitSignup btn btn-outline-dark'>sign up</button>
             </form>
-            <h4>Already have an account? <Link to='/login'><button>Log in</button></Link></h4>
+            <h3>Already have an account? <Link to='/login'><button className='loginBtn btn btn-outline-dark'>Log in</button></Link></h3>
         </div>
         );
     };
