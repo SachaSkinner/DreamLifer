@@ -26,11 +26,10 @@ class GoalTracker extends Component {
             for (var i = 0; i < sortedDates.length; i++) {
                 if (moment(sortedDates[i].date).isAfter(this.state.now)) {
                     if (moment(sortedDates[i].date).diff(this.state.now, 'days') === 1) {
-                        if (this.closeDates.length >= 1) {
+                        if (this.closeDates.length > 1) {
                             break;
                         }
                         this.closeDates.push(sortedDates[i]);
-                        this.canDisplay++;
                         this.displayNotification(this.closeDates[0]);
                     }
                 }
