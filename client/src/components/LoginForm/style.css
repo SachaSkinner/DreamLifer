@@ -27,3 +27,7 @@ input {
     top: -25px;
     cursor: pointer;
 }
+
+.loginInput{
+    width: 68%;
+}
