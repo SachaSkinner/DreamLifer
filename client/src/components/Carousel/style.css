@@ -1,7 +1,17 @@
-/* .carousal{
-    background-clip: yellow;
-}
 
 .carousalTitle{
-color: blue;
-} */
+    background-color: rgba(53, 75, 66, 0.51);
+    color: white;
+    position: relative;
+    top:-120px;
+    font-size: 22px;
+}
+
+.subTitles{
+
+    background-color: rgba(83, 78, 63, 0.51);
+    color: white;
+    position: relative;
+    font-size: 30px;
+
+}

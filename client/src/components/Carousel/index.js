@@ -1,52 +1,49 @@
-import React, { Component } from 'react';
-import Slider from 'infinite-react-carousel';
-import './style.css';
-
+import React, { Component } from "react";
+import Slider from "infinite-react-carousel";
+import "./style.css";
 
 class Carousal extends Component {
   render() {
-    const settings =  {
-      autoplay: true,
-      className: 'carousal',
-      dots: true
-
+    const settings = {
+      autoplay: false,
+      className: "carousal",
+      dots: true,
+    //   arrowsScroll: 1,
+      duration: 100,
+      autoplaySpeed: 1000
     };
 
-    const title ={
-        backgroundColor: 'rgba(53, 75, 66, 0.51)',
-        color: 'white',
-        position: "relative",
-        top:'-120px',
-        // opacity: "0.6"
-
-    }
     return (
-      <div className="carousalDiv">
-        <span><h5 style={title}>Don't just Dream of good life, fulfill them with DreamLifer</h5></span>
-        <Slider { ...settings }>
+      <div>
+        <span>
+          <p className="carousalTitle">
+            Don't just Dream of good life, Plan them with ☞ DreamLifer
+          </p>
+        </span>
+        <Slider {...settings}>
           <div>
-            <h1>1</h1>
+            <p className="subTitles">Plan your future</p>
           </div>
           <div>
-            <h1>2</h1>
+            <p className="subTitles">Track your goals</p>
           </div>
           <div>
-            <h1>3</h1>
+            <p className="subTitles">Plan Your day</p>
           </div>
           <div>
-            <h1>4</h1>
+            <p className="subTitles">Review your day</p>
           </div>
           <div>
-            <h1>5</h1>
+            <p className="subTitles">Create Memories</p>
           </div>
           <div>
-            <h1>6</h1>
+            <p className="subTitles">Go back to past memories</p>
           </div>
           <div>
-            <h1>7</h1>
+            <p className="subTitles">Stay motiveted with the daily quotes</p>
           </div>
           <div>
-            <h1>8</h1>
+            <p className="subTitles">Accomplish more...</p>
           </div>
         </Slider>
       </div>
