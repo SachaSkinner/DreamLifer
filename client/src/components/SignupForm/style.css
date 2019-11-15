@@ -17,10 +17,20 @@ h4 {
 form {
     background: lightgray;
 }
-input {
+/* input {
     margin-left: 35px;
     display: block;
-}
+} */
 .submitSignup {
     cursor: pointer;
+    position: relative;
+    left: 34%;
+    top: -1px;
 }
+.signupInput{
+    width:83%;
+}
+
+
+
+

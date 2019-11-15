@@ -57,6 +57,7 @@ class Dashboard extends Component {
         return (
             <Container fluid>
                 <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                <div className="container">
                 <Row>
                     <Row>
                         <Col size='md-4'>
@@ -72,14 +73,14 @@ class Dashboard extends Component {
                     </Row>
                     <Col size="md-12">
 
-                        <QuotesRequest />
+                        <QuotesRequest /><br></br>
 
                     </Col>
                 </Row>
-                <Row> 
-                    <button onClick={this.handleActiveTab} name='goals'>Plan my day.</button> 
-                    <button  onClick={this.handleActiveTab} name='review'> Review my day</button>
-                </Row>
+             
+                    <button className="btn btn-outline-dark" onClick={this.handleActiveTab} name='goals'>Plan my day.</button> {' '}
+                    <button className="btn btn-outline-dark" onClick={this.handleActiveTab} name='review'> Review my day</button>
+              
                 <Row>
                     <div className='conty'>
                         <Col size='4'>
@@ -120,6 +121,7 @@ class Dashboard extends Component {
                                 )}
                         </div>
                     </Row>
+                    </div>
             </Container>
 
         );

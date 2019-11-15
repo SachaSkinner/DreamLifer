@@ -23,7 +23,11 @@ input {
 }
 .submitLogin {
     position: relative;
-    left: 50%;
+    left: 40%;
     top: -25px;
     cursor: pointer;
+}
+
+.loginInput{
+    width: 68%;
 }

@@ -53,10 +53,9 @@ class LoginForm extends Component {
         <div className='loginWrapper'>
             <h3>{this.state.headerMessage}</h3>
             <form>
-                <input value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
-                <input type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
+                <input className="loginInput" value={this.state.email} name='email' onChange={this.handleInputChange} placeholder='email'></input>
+                <input className="loginInput" type='password' value={this.state.password} name='password' onChange={this.handleInputChange} placeholder='password'></input>
                 <button onClick={this.handleLogin} className='submitLogin btn btn-outline-dark'>sign in</button>
-
             </form>
         </div>
         );

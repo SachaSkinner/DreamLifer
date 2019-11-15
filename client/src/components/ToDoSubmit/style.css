@@ -1,0 +1,10 @@
+.submitTodo {
+    position: relative;
+    left: 40%;
+    /* top: 0px; */
+    cursor: pointer;
+}
+
+.todoInput{
+    width: 81%;
+}
