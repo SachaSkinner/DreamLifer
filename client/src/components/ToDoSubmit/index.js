@@ -6,7 +6,7 @@ import API from '../../utils/API';
 class Todo extends Component {
     state = {
         message: '',
-        headerMessage: 'Add your steps to progress here'
+        headerMessage: 'Select a date, set your goals'
     };
 
     refreshState = () => {
@@ -35,7 +35,10 @@ class Todo extends Component {
 
         return (
         <div className='signupWrapper'>
-            <h3>{this.state.headerMessage}</h3>
+            <h3>
+                <p>{this.props.calendarDate}</p>
+                {this.state.headerMessage}
+            </h3>
             <form>
                 <input value={this.state.message} name='message' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <button onClick={this.handleSubmit} className='submitSignup'>submit</button>
