@@ -19,7 +19,8 @@ class Dashboard extends Component {
         questions: [],
         calendarDate: '',
         todos: [],
-        reviews: []
+        reviews: [],
+        
     };
 
     handleDashState = (state, value) => {
@@ -31,18 +32,7 @@ class Dashboard extends Component {
             })
     }
 
-    loadQuestions = () => {
-        API.getQuestions()
-            .then(res => {
-                this.setState({ questions: res.data });
-                // console.log(this.state.questions);
-            })
-            .catch(err => console.log(err));
-    };
-
-    componentDidMount() {
-        this.loadQuestions();
-    }
+  
 
     handleActiveTab = event => {
         const tabSwitch = event.target.name
@@ -53,7 +43,6 @@ class Dashboard extends Component {
 
     render() {
         const style = {
-            // display: "inline-block",
             textAlign: 'center',
             color: '#315a78',
             fontFamily: "san-serif"
@@ -75,7 +64,7 @@ class Dashboard extends Component {
                         </Col>
                         <Col size='md-1'></Col>
                         <Col size='md-7'>
-                            <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName}!` :
+                            <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                 'Welcome!'}</h1>
                             <br></br>
                             <h2 style={style}>{this.state.calendarDate}</h2>
@@ -134,4 +123,9 @@ class Dashboard extends Component {
     };
 };
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> new_review
 export default Dashboard;
