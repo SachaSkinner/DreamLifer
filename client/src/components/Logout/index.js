@@ -9,8 +9,6 @@ class Logout extends Component {
 
   handleLogout = () => {
     API.logoutUser().then(res => {
-        console.log(res.data);
-        console.log(this.props.User);
         this.props.handleGlobalState("User", res.data);
     });
   };

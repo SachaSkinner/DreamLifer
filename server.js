@@ -16,8 +16,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-// require("./routes/apiRoutes")(app);
-// require("./routes/auth/cookiesauth")(app);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
   useUnifiedTopology: true,

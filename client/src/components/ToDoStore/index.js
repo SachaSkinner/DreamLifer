@@ -17,6 +17,7 @@ class TodoStore extends Component {
 
     grabTodos = () => {
         API.getItems(this.state.item, this.props.User.id, this.props.calendarDate).then(res => {
+           
             this.setState({ allTodos: res.data.todo });
         }).catch(err => console.log(err));
     };
@@ -31,17 +32,17 @@ class TodoStore extends Component {
         this.grabTodos();
         this.loadTodos();
     };
-    
+
 
     render() {
 
         return (
         <div className='signupWrapper'>
-            <h3>Your steps to your goal</h3>
+            <h3>Your goals on this date</h3>
             <div>
                 {this.state.allTodos ?
                 this.state.allTodos.map(element => (
-                <p key={element._id}>{element.message} ----- {element.date}</p>
+                <p key={element._id}>{element.message}</p>
                 )) : null
                 }
             </div>
