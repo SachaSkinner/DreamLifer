@@ -103,6 +103,9 @@ class Dashboard extends Component {
                                         <Emoji  style={emoji} symbol="😴"/> <div style={emoji} >Sleep</div>
                                         <Emoji  style={emoji} symbol="🌟"/> <div style={emoji} >Ideas</div>
                                         <Emoji style={emoji}  symbol="🙏"/> <div style={emoji} >I am thankful for..</div></Row>
+                                        <Review User={this.props.User} calendarDate={this.state.calendarDate} />
+                                        <ReviewStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                                        
                                 </Col>
                                 </>) : 
                                 (<>
@@ -123,9 +126,4 @@ class Dashboard extends Component {
     };
 };
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> new_review
 export default Dashboard;
