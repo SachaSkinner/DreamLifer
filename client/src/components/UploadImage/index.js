@@ -103,7 +103,7 @@ class ImageUpload extends Component {
                 <div className="uploadInputs">
                     <progress className="add-picture" value={this.state.progress} max="100" />
                     <br></br>
-                    <input className="add-picture" style={input} type='file' onChange={this.handleChange} />
+                    <input className="add-picture chooseFile" style={input} type='file' onChange={this.handleChange} />
                     <br></br>
                     <button className="add-picture" onClick={this.handleUpload}>Upload photo</button>
                     <br />

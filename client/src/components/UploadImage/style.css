@@ -11,3 +11,11 @@
   text-align: center; 
   display: block; 
 }
+
+
+@media screen and (max-width: 640px){
+  .chooseFile{
+    position: relative;
+    left: 70px;
+  }
+ }
