@@ -24,11 +24,16 @@ form {
 .submitSignup {
     cursor: pointer;
     position: relative;
-    left: 34%;
+    left: 40%;
     top: -1px;
 }
 .signupInput{
     width:83%;
+}
+
+.loginBtn{
+    position: relative;
+    top: 0px;
 }
 
 

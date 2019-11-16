@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import Carousal from "../components/Carousel"
 // import Signup from '../components/Signup';
 // import Login from '../components/Login';
 
@@ -45,8 +46,8 @@ class Home extends Component {
     <Container className="container">
       <Row>
         <Col size="md-12">
-          <Jumbotron>
-            <h1>This is our home!</h1>
+          <Jumbotron> 
+          <Carousal/>
           </Jumbotron>
         </Col>
       </Row>
@@ -54,9 +55,5 @@ class Home extends Component {
   );
   }
 };
-// >>>>>>> authFormatting
-
-
-
 
 export default Home;
