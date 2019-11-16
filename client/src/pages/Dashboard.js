@@ -9,7 +9,7 @@ import API from "../utils/API";
 import QuotesRequest from "../helpers/QuotesRequest";
 import '../index.css';
 import GoalTracker from "../components/GoalTracker";
-import Emoji from "../components/Emoji";
+
 import Review from "../components/ReviewSubmit";
 import ReviewStore from "../components/ReviewStore";
 import moment from 'moment';
@@ -63,6 +63,7 @@ class Dashboard extends Component {
                             <Col size='md-4'>
                                 <ReactUploadImage User={this.props.User}></ReactUploadImage>
                             </Col>
+
                             <Col size='md-1'></Col>
                             <Col size='md-7'>
                                 <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
@@ -93,20 +94,7 @@ class Dashboard extends Component {
                             <Row>
                                 <h2> Capture the important. Get better every day!</h2> </Row>
 
-                            <Row>
-                                <Emoji style={emoji} symbol="💕" /> <div style={emoji}>Family</div>
-                                <Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div>
-                                <Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div>
-                                <Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div>
-                                <Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div>
-                                <Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div>
-                                <Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div>
-                                <Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div>
-                                <Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div>
-                                <Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div>
-                                <Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div>
-                                <Emoji style={emoji} symbol="🙏" /> <div style={emoji} >I am thankful for..</div>
-                            </Row>
+                           
                             <br></br>
                             <Row>
                                 <Col size='4'>
@@ -123,6 +111,8 @@ class Dashboard extends Component {
 
                         </div>) :
                         (<div>
+                             <Row>
+                                <h2> Plan your day. Track your future goals.</h2> </Row>
                             <Row>
                             <Col size='4'>
                                 <CalendarView handleDashState={this.handleDashState} />

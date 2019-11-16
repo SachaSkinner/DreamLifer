@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import API from '../../utils/API';
-// import './style.css';
+import './style.css';
+import Emoji from "../Emoji";
 
 class Review extends Component {
     state = {
@@ -54,34 +55,52 @@ class Review extends Component {
     };
 
     render() {
+        const emoji = {
+            display: "inline-block",
+            fontSize: "20px"
+        }
 
         return (
         <div>
             <h3>{this.state.headerMessage}</h3>
+           
+                               
+                               
+                                
+                               
+                                
+                               
+                               
+                                
+                               
+                               
+                               
             <form>
-                <div>Family</div>
-                <textarea value={this.state.family} name='family' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></textarea>
-                <div>Friends</div>
-                <input value={this.state.friends} name='friends' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Work</div>
+           
+
+                <div> <Emoji style={emoji} symbol="💕" /> <div style={emoji}>Family</div></div>
+                <input className="input-review" value={this.state.family} name='family' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <div> <Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div> </div>
+                <input className="input-review" value={this.state.friends} name='friends' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
+                <div> <Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div></div>
                 <input value={this.state.work} name='work' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Study</div>
+                <div> <Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div></div>
                 <input value={this.state.study} name='study' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Fun</div>
+                <div><Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div></div>
                 <input value={this.state.fun} name='fun' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Food</div>
+                <div> <Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div></div>
                 <input value={this.state.food} name='food' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Sleep</div>
+                <div><Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div></div>
                 <input value={this.state.sleep} name='sleep' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Mood</div>
+                <div> <Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div></div>
                 <input value={this.state.mood} name='mood' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Sport</div>
+                <div> <Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div></div>
                 <input value={this.state.sport} name='sport' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Ideas</div>
+                <div><Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div></div>
                 <input value={this.state.ideas} name='ideas' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>Notes</div>
+                <div> <Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div></div>
                 <input value={this.state.notes} name='notes' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
-                <div>I am thankful for..</div>
+                <div> <Emoji style={emoji} symbol="🙏" /> <div style={emoji} >I am thankful for..</div></div>
                 <input value={this.state.thanks} name='thanks' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <button onClick={this.handleSubmit} className='submitSignup'>submit</button>
             </form>
