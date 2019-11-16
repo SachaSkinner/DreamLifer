@@ -8,7 +8,7 @@ class Carousal extends Component {
       autoplay: false,
       className: "carousal",
       dots: true,
-    //   arrowsScroll: 1,
+    //arrowsScroll: 1,
       duration: 100,
       autoplaySpeed: 1000
     };
@@ -40,7 +40,7 @@ class Carousal extends Component {
             <p className="subTitles">Go back to past memories</p>
           </div>
           <div>
-            <p className="subTitles">Stay motiveted with the daily quotes</p>
+            <p className="subTitles">Daily insightful quotes</p>
           </div>
           <div>
             <p className="subTitles">Accomplish more...</p>

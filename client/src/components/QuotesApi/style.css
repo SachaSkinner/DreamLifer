@@ -10,7 +10,8 @@
 .quoteTitle{
     text-align: center;
     color: #315a78;
-    font: bolder 30px cursive;
+    font-family: 'Courgette', cursive;
+    font-size: 38px;
 }
 .quoteBox{
     box-sizing: border-box;
