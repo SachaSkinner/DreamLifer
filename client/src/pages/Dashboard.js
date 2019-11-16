@@ -50,8 +50,13 @@ class Dashboard extends Component {
 
 
         }
+        const padding = {
+            padding: "10px",
+            display: 'flex'
+        }
       
         return (
+           
             <Container fluid>
                 <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
                 <div className="container">
@@ -60,7 +65,7 @@ class Dashboard extends Component {
                             <Col size='md-4'>
                                 <ReactUploadImage User={this.props.User}></ReactUploadImage>
                             </Col>
-                            <Col size='md-1'></Col>
+                            <Col  size='md-1'></Col>
                             <Col size='md-7'>
                                 <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                     'Welcome!'}</h1>
@@ -84,32 +89,32 @@ class Dashboard extends Component {
 
 
                     {this.state.tab === 'review' ?
-                        (<div>
+                        (<div style={padding}>
             
-                            <Row>
-                                <Col size='4'>
-                                    <CalendarView handleDashState={this.handleDashState} />
+                            <Row style={padding}>
+                                <Col style={padding} size='col-lg-4 col-sm-12'>
+                                    <CalendarView style={padding} handleDashState={this.handleDashState} />
                                 </Col>
-                                <Col size='4'>
-                                    <Review User={this.props.User} calendarDate={this.state.calendarDate} />
+                                <Col style={padding} size='col-lg-4 col-sm-12'>
+                                    <Review style={padding} User={this.props.User} calendarDate={this.state.calendarDate} />
                                 </Col>
-                                <Col size='4'>
+                                <Col style={padding} size='col-lg-4 col-sm-12'>
 
-                                    <ReviewStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                                    <ReviewStore style={padding}  User={this.props.User} calendarDate={this.state.calendarDate} />
                                 </Col>
                             </Row>
 
                         </div>) :
                         (<div>
                             <Row>
-                            <Col size='4'>
+                            <Col style={padding} size='col-sm-4 col-lg-12'>
                                 <CalendarView handleDashState={this.handleDashState} />
                             </Col>
-                            <Col size='4'>
+                            <Col style={padding} size='col-sm-4 col-lg-12'>
                                 <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
                                 <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
                             </Col>
-                            <Col size='4'>
+                            <Col style={padding} size='col-sm-4 col-lg-12'>
                                 <GoalTracker User={this.props.User} />
                             </Col>
                             </Row>
