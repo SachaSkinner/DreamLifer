@@ -100,6 +100,7 @@ class ImageUpload extends Component {
                 <div className="profilePic">
                     <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
                 </div>
+                <br></br>
                 <div className="uploadInputs">
                     <progress className="add-picture" value={this.state.progress} max="100" />
                     <br></br>

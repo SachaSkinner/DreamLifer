@@ -16,7 +16,7 @@ class Logout extends Component {
   render() {
     return (
         <div className='logoutWrapper'>
-          <div onClick={this.handleLogout} className='logoutButton btn btn-danger'>
+          <div onClick={this.handleLogout} className='logoutButton btn btn-warning'>
               Logout
           </div>
         </div>

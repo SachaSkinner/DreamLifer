@@ -44,7 +44,7 @@ class ReviewStore extends Component {
                 <div>
                     {this.state.allReviews ?
                         this.state.allReviews.map(element => (
-                            <p key={element._id}> {element.date} <br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks}<br></br></p>
+                            <p key={element._id}> {element.date} <hr></hr><br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks} <br></br> <hr></hr></p>
                         )) : null
                     }
                 </div>
