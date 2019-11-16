@@ -10,7 +10,7 @@ import Nav from "./components/Nav";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 
-import logo from '../src/assets/images/logo.png';
+import logo from '../src/assets/images/logo4.png';
 import Header from '../src/component/Layout/Header';
 import "./App.css";
 
@@ -41,15 +41,20 @@ class App extends React.Component {
   };
 
   render() {
+    const style = {
+      borderRadius: '20px'
+    }
     return (
       <Router>
         <div>
           <Nav />
+          <br></br>
           
           <div className="App">
             <div size="3" className="logo">
-              <img src={logo} alt="logo" width="300" height="115"/>
+              <img src={logo} alt="logo" width="200" height="100" border-radius="50%" style={style}/>
             </div>
+            <br></br>
             <div className="container">
               <Header className="app-moto" />
             </div> <br></br>

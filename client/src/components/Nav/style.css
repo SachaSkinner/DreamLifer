@@ -5,3 +5,14 @@ a {
     float: right;
 
 }
+.my-nav {
+    background-color: rgb(121, 192, 240);
+    padding: 10px;
+}
+.name {
+    text-align: center;
+}
+.navbar-brand {
+    border-radius: 20px;
+    padding: 10px;
+}

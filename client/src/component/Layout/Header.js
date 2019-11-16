@@ -6,8 +6,7 @@ function Header() {
     return (
         <header style={headerStyle}>
             <h4>
-                Set your future dreams and keep track of how far you've come down the road
-            </h4>
+                Accomplishing milestones made simpler.           </h4>
             {/* <Link style={linkStyle} to="/">Home </Link> | */}
            {/* | <Link style={linkStyle} to="myList">About Us</Link> */}
         </header>
@@ -20,11 +19,11 @@ function Header() {
 // }
 
 const headerStyle = {
-    background: '#315a78',
+    background: 'rgb(166, 168, 168)',
     color: '#fff',
     textAlign: 'center',
     padding: '10px',
-    boxShadow: `0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`
+    boxShadow: `0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)`
 }
 
 export default Header

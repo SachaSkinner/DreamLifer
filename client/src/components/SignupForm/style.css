@@ -12,7 +12,7 @@ h3 {
 h4 {
     margin: 0;
     padding: 15px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 form {
     background: lightgray;
