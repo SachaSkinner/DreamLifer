@@ -4,7 +4,7 @@
     border: 1px solid black;
 }
 h3 {
-    background: royalblue;
+    background: #315a78;
     margin: 0;
     padding: 15px;
     color: white;
@@ -23,7 +23,12 @@ input {
 }
 .submitLogin {
     position: relative;
-    left: 50%;
-    top: -25px;
+    left: 40%;
+    top: 0px;
     cursor: pointer;
 }
+
+.loginInput{
+    width: 83%;
+}
+

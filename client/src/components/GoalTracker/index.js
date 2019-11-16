@@ -73,7 +73,7 @@ is just one day away!! Do your best to finish up!`});
                 {this.state.allTodos ?
                 this.state.allTodos.map(element => (
                 moment(element.date).isAfter(this.state.now) ?
-                <p key={element._id}>{element.message} ----- 
+                <p key={element._id}>{element.message} ----- {' '}
                 {
                 moment(element.date).diff(this.state.now, 'days') === 1 ?
                 (moment(element.date).diff(this.state.now, 'days') + ' day left!') :

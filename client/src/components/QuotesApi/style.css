@@ -5,12 +5,14 @@
     padding: 10px;
     font: 20px sans-serif;
     border-radius: 10px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 .quoteTitle{
     text-align: center;
     color: #315a78;
-    font: bolder 30px cursive;
+    font-family: 'Courgette', cursive;
+    font-size: 38px;
 }
 .quoteBox{
     box-sizing: border-box;

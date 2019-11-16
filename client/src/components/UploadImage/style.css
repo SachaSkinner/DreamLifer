@@ -5,9 +5,18 @@
  }
  .profilePic img{
   object-fit: cover;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
 .uploadInputs{
   text-align: center; 
   display: block; 
 }
+
+
+@media screen and (max-width: 640px){
+  .chooseFile{
+    position: relative;
+    left: 70px;
+  }
+ }

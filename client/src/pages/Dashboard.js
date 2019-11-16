@@ -46,9 +46,6 @@ class Dashboard extends Component {
             textAlign: 'center',
             color: '#315a78',
             fontFamily: "san-serif"
-
-
-
         }
         const emoji = {
             display: "inline-block",
@@ -58,8 +55,9 @@ class Dashboard extends Component {
             <div>
                 <Container fluid>
                     <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
-                    <Row>
+                    <div className="container">
                         <Row>
+
                             <Col size='md-4'>
                                 <ReactUploadImage User={this.props.User}></ReactUploadImage>
                             </Col>
@@ -71,69 +69,76 @@ class Dashboard extends Component {
                                 <h2 style={style}>{this.state.calendarDate}</h2>
                             </Col>
                         </Row>
-                        <Col size="md-12">
+                        <Row>
+                            <Col size="md-12">
 
-                            <QuotesRequest />
+                                <QuotesRequest /><br></br>
 
-                        </Col>
-                    </Row>
-                    <Row>
-                        <button onClick={this.handleActiveTab} name='goals'>Plan my day.</button>
-                        <button onClick={this.handleActiveTab} name='review'> Review my day</button>
-                    </Row>
-                    {this.state.tab === 'review' ?
-                        (
-                            <div>
-                                <Row><h1>Review your day by filling out important sections of your choice! </h1>
-                                    <h2> Capture the important. Get better every day!</h2>
-                                    <Emoji style={emoji} symbol="💕" /> <div style={emoji}>Family</div>
-                                    <Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div>
-                                    <Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div>
-                                    <Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div>
-                                    <Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div>
-                                    <Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div>
-                                </Row>
-                                <Row>
-                                    <Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div>
-                                    <Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div>
-                                    <Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div>
-                                    <Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div>
-                                    <Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div>
-                                    <Emoji style={emoji} symbol="🙏" /> <div style={emoji} >I am thankful for..</div>
-                                </Row>
-                                <Row>
-                                    <Col size='4'>
-                                        <CalendarView handleDashState={this.handleDashState} />
-                                    </Col>
-                                    <Col size='4'>
-                                        <Review User={this.props.User} calendarDate={this.state.calendarDate} />
-                                    </Col>
-                                    <Col size='4'>
-                                        <ReviewStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                                    </Col>
-                                </Row>
-                            </div>
-                        ) :
-                        (
-                            <div>
-                                <h1>For plans</h1>
+                            </Col>
+                        </Row>
+                        <Row>
+
+                            <button className="btn btn-outline-dark" onClick={this.handleActiveTab} name='goals'>Plan my day.</button> {' '}
+                            <button className="btn btn-outline-dark" onClick={this.handleActiveTab} name='review'> Review my day</button>
+                        </Row>
+
+                        {this.state.tab === 'review' ?
+                            (
                                 <div className='conty'>
 
-                                    <Col size='4'>
-                                        <CalendarView handleDashState={this.handleDashState} />
-                                    </Col>
-                                    <Col size='4'>
-                                        <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                                        <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                                    </Col>
-                                    <Col size='4'>
-                                        <GoalTracker User={this.props.User} />
-                                    </Col>
-                                   
+                                    <Row><h1>Review your day by filling out important sections of your choice! </h1>
+                                        <h2> Capture the important. Get better every day!</h2>
+                                        <Emoji style={emoji} symbol="💕" /> <div style={emoji}>Family</div>
+                                        <Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div>
+                                        <Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div>
+                                        <Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div>
+                                        <Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div>
+                                        <Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div>
+                                    </Row>
+                                    <Row>
+                                        <Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div>
+                                        <Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div>
+                                        <Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div>
+                                        <Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div>
+                                        <Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div>
+                                        <Emoji style={emoji} symbol="🙏" /> <div style={emoji} >I am thankful for..</div>
+                                    </Row>
+                                    <Row>
+                                        <Col size='4'>
+                                            <CalendarView handleDashState={this.handleDashState} />
+                                        </Col>
+                                        <Col size='4'>
+                                            <Review User={this.props.User} calendarDate={this.state.calendarDate} />
+                                        </Col>
+                                        <Col size='4'>
+                                            <ReviewStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                                        </Col>
+                                    </Row>
                                 </div>
-                            </div>
-                        )
-                    }
+                            ) :
+                            (
+                                <div>
+                                    <h1>For plans</h1>
+                                    <div className='conty'>
+                                        <Row>
+
+                                            <Col size='4'>
+                                                <CalendarView handleDashState={this.handleDashState} />
+                                            </Col>
+                                            <Col size='4'>
+                                                <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                                                <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                                            </Col>
+                                            <Col size='4'>
+                                                <GoalTracker User={this.props.User} />
+                                            </Col>
+                                        </Row>
+
+                                    </div>
+                                </div>
+                            )
+                        };
+                    </div>
                 </Container>
             </div>
         )
