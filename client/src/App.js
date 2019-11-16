@@ -10,7 +10,7 @@ import Nav from "./components/Nav";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 
-import logo from '../src/assets/images/logo.png';
+import logo from '../src/assets/images/logo2.png';
 import Header from '../src/component/Layout/Header';
 import "./App.css";
 
@@ -48,7 +48,7 @@ class App extends React.Component {
           
           <div className="App">
             <div size="3" className="logo">
-              <img src={logo} alt="logo" width="300" height="115"/>
+              <img src={logo} alt="logo" width="300" height="114"/>
             </div>
             <div className="container">
               <Header className="app-moto" />
