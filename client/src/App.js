@@ -44,8 +44,7 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Nav />
-          
+          <Nav /> 
           <div className="App">
             <div size="3" className="logo">
               <img src={logo} alt="logo" width="300" height="114"/>
