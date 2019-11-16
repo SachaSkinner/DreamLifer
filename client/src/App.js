@@ -48,7 +48,7 @@ class App extends React.Component {
           
           <div className="App">
             <div size="3" className="logo">
-              <img src={logo} alt="logo" width="300" height="115" />
+              <img src={logo} alt="logo" width="300" height="115"/>
             </div>
             <div className="container">
               <Header className="app-moto" />
