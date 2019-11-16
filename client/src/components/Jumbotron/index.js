@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from '../../../src/assets/images/road.jpeg'
+import bgImage from '../../../src/assets/images/background.jpeg'
 
 function Jumbotron({ children }) {
   return (
