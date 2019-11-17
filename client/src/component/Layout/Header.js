@@ -1,8 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
+    const style = {
+        padding: '5px',
+        color: 'rgb(34, 110, 63)',
+        backgroundColor: 'rgba(240, 192, 46, 0.989)',
+        textAlign: 'center',
+        marginLeft: '5px',
+        marginRight: '5px'
+
+    }
+
+
     return (
         <header style={headerStyle}>
+            <Link to='/signup' className="navbar-brand">
+
+                <button style={style}> Sign in</button>
+            </Link>
+            <Link to='/login' className="navbar-brand">
+
+                <button style={style}>Login in </button>
+            </Link>
             <h4>
                 Set your future dreams and keep track of how far you've come down the road
             </h4>
