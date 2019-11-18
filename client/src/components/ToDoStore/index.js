@@ -41,8 +41,10 @@ class TodoStore extends Component {
             <h3>Your goals on this date</h3>
             <div>
                 {this.state.allTodos ?
+                
                 this.state.allTodos.map(element => (
-                <p key={element._id}>{element.message}</p>
+                    <ul>
+                <li key={element._id}> {element.message}</li></ul>
                 )) : null
                 }
             </div>

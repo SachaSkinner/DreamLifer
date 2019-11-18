@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Col, Row } from "../../components/Grid";
 
 function Header() {
     const style = {
@@ -11,32 +12,44 @@ function Header() {
         marginRight: '5px'
 
     }
+    const headerStyle = {
+        background: '#315a78',
+        color: '#fff',
+        textAlign: 'center',
+        padding: '10px',
+        boxShadow: `0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
+        borderRadius: "10px"
+    }
 
+    const center = {
+        textAlign: 'center'
+    }
 
     return (
         <header style={headerStyle}>
-            <Link to='/signup' className="navbar-brand">
+            <Row>
+                <Col size='col-lg-10 col-sm-12'><h4>
+                    Set your future dreams and keep track of how far you've come down the road
+            </h4></Col>
+            <div style={center}>
+            <Col size='col-lg-4 col-sm-12'>
+                    <Link to='/signup' className="navbar-brand">
 
-                <button style={style}> Sign in</button>
-            </Link>
-            <Link to='/login' className="navbar-brand">
+                        <button style={style}> Sign in</button>
+                    </Link>
+                    <Link to='/login' className="navbar-brand">
 
-                <button style={style}>Login in </button>
-            </Link>
-            <h4>
-                Set your future dreams and keep track of how far you've come down the road
-            </h4>
+                        <button style={style}>Login in </button>
+                    </Link>
+                </Col>
+                </div>
+            </Row>
+
+
         </header>
     )
 }
 
-const headerStyle = {
-    background: '#315a78',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px',
-    boxShadow: `0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
-    borderRadius: "10px"
-}
+
 
 export default Header

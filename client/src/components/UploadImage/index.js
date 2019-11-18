@@ -72,20 +72,10 @@ class ImageUpload extends Component {
     };
 
     render() {
-        const style = {
-
-            //    marginLeft: "5%",
-            //    marginTop: "5%",
-            //     flexDirection: 'column',
-            //     alignItems: 'center',
-            //     justifyContent: 'center',
-            //     display: 'inline-block'
-
-        }
+       
         const input = {
-            // textAlign: "center",
-            // marginLeft: "auto",
-            marginLeft: "75px"
+           
+            marginLeft: "60px"
         }
 
         const image = {
@@ -96,7 +86,7 @@ class ImageUpload extends Component {
 
         return (
 
-            <div style={style}>
+            <div >
                 <div className="profilePic">
                     <img style={image} src={this.state.url} alt="Uploaded images" height="200" width="200" />
                 </div>

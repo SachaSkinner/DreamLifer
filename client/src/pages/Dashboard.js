@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
-import Logout from '../components/Logout';
+import HeaderOut from '../component/Layout/Header2';
+
+
 import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
@@ -47,25 +49,34 @@ class Dashboard extends Component {
             color: '#315a78',
             fontFamily: "san-serif"
 
-
-
-        }
-        const padding = {
-            padding: "10px",
-            display: 'flex'
         }
       
+       
+        const purple = {
+            backgroundColor: 'rgb(55, 132, 204)',
+            color: 'white'
+        }
+        
+        
+       
+
         return (
            
-            <Container fluid>
-                <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+
+            <Container  fluid>
+
                 <div className="container">
                     <Row>
+                        <div className="container">
+                            <HeaderOut  handleGlobalState={this.props.handleGlobalState} User={this.props.User}className="app-moto" />
+                        </div> 
+                        <br></br>
                         <Row>
+                        
                             <Col size='md-4'>
                                 <ReactUploadImage User={this.props.User}></ReactUploadImage>
                             </Col>
-                            <Col  size='md-1'></Col>
+                            <Col size='md-1'></Col>
                             <Col size='md-7'>
                                 <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                     'Welcome!'}</h1>
@@ -79,53 +90,59 @@ class Dashboard extends Component {
 
                         </Col>
                     </Row>
-                    <Row>
+                    <div >
+                    <Row >
 
-                        <button className="btn btn-outline-dark" onClick={this.handleActiveTab} name='goals'>Plan my day.</button> {' '}
-                        <button className="btn btn-outline-dark" onClick={this.handleActiveTab} name='review'> Review my day</button>
+                        <button style={purple} className="btn btn-outline-dark ml-auto" onClick={this.handleActiveTab} name='goals'>Plan my day.</button> <span>&nbsp;</span>
+                        <button style={purple} className="btn btn-outline-dark mr-auto" onClick={this.handleActiveTab} name='review'> Review my day</button>
                     </Row>
                     <br></br>
+                    </div>
 
 
 
                     {this.state.tab === 'review' ?
-                        (<div style={padding}>
-            
-                            <Row style={padding}>
-                                <Col style={padding} size='col-lg-4 col-sm-12'>
-                                    <CalendarView style={padding} handleDashState={this.handleDashState} />
-                                </Col>
-                                <Col style={padding} size='col-lg-4 col-sm-12'>
-                                    <Review style={padding} User={this.props.User} calendarDate={this.state.calendarDate} />
-                                </Col>
-                                <Col style={padding} size='col-lg-4 col-sm-12'>
+                        (<div >
 
-                                    <ReviewStore style={padding}  User={this.props.User} calendarDate={this.state.calendarDate} />
+                            <Row >
+                                <Col   size='md-4'>
+                                    <CalendarView  handleDashState={this.handleDashState} />
+                                </Col>
+                                <Col   size='md-4'>
+                                    <Review User={this.props.User} calendarDate={this.state.calendarDate} />
+                                </Col>
+                                <Col  size='md-4'>
+
+                                    <ReviewStore  User={this.props.User} calendarDate={this.state.calendarDate} />
                                 </Col>
                             </Row>
 
                         </div>) :
-                        (<div>
-                            <Row>
-                            <Col style={padding} size='col-sm-4 col-lg-12'>
-                                <CalendarView handleDashState={this.handleDashState} />
-                            </Col>
-                            <Col style={padding} size='col-sm-4 col-lg-12'>
-                                <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
-                                <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
-                            </Col>
-                            <Col style={padding} size='col-sm-4 col-lg-12'>
-                                <GoalTracker User={this.props.User} />
-                            </Col>
+                        (<div >
+                            <Row >
+                                <Col   size='md-4'>
+                                    <CalendarView handleDashState={this.handleDashState} />
+                                </Col>
+                                <Col size='md-4'>
+                                    <Todo User={this.props.User} calendarDate={this.state.calendarDate} />
+                                    <TodoStore User={this.props.User} calendarDate={this.state.calendarDate} />
+                                </Col>
+                                <Col  size='md-4'>
+                                    <GoalTracker User={this.props.User} />
+                                </Col>
                             </Row>
                         </div>
                         )}
 
                 </div>
             </Container>
+           
 
         );
     };
 };
 
 export default Dashboard;
+
+
+
