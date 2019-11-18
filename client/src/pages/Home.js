@@ -1,21 +1,31 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import Header from '../component/Layout/Header';
 // import Carousal from "../components/Carousel"
 
 class Home extends Component {
   render() {
-  return (
-    <Container className="container">
-      <Row>
-        <Col size="md-12">
-          <Jumbotron> 
-          {/* <Carousal/> */}
-          </Jumbotron>
-        </Col>
-      </Row>
-    </Container>
-  );
+    const together = {
+      padding: '0'
+    }
+   
+    return (
+      <Container className="container">
+        <Row>
+          <Col size="md-12">
+            <div style={together} className="container">
+              <Header  className="app-moto" />
+              <br></br>
+            <Jumbotron>
+
+              {/* <Carousal/> */}
+            </Jumbotron>
+            </div> <br></br>
+          </Col>
+        </Row>
+      </Container>
+    );
   }
 };
 

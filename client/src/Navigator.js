@@ -8,7 +8,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Logout from './components/Logout';
+
 
 function Navigator(props) {
     return (
@@ -36,9 +36,7 @@ function Navigator(props) {
             <Route component={NoMatch} />
           </Switch>
         </div>
-        <div>
-          <Logout />
-        </div>
+        
   
       </Router>
       </>
