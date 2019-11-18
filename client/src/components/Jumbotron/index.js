@@ -5,8 +5,7 @@ function Jumbotron({ children }) {
   return (
     <div
       style={{
-        backgroundImage: `url(${bgImage})`,
-        
+        backgroundImage: `url(${bgImage})`, 
         backgroundSize: "100% 100%",
         height: "480px",
         width: "auto",

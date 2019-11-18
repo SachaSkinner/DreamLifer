@@ -114,7 +114,7 @@ class Review extends Component {
                     </div>
                     <br></br>
                     <div className="center">
-                    <button onClick={this.handleSubmit} className='center'>Submit</button>
+                    <button onClick={this.handleSubmit} className='btn btn-outline-dark center'>Submit</button>
                     </div>
                 </form>
             </div>

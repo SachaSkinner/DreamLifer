@@ -14,7 +14,6 @@ import GoalTracker from "../components/GoalTracker";
 import Review from "../components/ReviewSubmit";
 import ReviewStore from "../components/ReviewStore";
 import moment from 'moment';
-import './style.css'
 
 class Dashboard extends Component {
     state = {
