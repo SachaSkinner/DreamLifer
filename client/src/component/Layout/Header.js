@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Row } from "../../components/Grid";
@@ -22,7 +24,9 @@ function Header() {
     }
 
     const center = {
-        textAlign: 'center'
+        textAlign: 'center',
+       marginLeft: 'auto',
+       marginRight: 'auto'
     }
 
     return (

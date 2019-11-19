@@ -76,7 +76,7 @@ class ImageUpload extends Component {
        
         const input = {
            
-            marginLeft: "60px",
+            marginLeft: "55px",
             marginBottom: '5px'
         }
 
