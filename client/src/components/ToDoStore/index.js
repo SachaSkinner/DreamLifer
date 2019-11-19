@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import API from '../../utils/API';
-// import './style.css';
 
 class TodoStore extends Component {
     state = {

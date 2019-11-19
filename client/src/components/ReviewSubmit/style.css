@@ -1,5 +1,6 @@
 .reviews_text {
     padding: 5px 40px;
+    width: 80%;
 }
 .center {
     text-align: center;
@@ -7,4 +8,11 @@
 .review_form {
     height: 350px;
     overflow: scroll;
+}
+
+@media screen and (max-width: 640px){
+    .reviews_text {
+        padding: 5px 40px;
+        width: 84%;
+    }
 }
