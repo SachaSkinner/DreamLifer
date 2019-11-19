@@ -7,6 +7,7 @@ import habits from "../assets/images/habits1.jpg";
 import wishes from "../assets/images/magic.jpg";
 import podcasts from "../assets/images/podcasts.jpg";
 import books2 from "../assets/images/books2.jpg";
+import movies from "../assets/images/movies2.jpg";
 import "../App.css";
 
 function Community() {
@@ -99,6 +100,16 @@ function Community() {
           <img src={books2} alt="" />
         </a>
       </div>
+      <div className="gallery">
+        <a
+          className="resourcesImage"
+          href="https://brightside.me/wonder-films/15-inspiring-movies-that-are-perfect-for-the-whole-family-151705/"
+        >
+          {" "}
+          <img src={movies} alt="" />
+        </a>
+      </div>
+      
 
     </div>
   );
