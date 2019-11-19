@@ -52,7 +52,7 @@ class Dashboard extends Component {
       
        
         const purple = {
-            backgroundColor: 'rgb(55, 132, 204)',
+            backgroundColor: '#516FCA',
             color: 'white'
         }
         

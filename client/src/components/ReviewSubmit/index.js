@@ -69,43 +69,43 @@ class Review extends Component {
                     <input className="reviews_text" value={this.state.family} name='family' onChange={this.handleInputChange} placeholder=''></input> 
                     </div>
                     <div className="center">
-                    <div><Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div></div>
+                    <div> <Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div></div>
                     <input className="reviews_text" value={this.state.friends} name='friends' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div></div>
+                    <div> <Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div></div>
                     <input className="reviews_text" value={this.state.work} name='work' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="🤝👯‍" /> <div style={emoji} >Friends</div></div>
+                    <div> <Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div></div>
                     <input className="reviews_text" value={this.state.study} name='study' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div></div>
+                    <div> <Emoji style={emoji} symbol="🎨" /> <div style={emoji} >Fun/leisure</div></div>
                     <input className="reviews_text" value={this.state.fun} name='fun' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="💼" /> <div style={emoji} >Work</div></div>
+                    <div> <Emoji style={emoji} symbol=" 🍱 " /> <div style={emoji} >Food</div></div>
                     <input className="reviews_text" value={this.state.food} name='food' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="🎓" /> <div style={emoji} >Study</div></div>
+                    <div> <Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div></div>
                     <input className="reviews_text" value={this.state.sleep} name='sleep' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div>  <Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div></div>
+                    <div> <Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div></div>
                     <input className="reviews_text" value={this.state.mood} name='mood' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="❤️" /> <div style={emoji} >Health/Mood</div></div>
+                    <div><Emoji style={emoji} symbol="🤸‍♂‍" /> <div style={emoji}>Sport</div></div>
                     <input className="reviews_text" value={this.state.sport} name='sport' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="😴" /> <div style={emoji} >Sleep</div></div>
+                    <div> <Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div></div>
                     <input className="reviews_text" value={this.state.ideas} name='ideas' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
-                    <div> <Emoji style={emoji} symbol="🌟" /> <div style={emoji} >Ideas</div></div>
+                    <div>  <Emoji style={emoji} symbol="📋" /> <div style={emoji} >Notes</div></div>
                     <input className="reviews_text" value={this.state.notes} name='notes' onChange={this.handleInputChange} placeholder=''></input>
                     </div>
                     <div className="center">
