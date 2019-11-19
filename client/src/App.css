@@ -9,6 +9,7 @@ body{
   line-height: 1.4;
   /* background-image: url('../assets/images/MegaTron.jpg'); */
   background-image: url('./assets/images/paper.png');
+  padding-top: 70px;
 
   /* background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('./assets/images/MegaTron.jpg'); */
  

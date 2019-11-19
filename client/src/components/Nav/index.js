@@ -11,8 +11,9 @@ function Nav() {
     textAlign: 'center'
 
   }
+ 
   return (
-    <nav className="navbar navbar-expand-lg comeonnavbar-dark">
+    <nav  className="navbar  fixed-top navbar-expand-lg comeonnavbar-dark">
       <Link to='/' className="navbar-brand">
         <button style={style}>Home</button>
       </Link>
