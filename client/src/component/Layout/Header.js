@@ -35,11 +35,11 @@ function Header() {
             <Col size='col-lg-4 col-sm-12'>
                     <Link to='/signup' className="navbar-brand">
 
-                        <button style={style}> Sign in</button>
+                        <button style={style}> Sign up</button>
                     </Link>
                     <Link to='/login' className="navbar-brand">
 
-                        <button style={style}>Login in </button>
+                        <button style={style}>Log in </button>
                     </Link>
                 </Col>
                 </div>
