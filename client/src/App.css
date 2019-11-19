@@ -12,7 +12,8 @@ body {
 }
 
 
-/* resources page */
+/* resources styles starts */
+
 div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
@@ -41,4 +42,14 @@ div.desc {
     position: relative;
     text-align: center;
   }
+
+  div.gallery {
+  width: 100%;
+  }
+
+  div.gallery img {
+    height: 250px;
+  }
  }
+
+ /* resources styles ends */

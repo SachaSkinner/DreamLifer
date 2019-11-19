@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "../components/Grid";
 import pomodoro from "../assets/images/Pomodoro.png";
 import books from "../assets/images/books.jpg";
 import stories from "../assets/images/story.png";
