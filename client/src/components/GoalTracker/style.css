@@ -1,0 +1,15 @@
+.remove {
+    padding: 10px;
+    background: red;
+}
+.complete {
+    padding: 10px;
+    background: green;
+    color: white;
+}
+.todoBox {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+     
+}

@@ -28,14 +28,13 @@ class Dashboard extends Component {
             .then((response) =>{
                 console.log(response)
                 this.setState({ reviews: response.data.reviews, todos: response.data.todos})
-            })
+        });
     }
 
     loadQuestions = () => {
         API.getQuestions()
             .then(res => {
                 this.setState({ questions: res.data });
-                // console.log(this.state.questions);
             })
             .catch(err => console.log(err));
     };
@@ -114,6 +113,8 @@ class Dashboard extends Component {
                                         <Emoji  style={emoji} symbol="😴"/> <div style={emoji} >Sleep</div>
                                         <Emoji  style={emoji} symbol="🌟"/> <div style={emoji} >Ideas</div>
                                         <Emoji style={emoji}  symbol="🙏"/> <div style={emoji} >I am thankful for..</div></Row>
+                                        <Review User={this.props.User} calendarDate={this.state.calendarDate} />
+                                        <ReviewStore User={this.props.User} calendarDate={this.state.calendarDate} />
                                 </Col>
                                 </>) : 
                                 (<>
@@ -129,7 +130,6 @@ class Dashboard extends Component {
                         </div>
                     </Row>
             </Container>
-
         );
     };
 };

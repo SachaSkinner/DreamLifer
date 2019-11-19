@@ -15,10 +15,8 @@ class ReviewStore extends Component {
         });
     };
 
-    grabReviews = () => {
-       
-        API.getItems(this.state.item, this.props.User.id, this.props.calendarDate).then(res => {
-            
+    grabReviews = () => {   
+        API.getItems(this.state.item, this.props.User.id, this.props.calendarDate).then(res => {     
             this.setState({ allReviews: res.data.newreviews });
         }).catch(err => console.log(err));
     };
