@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import API from '../../utils/API';
-// import './style.css';
+import './style.css';
 import moment from 'moment';
 import Moment from 'moment';
 moment().format();
@@ -23,7 +23,7 @@ class GoalTracker extends Component {
         API.getTodosToCompare(this.props.User.id).then(res => {
 
             const sortedDates  = res.data.todo.sort((a,b) => new Moment(a.date).format('YYYYMMDD') - new Moment(b.date).format('YYYYMMDD'));
-            
+
             this.setState({ allTodos: sortedDates });
             for (var i = 0; i < sortedDates.length; i++) {
                 if (moment(sortedDates[i].date).isAfter(this.state.now)) {
@@ -73,13 +73,19 @@ is just one day away!! Do your best to finish up!`});
                 {this.state.allTodos ?
                 this.state.allTodos.map(element => (
                 moment(element.date).isAfter(this.state.now) ?
+                <div class='todoBox' key={element._id}>
                 <p key={element._id}> <span>&nbsp;</span>! {element.message} ----- {' '}
                 {
                 moment(element.date).diff(this.state.now, 'days') === 1 ?
                 (moment(element.date).diff(this.state.now, 'days') + ' day left!') :
                 moment(element.date).diff(this.state.now, 'days') + ' days remaining!'
                 }
-                </p> : null
+                </p>
+                <div className='buttons'>
+                <span className='remove'>X</span>
+                <span className='complete'>✔</span>
+                </div>
+                </div> : null
                 )) : null
                 }
 
