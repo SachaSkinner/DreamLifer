@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Header from '../component/Layout/Header';
-// import Carousal from "../components/Carousel"
+import Carousal from "../components/Carousel"
 
 class Home extends Component {
   render() {
@@ -19,7 +19,7 @@ class Home extends Component {
               <br></br>
             <Jumbotron>
 
-              {/* <Carousal/> */}
+              <Carousal/>
             </Jumbotron>
             </div> <br></br>
           </Col>

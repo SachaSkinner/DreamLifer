@@ -34,16 +34,13 @@ class Carousal extends Component {
             <p className="subTitles">Review your day</p>
           </div>
           <div>
-            <p className="subTitles">Create Memories</p>
+            <p className="subTitles">Personalize Memories</p>
           </div>
           <div>
-            <p className="subTitles">Go back to past memories</p>
+            <p className="subTitles">Save Memories</p>
           </div>
           <div>
             <p className="subTitles">Daily insightful quotes</p>
-          </div>
-          <div>
-            <p className="subTitles">Accomplish more...</p>
           </div>
         </Slider>
       </div>
