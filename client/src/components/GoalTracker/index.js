@@ -26,7 +26,7 @@ class GoalTracker extends Component {
             this.setState({ allTodos: sortedDates });
             for (var i = 0; i < sortedDates.length; i++) {
                 if (moment(sortedDates[i].date).isAfter(this.state.now)) {
-                    if (moment(sortedDates[i].date).diff(this.state.now, 'days') === 1) {
+                    if ((moment(sortedDates[i].date).diff(this.state.now, 'days') === 1) && (sortedDates[i].completed === false)) {
                         if (this.closeDates.length >= 1) {
                             break;
                         }
