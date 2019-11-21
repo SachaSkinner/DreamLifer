@@ -1,18 +1,49 @@
-
-.carousalTitle{
-    background-color: rgba(17, 37, 81, 0.50);
-    color: white;
-    position: relative;
-    top:-120px;
-    font-size: 22px;
+body {
+    margin: 0;
+    padding: 0; }
+  
+  .slide-container {
+    width: 70%;
+    margin: auto;   
 }
-
-.subTitles{
-
-    /* background-color: rgba(31, 42, 73, 0.39); */
-    color: black;
-    position: relative;
-    font-size: 38px;
-    
-
-}
+  
+  
+  .each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 400px;
+  }
+  
+  .each-slide span {
+    color: honeydew;
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Architects Daughter', cursive;
+    background: #143361a8;
+    text-align: center;
+  }
+  
+  .each-fade {
+    display: flex;
+  }
+  
+  .each-fade .image-container {
+    width: 75%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .each-fade .image-container img {
+    width: 100%;
+  }
+  
+  .each-fade h2 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #adceed;
+  }

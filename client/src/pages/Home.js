@@ -17,10 +17,7 @@ class Home extends Component {
             <div style={together} className="container">
               <Header  className="app-moto" />
               <br></br>
-            <Jumbotron>
-
-              <Carousal/>
-            </Jumbotron>
+              <Carousal/>           
             </div> <br></br>
           </Col>
         </Row>
