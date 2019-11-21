@@ -1,7 +1,8 @@
 # DreamLifer
+# An amazing web-aplication that will help you organize your personal life
 ## Technologies used: 
 ### React, JavaScript, Node. js, Express, MongoDB, Mongoose, Bootstrap, Notications API, Axios, Cookie-parser Authentication, Heroku, Moment, Firebase Storage.
-## An amazing web-aplication that will help you organize your personal life
+
 ## Home page with login and sign in functions and beautiful carousel!
 ![home-gif](https://user-images.githubusercontent.com/45444261/69371386-5a092380-0c65-11ea-949d-0dc245a96412.gif)
 
