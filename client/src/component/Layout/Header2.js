@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import Logout from '../../components/Logout';
 
@@ -13,7 +13,8 @@ class HeaderOut extends Component {
 
             color: 'rgb(34, 110, 63)',
             backgroundColor: 'rgba(240, 192, 46, 0.989)',
-            textAlign: 'center'
+            textAlign: 'center',
+            marginBottom: '-7px',
             // "@media screen and (max-width: 980px)":{
                 
             //     left: "30px"
@@ -26,12 +27,14 @@ class HeaderOut extends Component {
         return (
             <header style={headerStyle}>
                 <h4>
-
                     Set your future dreams and keep track of how far you've come down the road
                     {' '}
-                    <button style={style}> <div>
-                    <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
-                </div></button>
+
+                    <button style={style}> 
+                        <div>
+                            <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                        </div>
+                    </button>
 
                 </h4>
 

@@ -109,9 +109,7 @@ function Community() {
           <img src={movies} alt="" />
         </a>
       </div>
-      
-
-    </div>
+    </div> 
   );
 }
 
