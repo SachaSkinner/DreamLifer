@@ -32,3 +32,18 @@ input {
     width: 83%;
 }
 
+@media screen and (max-width: 414px){
+    h3{
+        padding: 20px;
+        font-size: 22px;
+    }
+    
+}
+
+@media screen and (max-width: 375px){
+    h3{
+        padding: 24px;
+        font-size: 18px;
+    }
+    
+}
