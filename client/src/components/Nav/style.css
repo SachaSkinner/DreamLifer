@@ -1,12 +1,17 @@
 a {
     padding: 5px;
     color: rgb(34, 110, 63);
-    background-color: rgba(236, 226, 83, 0.989);
-   
+    background-color: rgba(236, 226, 83, 0.989);   
     float: right;
 
 }
 
 .navbar{
     background: #315a78;
+}
+
+@media screen and (max-width: 640px){
+  .navbar-brand{
+  margin-right: 2px;
+  }
 }
