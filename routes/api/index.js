@@ -131,6 +131,14 @@ router.get('/users/items/:item/:id/:date', function (req, res) {
             console.log(err);
         });
     });
+    router.delete('/users/reviews/:id/del', (req, res) => {
+        db.DayReviews.findOneAndRemove({_id: req.params.id}).then(deletedReview => {
+            res.json('Successfully deleted');
+        }).catch(err => {
+            res.json('There was an error deleting this item ... ');
+            console.log(err);
+        });
+    });
 
     // Get a user's information, whichData takes 'todo' or 'image' and will populate
     // the response with the User's todos or images
@@ -187,3 +195,4 @@ router.get('/users/items/:item/:id/:date', function (req, res) {
     });
 
 module.exports = router;
+

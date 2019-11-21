@@ -32,6 +32,13 @@ class ReviewStore extends Component {
         this.grabReviews();
         this.loadReviews();
     };
+    handleRemove = event => {
+        API.removeReview(event.target.getAttribute('dataid')).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
+    };
 
     render() {
 
@@ -41,8 +48,12 @@ class ReviewStore extends Component {
                 <div>
                     {this.state.allReviews.length !== 0 ?
                         this.state.allReviews.map(element => (
-                            <p key={element._id}> {element.date} <br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks}<br></br></p>
-                        )) : <h5>You haven't added any reviews for this date...</h5>
+                            <p key={element._id}> {element.date}  <span className='remove' dataid={element._id} onClick={this.handleRemove}>X</span><br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks}<br></br></p>
+                            
+                           
+                        )) 
+                       
+                    : <h5>You haven't added any reviews for this date...</h5>
                         }
                 </div>
             </div>
