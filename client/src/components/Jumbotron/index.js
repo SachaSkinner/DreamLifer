@@ -10,7 +10,7 @@ function Jumbotron({ children }) {
         // height: "480px",
         width: "auto",
         paddingTop: 120,
-        paddingBottom: 50,
+        paddingBottom: 80,
         textAlign: "center",
         boxShadow: `0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`
       }}
