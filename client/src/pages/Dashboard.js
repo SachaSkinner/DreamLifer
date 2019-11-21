@@ -3,8 +3,6 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import HeaderOut from '../component/Layout/Header2';
-
-
 import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";

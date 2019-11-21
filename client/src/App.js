@@ -3,15 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import API from './utils/API';
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-
 import Community from "./pages/Community";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-
-import logo from '../src/assets/images/birdy.png';
-
+import logo from '../src/assets/images/logoV5.png';
 import "./App.css";
 
 

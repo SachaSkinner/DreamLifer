@@ -5,45 +5,42 @@ import "./style.css";
 class Carousal extends Component {
   render() {
     const settings = {
-      autoplay: false,
+      // autoplay: true,
       className: "carousal",
       dots: true,
     //arrowsScroll: 1,
-      duration: 100,
-      autoplaySpeed: 1000
+      // duration: 100,
+      // autoplaySpeed: 2000
     };
 
     return (
       <div>
         <span>
           <p className="carousalTitle">
-            Don't just Dream of good life, Plan them with ☞ DreamLifer
+            {/* Don't just Dream of good life, Plan them with ☞ DreamLifer */}
           </p>
         </span>
         <Slider {...settings}>
           <div>
-            <p className="subTitles">Plan your future</p>
+            <p className="subTitles">Set Your Future Goals</p>
           </div>
           <div>
-            <p className="subTitles">Track your goals</p>
+            <p className="subTitles">Track Your Goals</p>
           </div>
           <div>
-            <p className="subTitles">Plan Your day</p>
+            <p className="subTitles">Plan Your Day</p>
           </div>
           <div>
-            <p className="subTitles">Review your day</p>
+            <p className="subTitles">Review Your Day</p>
           </div>
           <div>
-            <p className="subTitles">Create Memories</p>
+            <p className="subTitles">Personalize Your Memories</p>
           </div>
           <div>
-            <p className="subTitles">Go back to past memories</p>
+            <p className="subTitles">Save Memories</p>
           </div>
           <div>
-            <p className="subTitles">Daily insightful quotes</p>
-          </div>
-          <div>
-            <p className="subTitles">Accomplish more...</p>
+            <p className="subTitles">Daily Insightful Quotes</p>
           </div>
         </Slider>
       </div>

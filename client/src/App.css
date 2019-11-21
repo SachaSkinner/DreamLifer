@@ -23,7 +23,7 @@ div.gallery {
 
 div.gallery:hover {
   border: 1px solid #777;
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 
 div.gallery img {
