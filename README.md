@@ -1,5 +1,5 @@
 # DreamLifer
-## A React web-application that will help you organize your personal life and save memories!
+## A MERN-stack web-application that will help you organize your personal life and save memories!
 ## Technologies used: 
 ### React, JavaScript, Node. js, Express, MongoDB, Mongoose, Bootstrap, Notications API, Axios, Cookie-parser Authentication, Heroku, Moment, Firebase Storage.
 
