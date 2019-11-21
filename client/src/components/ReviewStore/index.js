@@ -15,10 +15,8 @@ class ReviewStore extends Component {
         });
     };
 
-    grabReviews = () => {
-       
-        API.getItems(this.state.item, this.props.User.id, this.props.calendarDate).then(res => {
-            
+    grabReviews = () => {   
+        API.getItems(this.state.item, this.props.User.id, this.props.calendarDate).then(res => {     
             this.setState({ allReviews: res.data.newreviews });
         }).catch(err => console.log(err));
     };
@@ -35,18 +33,17 @@ class ReviewStore extends Component {
         this.loadReviews();
     };
 
-
     render() {
 
         return (
             <div >
                 <h3>My memories </h3>
                 <div>
-                    {this.state.allReviews ?
+                    {this.state.allReviews.length !== 0 ?
                         this.state.allReviews.map(element => (
-                            <p key={element._id}> {element.date} <hr></hr><br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks} <br></br> <hr></hr></p>
-                        )) : null
-                    }
+                            <p key={element._id}> {element.date} <br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks}<br></br></p>
+                        )) : <h5>You haven't added any reviews for this date...</h5>
+                        }
                 </div>
             </div>
         );

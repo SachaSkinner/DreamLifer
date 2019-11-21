@@ -114,9 +114,8 @@ router.get('/users/items/:item/:id/:date', function (req, res) {
     // Update the todos completed status
     router.put('/users/todos/:id/complete', (req, res) => {
         db.Todo.findOneAndUpdate({_id: req.params.id},
-        {completed: req.body.completed}).then(newTodo => {
-            res.json(newTodo);
-            console.log('new todo');
+        {completed: true}).then(newTodo => {
+            res.json('Completed Todo');
         }).catch(err => {
             res.json('No data to fetch on this date ... ');
             console.log(err);
@@ -125,7 +124,7 @@ router.get('/users/items/:item/:id/:date', function (req, res) {
 
     // Delete a todo, currently does not delete the todo referenced by User
     router.delete('/users/todos/:id/del', (req, res) => {
-        db.Todo.findById({_id: req.params.id}).then(deletedTodo => {
+        db.Todo.findOneAndRemove({_id: req.params.id}).then(deletedTodo => {
             res.json('Successfully deleted');
         }).catch(err => {
             res.json('There was an error deleting this item ... ');

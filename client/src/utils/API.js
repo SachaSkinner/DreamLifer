@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default {
-
   signupUser: function (userData) {
     return axios.post("/auth/signup", userData);
   },
@@ -25,35 +24,24 @@ export default {
   },
   submitReview: function (family, friends, work, study, fun, food, sleep, mood, sport, ideas, notes, thanks, id, date) {
     return axios.post('/api/users/reviews', { family: family, friends: friends, work: work, study: study, fun: fun, food: food, sleep: sleep, mood: mood, sport: sport, ideas: ideas, notes: notes, thanks: thanks, id: id, date: date })
-
   },
   getItems: function (item, id, date) {
     return axios.get(`/api/users/items/${item}/${id}/${date}`);
   },
-  
   getDayInfo: function (id, date) {
     return axios.post(`/api/users/getDayInfo`, { id, date });
   },
-
   getTodosToCompare: function (id) {
     return axios.get(`/api/users/todo/${id}/timeleft`);
-  }
-  ,
+  },
   takeUrl: function (id) {
     return axios.get('/url/takeUrl/' + id);
+  },
+  completeTodo: function(id) {
+    return axios.put(`/api/users/todos/${id}/complete`)
+  },
+  removeTodo: function(id) {
+    return axios.delete(`api/users/todos/${id}/del`);
   }
-  //todo 
 
-  // getTodos: function(){
-  //   return axios.get("api/todo");
-  // },
-  // getTodo: function(id){
-  //   return axios.get("api/todo" + id);
-  // },
-  // deleteTodo: function(id) {
-  //   return axios.delete("/api/todo" + id);
-  // },
-  // addTodo: function(titleData) {
-  //   return axios.post("/api/todo/title" + titleData); 
-  // }
 };

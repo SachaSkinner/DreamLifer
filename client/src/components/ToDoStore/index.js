@@ -39,13 +39,13 @@ class TodoStore extends Component {
         <div className='signupWrapper'>
             <h3>Your goals on this date</h3>
             <div>
+            <ul>
                 {this.state.allTodos ?
-                
                 this.state.allTodos.map(element => (
-                    <ul>
-                <li key={element._id}> {element.message}</li></ul>
+                <li style={{borderBottom: '1px solid dimgray'}} key={element._id}> {element.message} <br></br>Completed? : {`${element.completed}`} </li>
                 )) : null
                 }
+            </ul>
             </div>
         </div>
         );
