@@ -36,6 +36,12 @@ export default {
   },
   takeUrl: function (id) {
     return axios.get('/url/takeUrl/' + id);
+  },
+  completeTodo: function(id) {
+    return axios.put(`/api/users/todos/${id}/complete`)
+  },
+  removeTodo: function(id) {
+    return axios.delete(`api/users/todos/${id}/del`);
   }
 
 };

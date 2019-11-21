@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from 'react-router-dom';
 import API from '../../utils/API';
 import './style.css';
 import moment from 'moment';
@@ -63,6 +62,23 @@ class GoalTracker extends Component {
 is just one day away!! Do your best to finish up!`});
     }
 
+    handleComplete = (event) => {
+        API.completeTodo(event.target.getAttribute('dataid')).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
+
+    };
+
+    handleRemove = event => {
+        API.removeTodo(event.target.getAttribute('dataid')).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+
 
     render() {
 
@@ -72,8 +88,8 @@ is just one day away!! Do your best to finish up!`});
             <div>
                 {this.state.allTodos ?
                 this.state.allTodos.map(element => (
-                moment(element.date).isAfter(this.state.now) ?
-                <div class='todoBox' key={element._id}>
+                moment(element.date).isAfter(this.state.now) && element.completed === false ?
+                <div className='todoBox' key={element._id}>
                 <p key={element._id}> <span>&nbsp;</span>! {element.message} ----- {' '}
                 {
                 moment(element.date).diff(this.state.now, 'days') === 1 ?
@@ -82,8 +98,8 @@ is just one day away!! Do your best to finish up!`});
                 }
                 </p>
                 <div className='buttons'>
-                <span className='remove'>X</span>
-                <span className='complete'>✔</span>
+                <span className='remove' dataid={element._id} onClick={this.handleRemove}>X</span>
+                <span className='complete' dataid={element._id} onClick={this.handleComplete}>✔</span>
                 </div>
                 </div> : null
                 )) : null
