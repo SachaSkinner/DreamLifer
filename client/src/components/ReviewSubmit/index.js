@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import API from '../../utils/API';
 import './style.css';
 import Emoji from "../Emoji";
+import moment from 'moment';
+moment().format();
 
 class Review extends Component {
     state = {
+        now: '',
         family: '',
         friends: '',
         work: '',
@@ -44,6 +47,11 @@ class Review extends Component {
         });
     };
 
+    getNowDate = () => {
+        let Mnow = moment(new Date()).format('YYYY-MM-DD');
+        this.setState({ now: Mnow });
+    };
+
     handleSubmit = event => {
         event.preventDefault();
 
@@ -51,6 +59,10 @@ class Review extends Component {
             this.refreshState();
             this.setState({ headerMessage: res.data });
         }).catch(err => console.log(err));
+    };
+
+    componentDidMount = () => {
+        this.getNowDate();
     };
 
     render() {
@@ -61,6 +73,8 @@ class Review extends Component {
 
         return (
             <div>
+                 {this.state.now === moment(this.props.calendarDate).format('YYYY-MM-DD') ? (
+                     <>
                 <h3>{this.state.headerMessage}</h3>
                 <form className="review_form"> 
                    
@@ -116,7 +130,11 @@ class Review extends Component {
                     <div className="center">
                     <button onClick={this.handleSubmit} className='btn btn-outline-dark center'>Submit</button>
                     </div>
-                </form>
+                 </form>
+                 </> ) :
+                 (
+                     <h3>You can only review your day on today's date!</h3>
+                 )}
             </div>
         );
     };
