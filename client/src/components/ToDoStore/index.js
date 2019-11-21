@@ -67,8 +67,8 @@ class TodoStore extends Component {
                         <>
                     <li key={element._id} style={{textDecoration: 'line-through'}}> 
                         {element.message} <br></br>
-                        Completed! 
                     </li>
+                        Completed! 
 
                     <div className='buttons'>
                         <span className='remove' dataid={element._id} onClick={this.handleRemove}>X</span>
@@ -78,7 +78,7 @@ class TodoStore extends Component {
                         <>
                     <li key={element._id}> 
                         {element.message} <br></br>
-                        Need to do! 
+                
                     </li>
 
                     <div className='buttons'>

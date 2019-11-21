@@ -8,6 +8,7 @@ class ReviewStore extends Component {
         allReviews: [],
         item: 'newreviews'
     };
+    
 
     refreshState = () => {
         this.setState({
@@ -41,6 +42,9 @@ class ReviewStore extends Component {
     };
 
     render() {
+        const floatRight = {
+            float: 'right'
+        } 
 
         return (
             <div >
@@ -48,7 +52,7 @@ class ReviewStore extends Component {
                 <div>
                     {this.state.allReviews.length !== 0 ?
                         this.state.allReviews.map(element => (
-                            <p key={element._id}> {element.date}  <span className='remove' dataid={element._id} onClick={this.handleRemove}>X</span><br></br>Family: {element.family} <br></br>Friends: {element.friends} <br></br>Work: {element.work}<br></br>Study:  {element.study}<br></br>Fun:  {element.fun}<br></br>Food:  {element.food}<br></br>Sleep:  {element.sleep} <br></br>Mood: {element.mood}<br></br> Sport: {element.sport}<br></br> Ideas: {element.ideas} <br></br> Notes: {element.notes}<br></br> I am thankful for:  {element.thanks}<br></br></p>
+                            <p key={element._id}> {element.date}  <span style={floatRight} className='remove' dataid={element._id} onClick={this.handleRemove}>X</span><br></br> <br></br><strong>Family:</strong> {element.family} <br></br> <strong>Friends:</strong> {element.friends} <br></br> <strong>Work: </strong>{element.work}<br></br> <strong>Study:  </strong>{element.study}<br></br> <strong>Fun: </strong> {element.fun}<br></br> <strong>Food: </strong> {element.food}<br></br> <strong>Sleep: </strong> {element.sleep} <br></br> <strong>Mood:</strong> {element.mood}<br></br> <strong>Sport:</strong> {element.sport}<br></br><strong>Ideas:</strong>  {element.ideas} <br></br> <strong>Notes:</strong> {element.notes}<br></br> <strong> I am thankful for:  </strong>{element.thanks}<hr></hr></p>
                             
                            
                         )) 
