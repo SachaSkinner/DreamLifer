@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
 import Header from '../component/Layout/Header';
 import Carousal from "../components/Carousel"
 
@@ -17,10 +16,7 @@ class Home extends Component {
             <div style={together} className="container">
               <Header  className="app-moto" />
               <br></br>
-            <Jumbotron>
-
-              <Carousal/>
-            </Jumbotron>
+              <Carousal/>           
             </div> <br></br>
           </Col>
         </Row>
