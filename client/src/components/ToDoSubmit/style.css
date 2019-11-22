@@ -3,6 +3,7 @@
     left: 40%;
     /* top: 0px; */
     cursor: pointer;
+    margin-bottom: 25px;
 }
 
 .todoInput{
