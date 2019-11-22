@@ -79,7 +79,6 @@ class TodoStore extends Component {
                         <>
                     <li key={element._id}> 
                         {element.message} <br></br>
-                        Need to do! 
                     </li>
 
                     <div className='buttons'>
