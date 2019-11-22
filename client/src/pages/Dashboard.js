@@ -3,6 +3,8 @@ import { Col, Row, Container } from "../components/Grid";
 import ReactUploadImage from "../components/UploadImage"
 import CalendarView from '../components/CalendarView';
 import HeaderOut from '../component/Layout/Header2';
+
+
 import Todo from '../components/ToDoSubmit';
 import TodoStore from '../components/ToDoStore';
 import API from "../utils/API";
@@ -12,11 +14,9 @@ import GoalTracker from "../components/GoalTracker";
 import Review from "../components/ReviewSubmit";
 import ReviewStore from "../components/ReviewStore";
 import moment from 'moment';
-moment().format();
 
 class Dashboard extends Component {
     state = {
-        now: '',
         questions: [],
         calendarDate: '',
         todos: [],
@@ -32,20 +32,13 @@ class Dashboard extends Component {
             })
     }
 
+
+
     handleActiveTab = event => {
         const tabSwitch = event.target.name
         this.setState({
             tab: tabSwitch
         });
-    };
-
-    getNowDate = () => {
-        let Mnow = moment(new Date()).format('ddd MMM DD YYYY');
-        this.setState({ now: Mnow });
-    };
-
-    componentDidMount() {
-        this.getNowDate();
     };
 
     render() {
@@ -61,7 +54,9 @@ class Dashboard extends Component {
             backgroundColor: '#516FCA',
             color: 'white'
         }
-
+        
+        
+       
 
         return (
            
@@ -84,7 +79,7 @@ class Dashboard extends Component {
                                 <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                     'Welcome!'}</h1>
                                 <br></br>
-                                <h2 style={style}>{this.state.now}</h2>
+                                <h2 style={style}>{this.state.calendarDate}</h2>
                             </Col>
                         </Row>
                         <Col size="md-12">
@@ -141,6 +136,7 @@ class Dashboard extends Component {
             </Container>
             </div>
            
+
         );
     };
 };

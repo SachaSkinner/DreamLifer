@@ -1,42 +1,59 @@
 
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import Logout from '../../components/Logout';
 
 
 
 class HeaderOut extends Component {
-    
+
     render() {
         const style = {
-            
+
             color: 'rgb(34, 110, 63)',
             backgroundColor: 'rgba(240, 192, 46, 0.989)',
-            textAlign: 'center'
-    
+            textAlign: 'center',
+            marginBottom: '-7px',
+            // "@media screen and (max-width: 980px)":{
+                
+            //     left: "30px"
+                
+            // }
+            
+        
+
         }
         return (
             <header style={headerStyle}>
-            
-            <Link to='/' className="navbar-brand">
-       
-          <button style={style}> <div>
-              <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User}/> 
-            </div></button> 
-      </Link>
-            
                 <h4>
                     Set your future dreams and keep track of how far you've come down the road
+                    {' '}
+
+                    <button style={style}> 
+                        <div>
+                            <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                        </div>
+                    </button>
+
                 </h4>
+
+                {/* <Link to='/' className="navbar-brand"> */}
+
+                {/* <button style={style}> <div>
+                    <Logout handleGlobalState={this.props.handleGlobalState} User={this.props.User} />
+                </div></button> */}
+                {/* </Link> */}
+
+
             </header>
         )
-        
-    }
-    
-   
 
- 
+    }
+
+
+
+
 }
 
 const headerStyle = {

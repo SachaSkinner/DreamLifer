@@ -44,7 +44,7 @@ class App extends React.Component {
           <Nav /> 
           <div className="App">
             <div size="3" className="logo">
-              <img src={logo} alt="logo" width="300" height="114"/>
+              <img src={logo} alt="logo" width="180" height="80"/>
             </div>
            
           </div>

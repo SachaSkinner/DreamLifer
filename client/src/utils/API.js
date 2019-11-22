@@ -42,6 +42,9 @@ export default {
   },
   removeTodo: function(id) {
     return axios.delete(`api/users/todos/${id}/del`);
+  },
+  removeReview: function(id) {
+    return axios.delete(`api/users/reviews/${id}/del`);
   }
 
 };

@@ -84,7 +84,7 @@ is just one day away!! Do your best to finish up!`});
 
         return (
         <div className='signupWrapper'>
-            <h3>Your future goals</h3>
+            <h3>My future goals and dreams</h3>
             <div>
                 {this.state.allTodos ?
                 this.state.allTodos.map(element => (
