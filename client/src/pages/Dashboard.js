@@ -12,6 +12,9 @@ import GoalTracker from "../components/GoalTracker";
 import Review from "../components/ReviewSubmit";
 import ReviewStore from "../components/ReviewStore";
 import moment from 'moment';
+import gif1 from '../../src/assets/images/plan.gif';
+import gif2 from '../../src/assets/images/review.gif';
+
 
 class Dashboard extends Component {
     state = {
@@ -62,14 +65,14 @@ class Dashboard extends Component {
 
     instructionsCount = 0;
 
-    instructions = ["Use the arrows to follow these brief instructions!",
-        "Here on the Dashboard page, we can use the 'Plan my day' and 'Review my day' sections...",
-        "By default, we are in the Planning section. Click on the calendar to select a date, then in the middle section type in your goals and dreams you hope to achieve on that date!",
-        "Our goals on the current day will be shown underneath, and our important future goals will be shown to the right",
-        "Click a green checkmark to mark the goal as completed, or click the red X to remove it altogether",
-        "We keep track of the timing... if your dream is just one day away, we will send you a notification to let you know!",
-        "In the Reviewing section, reflect on your day and track your thoughts. We provided prompts for thought.",
-        "You can view your memories that you saved on past dates, but you can only write down these memories on the current date"
+    instructions = [
+        "1) 'Plan my day' lets you plan your future goals . Click on any calendar date of your choice to mark your future goal.",
+        "2) Submit your goals and the app will track your progress.",
+        "3) Click the ✓ button if your goal is complete.",
+        "4) 'Review my day' allows you to plan your current day.",
+        "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
+        "6) You shall be notified when your goal is one day away.",
+        "Thank you! Lets get started..",
         ];
 
     render() {
@@ -84,10 +87,7 @@ class Dashboard extends Component {
         const purple = {
             backgroundColor: '#516FCA',
             color: 'white'
-        }
-        
-        
-       
+        } 
 
         return (
             <>
@@ -108,13 +108,13 @@ class Dashboard extends Component {
                             </Col>
                             <Col size='md-1'></Col>
                             <Col size='md-4'>
-                                <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
+                                <h1 className="introText" style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                     'Welcome!'}</h1>
                                 <br></br>
-                                <h2 style={style}>{this.state.calendarDate}</h2>
+                                <h2 className="introText" style={style}>{this.state.calendarDate}</h2>
                             </Col>
                             <Col size='md-3'>
-                                <button onClick={this.displayModal}>New? Click here for a tutorial!</button>
+                                <button className="btn btn-primary active tutorialButton" onClick={this.displayModal}>Click here for Tutorial</button>
                             </Col>
                         </Row>
 
@@ -175,13 +175,16 @@ class Dashboard extends Component {
             <div className='modal' id='instructionsModal'>
                     <div className="instructions">
                         <span id='close' style={{color: 'red'}} className='close' onClick={this.closeModal}>X</span>
-                        <h1 className='modalHead'>Welcome to DreamLifer!</h1>
+                        <p className='modalHead'><b>Welcome to the tutorial point.</b></p>
+                        <p children={this.state.instructions}></p>
                         <div className='instructionsButtons'>
-                            <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr; </p>
-                            <img src={this.state.instructions}></img>
+                            <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr;</p>
+                                 <div>
+                                    <img src={gif1} width="400" height="210" alt="instruction Gifs"></img><br></br><hr></hr>
+                                    <img src={gif2} width="400" height="210" alt="instruction Gifs"></img>
+                                 </div>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.nextInstructions}> &rarr; </p>
-                        </div>
-                        
+                        </div>                   
                     </div>
             </div>
             </>
