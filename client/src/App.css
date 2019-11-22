@@ -65,16 +65,31 @@ div.desc {
 
 .tutorialButton {
   position: relative;
-  left: 200px;
-  right: auto;
-  top: 10px;
+  top: 8px;
 }
 
 
-@media screen and (max-width: 640px){
+/* @media screen and (max-width: 640px){
   .tutorialButton {
       position: relative;
       left: 100px;
   }
-  }
+  } */
 
+@media (min-width: 20em) and (max-width: 45em) {
+    /* slightly wider viewport */
+    .tutorialButton {
+      position: relative;
+      left: 140px;
+
+  }
+    
+}
+
+@media (min-width: 45em) {
+    /* everything else */
+    .tutorialButton {
+      position: relative;
+      left: 198px;
+  }
+}

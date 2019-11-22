@@ -175,7 +175,7 @@ class Dashboard extends Component {
             <div className='modal' id='instructionsModal'>
                     <div className="instructions">
                         <span id='close' style={{color: 'red'}} className='close' onClick={this.closeModal}>X</span>
-                        <p className='modalHead'>Welcome to the tutorial point.</p>
+                        <p className='modalHead'><b>Welcome to the tutorial point.</b></p>
                         <p children={this.state.instructions}></p>
                         <div className='instructionsButtons'>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr;</p>
