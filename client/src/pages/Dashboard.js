@@ -63,14 +63,13 @@ class Dashboard extends Component {
     instructionsCount = 0;
 
     instructions = [
-        "Use the arrows to follow these brief instructions!",
-        "Here on the Dashboard page, we can use the 'Plan my day' and 'Review my day' sections...",
-        "By default, we are in the Planning section. Click on the calendar to select a date, then in the middle section type in your goals and dreams you hope to achieve on that date!",
-        "Our goals on the current day will be shown underneath, and our important future goals will be shown to the right",
-        "Click a green checkmark to mark the goal as completed, or click the red X to remove it altogether",
-        "We keep track of the timing... if your dream is just one day away, we will send you a notification to let you know!",
-        "In the Reviewing section, reflect on your day and track your thoughts. We provided prompts for thought.",
-        "You can view your memories that you saved on past dates, but you can only write down these memories on the current date"
+        "1) 'Plan my day' lets you plan your future goals . Click on any calander date of your choice to mark your future goal.",
+        "2) Submit your goals and the app will track your progress.",
+        "3) Click the check button if your goal is complete.",
+        "4) 'Review my day' allows you to plan your current day.",
+        "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
+        "6) You shall be notified when your goal is one day away.",
+        "Thank you! Lets get started..",
         ];
 
     render() {
@@ -85,9 +84,7 @@ class Dashboard extends Component {
         const purple = {
             backgroundColor: '#516FCA',
             color: 'white'
-        }
-
-
+        } 
 
         return (
             <>
@@ -114,7 +111,7 @@ class Dashboard extends Component {
                                 <h2 className="introText" style={style}>{this.state.calendarDate}</h2>
                             </Col>
                             <Col size='md-3'>
-                                <button className="btn btn-secondary active tutorialButton" onClick={this.displayModal}>Click here for Tutorial</button>
+                                <button className="btn btn-primary active tutorialButton" onClick={this.displayModal}>Click here for Tutorial</button>
                             </Col>
                         </Row>
 
@@ -175,10 +172,10 @@ class Dashboard extends Component {
             <div className='modal' id='instructionsModal'>
                     <div className="instructions">
                         <span id='close' style={{color: 'red'}} className='close' onClick={this.closeModal}>X</span>
-                        <h1 className='modalHead'>Welcome to DreamLifer!</h1>
+                        <p className='modalHead'>Welcome to the tutorial point.</p>
                         <div className='instructionsButtons'>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr; </p>
-                            <img src={this.state.instructions}></img>
+                            <p children={this.state.instructions}></p>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.nextInstructions}> &rarr; </p>
                         </div>
                         
