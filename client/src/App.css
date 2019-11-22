@@ -55,3 +55,15 @@ div.desc {
  }
 
  /* resources styles ends */
+
+ @media (min-width: 768px){
+.col-md-7 {
+    left: 95px;
+}
+}
+
+/* @media screen and (max-width: 968px){
+  .col-md-7{
+    text-align: center;
+  }
+} */
