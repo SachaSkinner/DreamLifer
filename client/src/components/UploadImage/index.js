@@ -36,7 +36,7 @@ class ImageUpload extends Component {
             .then(res => {
 
                 if (!res.data.url) {
-                    this.setState({ url: "https://firebasestorage.googleapis.com/v0/b/dreamlifer-36c5e.appspot.com/o/images%2Fprofile_p.jpg?alt=media&token=b87d233a-333c-4710-8751-826b8e53d572" })
+                    this.setState({ url: "https://firebasestorage.googleapis.com/v0/b/dreamlifer-36c5e.appspot.com/o/images%2Fprofile-pic.jpg?alt=media&token=4f1ae793-de2a-4d9c-98be-2bf274ee6fe7"})
 
                 }
                 else {
@@ -74,6 +74,9 @@ class ImageUpload extends Component {
                     this.setState({ url });
                     this.props.User.url = this.state.url;
                     API.updateUrl(this.props.User.id, this.props.User.url)
+                        .then(() => {
+                            this.closeModal();
+                        })
                         .catch(err => console.log(err));
 
                 });

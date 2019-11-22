@@ -50,6 +50,16 @@ class TodoStore extends Component {
         });
     };
 
+    sortTodos(a, b) {
+        if(a.completed === b.completed) {
+            return 0;
+        } else if (a.completed){
+            return 1;
+        } else {
+            return -1;
+        }
+
+    }
 
     render() {
 
@@ -59,7 +69,9 @@ class TodoStore extends Component {
             <div>
             <ul>
                 {this.state.allTodos ?
-                this.state.allTodos.map(element => (
+                this.state.allTodos
+                .sort(this.sortTodos)
+                .map(element => (
 
                 <div className='todoBox' key={element._id}>
 
