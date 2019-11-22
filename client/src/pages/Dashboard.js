@@ -12,6 +12,9 @@ import GoalTracker from "../components/GoalTracker";
 import Review from "../components/ReviewSubmit";
 import ReviewStore from "../components/ReviewStore";
 import moment from 'moment';
+import gif1 from '../../src/assets/images/plan.gif';
+import gif2 from '../../src/assets/images/review.gif';
+
 
 class Dashboard extends Component {
     state = {
@@ -63,9 +66,9 @@ class Dashboard extends Component {
     instructionsCount = 0;
 
     instructions = [
-        "1) 'Plan my day' lets you plan your future goals . Click on any calander date of your choice to mark your future goal.",
+        "1) 'Plan my day' lets you plan your future goals . Click on any calendar date of your choice to mark your future goal.",
         "2) Submit your goals and the app will track your progress.",
-        "3) Click the check button if your goal is complete.",
+        "3) Click the ✓ button if your goal is complete.",
         "4) 'Review my day' allows you to plan your current day.",
         "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
         "6) You shall be notified when your goal is one day away.",
@@ -173,12 +176,15 @@ class Dashboard extends Component {
                     <div className="instructions">
                         <span id='close' style={{color: 'red'}} className='close' onClick={this.closeModal}>X</span>
                         <p className='modalHead'>Welcome to the tutorial point.</p>
+                        <p children={this.state.instructions}></p>
                         <div className='instructionsButtons'>
-                            <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr; </p>
-                            <p children={this.state.instructions}></p>
+                            <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr;</p>
+                                 <div>
+                                    <img src={gif1} width="400" height="210" alt="instruction Gifs"></img><br></br><hr></hr>
+                                    <img src={gif2} width="400" height="210" alt="instruction Gifs"></img>
+                                 </div>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.nextInstructions}> &rarr; </p>
-                        </div>
-                        
+                        </div>                   
                     </div>
             </div>
             </>
