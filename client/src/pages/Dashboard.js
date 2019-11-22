@@ -28,7 +28,6 @@ class Dashboard extends Component {
         this.setState({ [state]: moment(value).format("ddd MMM DD YYYY") })
         API.getDayInfo(this.props.User.id, moment(value).format("ddd MMM DD YYYY"))
             .then((response) => {
-                console.log(response)
                 this.setState({ reviews: response.data.reviews, todos: response.data.todos })
             })
     }
@@ -61,7 +60,7 @@ class Dashboard extends Component {
 
         return (
            
-
+            <div className='wrap'>
             <Container  fluid>
 
                 <div className="container">
@@ -135,6 +134,7 @@ class Dashboard extends Component {
 
                 </div>
             </Container>
+            </div>
            
 
         );

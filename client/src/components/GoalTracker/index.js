@@ -40,7 +40,7 @@ class GoalTracker extends Component {
 
     loadTodos = () => {
     let interval = setInterval(()=> {
-        this.grabTodos() }, 500);
+        this.grabTodos() }, 1000);
     return () => clearInterval(interval);
     }
 

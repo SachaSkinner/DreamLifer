@@ -8,4 +8,7 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+.wrap {
+  margin-bottom: 100px;
+}
 

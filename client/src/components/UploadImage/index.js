@@ -13,6 +13,16 @@ class ImageUpload extends Component {
         progress: 0
     }
 
+    displayModal = () => {
+        let modal = document.getElementById('modal');
+        modal.style.display = 'block';
+    };
+
+    closeModal = () => {
+        let modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    };
+
     handleChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0]
@@ -87,17 +97,19 @@ class ImageUpload extends Component {
 
 
         return (
-            <div >
+            <div>
                 <div className="profilePic">
-                    <img style={image} src={this.state.url} alt="" height="200" width="200" />
+                    <img style={image} src={this.state.url} alt="" height="200" width="200" onClick={this.displayModal} />
                 </div>
                 <br></br>
-                <div className="uploadInputs">
-                    <progress className="add-picture" value={this.state.progress} max="100" />
-                    <br></br>
-                    <input className="add-picture chooseFile" style={input} type='file' onChange={this.handleChange} />                    
-                    <button className="add-picture" onClick={this.handleUpload}>Upload photo</button>
-                    
+                <div className='modal' id='modal'>
+                    <div className="uploadInputs">
+                        <span id='close' className='close' onClick={this.closeModal}>X</span>
+                        <progress className="add-picture" value={this.state.progress} max="100" />
+                        <br></br>
+                        <input className="add-picture chooseFile" style={input} type='file' onChange={this.handleChange} />                    
+                        <button className="add-picture" onClick={this.handleUpload}>Upload photo</button>
+                    </div>
                 </div>
             </div>
         )

@@ -24,7 +24,7 @@ class TodoStore extends Component {
 
     loadTodos = () => {
     let interval = setInterval(()=> {
-        this.grabTodos() }, 500);
+        this.grabTodos() }, 1000);
     return () => clearInterval(interval);
     }
 
@@ -65,8 +65,9 @@ class TodoStore extends Component {
 
                     {element.completed ? (
                         <>
-                    <li key={element._id} style={{textDecoration: 'line-through'}}> 
-                        {element.message} <br></br>
+                    <li key={element._id}> 
+                        <span style={{textDecoration: 'line-through'}}>{element.message}</span> 
+                        <br></br>
                         Completed! 
                     </li>
 
@@ -78,7 +79,6 @@ class TodoStore extends Component {
                         <>
                     <li key={element._id}> 
                         {element.message} <br></br>
-                        Need to do! 
                     </li>
 
                     <div className='buttons'>
