@@ -62,7 +62,8 @@ class Dashboard extends Component {
 
     instructionsCount = 0;
 
-    instructions = ["Use the arrows to follow these brief instructions!",
+    instructions = [
+        "Use the arrows to follow these brief instructions!",
         "Here on the Dashboard page, we can use the 'Plan my day' and 'Review my day' sections...",
         "By default, we are in the Planning section. Click on the calendar to select a date, then in the middle section type in your goals and dreams you hope to achieve on that date!",
         "Our goals on the current day will be shown underneath, and our important future goals will be shown to the right",
@@ -85,9 +86,8 @@ class Dashboard extends Component {
             backgroundColor: '#516FCA',
             color: 'white'
         }
-        
-        
-       
+
+
 
         return (
             <>
@@ -108,13 +108,13 @@ class Dashboard extends Component {
                             </Col>
                             <Col size='md-1'></Col>
                             <Col size='md-4'>
-                                <h1 style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
+                                <h1 className="introText" style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                     'Welcome!'}</h1>
                                 <br></br>
-                                <h2 style={style}>{this.state.calendarDate}</h2>
+                                <h2 className="introText" style={style}>{this.state.calendarDate}</h2>
                             </Col>
                             <Col size='md-3'>
-                                <button onClick={this.displayModal}>New? Click here for a tutorial!</button>
+                                <button className="btn btn-secondary active tutorialButton" onClick={this.displayModal}>Click here for Tutorial</button>
                             </Col>
                         </Row>
 
