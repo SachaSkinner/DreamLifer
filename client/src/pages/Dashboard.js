@@ -85,7 +85,7 @@ class Dashboard extends Component {
         "1) 'Plan my day' lets you plan your future goals . Click on any calendar date of your choice to mark your future goal.",
         "2) Submit your goals and the app will track your progress.",
         "3) Click the ✓ button if your goal is complete.",
-        "4) 'Review my day' allows you to plan your current day.",
+        "4) 'Review my day' allows you to reflect and save memories on that day.",
         "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
         "6) You shall be notified when your goal is one day away.",
         "Thank you! Click the red X above and lets get started..",
