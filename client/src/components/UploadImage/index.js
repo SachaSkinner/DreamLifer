@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { storage } from "../../firebase"
 import API from '../../utils/API';
-// import { isNullOrUndefined } from 'util';
 import './style.css';
 
 

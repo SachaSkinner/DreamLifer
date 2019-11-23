@@ -62,7 +62,6 @@ router.route('/signup').get(sessionChecker, (req, res) => {
               // IMPORTANT!! After the newuser is created, we set the session user to be this new user
               req.session.user = newUser;
               res.json([`${newUser.firstName} successfully signed up!`, true]);
-              console.log(newUser);
             });
           });
         });
@@ -79,7 +78,6 @@ router.route('/login').get(sessionChecker, (req, res) => {
 }).post((req, res) => {
       // We search the DB for a user with this inputted username
         db.User.findOne({email: req.body.email}).then(function(user) {
-          console.log(user);
             if (user === null) {
                 res.json(['No user with this email', false]);
             } else {
