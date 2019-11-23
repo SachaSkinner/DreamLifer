@@ -64,7 +64,6 @@ is just one day away!! Do your best to finish up!`});
 
     handleComplete = (event) => {
         API.completeTodo(event.target.getAttribute('dataid')).then(res => {
-            console.log(res);
         }).catch(err => {
             console.log(err);
         });
@@ -73,7 +72,6 @@ is just one day away!! Do your best to finish up!`});
 
     handleRemove = event => {
         API.removeTodo(event.target.getAttribute('dataid')).then(res => {
-            console.log(res);
         }).catch(err => {
             console.log(err);
         });

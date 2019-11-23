@@ -24,7 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamLifer", {
 });
 
 
-
 app.route(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
