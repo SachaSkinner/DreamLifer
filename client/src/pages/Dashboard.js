@@ -57,6 +57,10 @@ class Dashboard extends Component {
     closeModal = () => {
         let modal = document.getElementById('instructionsModal');
         modal.style.display = 'none';
+        if (this.instructionsCount === 7) {
+            this.instructionsCount = 0;
+            this.setState({ instructions: this.instructions[this.instructionsCount]});
+        };
     };
 
     prevInstructions = () => {
@@ -71,6 +75,7 @@ class Dashboard extends Component {
             this.instructionsCount++;
             this.setState({ instructions: this.instructions[this.instructionsCount]});
         };
+
     };
 
     instructionsCount = 0;
