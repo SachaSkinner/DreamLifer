@@ -8,7 +8,9 @@
 
 
 ## Dashboard allows users to upload and save their profile picture, see a daily insightful quote, plan every day and save memories!
-In the first section we recommend to plan your day in the morning, track your goals during the day and set important ones for the future. The second section is for reviewing your day in 12 important categories, so you can store your memories. You can store memories for the current day, so we encourage you to use our application daily for better productivity.
+In the first section we recommend to plan your day in the morning, track your goals during the day and set important ones for the future.
+![plan](https://user-images.githubusercontent.com/45444261/69471574-5a3d1800-0d66-11ea-9a75-d906e85f1532.gif)
+The second section is for reviewing your day in 12 important categories, so you can store your memories. You can store memories for the current day, so we encourage you to use our application daily for better productivity.
 
 ## Resources page
 Available for everyone. Get inspired, stay motivated with our resources!
