@@ -76,7 +76,7 @@ class TodoStore extends Component {
 
                     {element.completed ? (
                         <>
-                    <p className='todoMessage' key={element._id}> 
+                    <p key={element._id}> 
                         <span style={{textDecoration: 'line-through'}}>{element.message}</span> 
                         <br></br>
                         Completed! 
@@ -88,7 +88,7 @@ class TodoStore extends Component {
                         </>
                     ) : (
                         <>
-                    <p className='todoMessage' key={element._id}> 
+                    <p key={element._id}> 
                         {element.message} <br></br>
                     </p>
 
