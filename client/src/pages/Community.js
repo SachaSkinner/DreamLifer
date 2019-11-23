@@ -11,8 +11,20 @@ import movies from "../assets/images/movies2.jpg";
 import "../App.css";
 
 function Community() {
+
+      const headerStyle = {
+        background: '#315a78',
+        color: '#fff',
+        textAlign: 'center',
+        padding: '10px',
+        boxShadow: `0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
+        borderRadius: "10px"
+    }
+
   return (
     <div className="container">
+
+    <h4 style={headerStyle}>Do you know about the Pomodoro technique that will help you be more productive? Check it out and even more wonderful resources to find some insights and inspiration!</h4>
       
       <div className="gallery">
         <a
