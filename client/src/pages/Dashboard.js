@@ -57,7 +57,7 @@ class Dashboard extends Component {
     };
 
     nextInstructions = () => {
-        if (this.instructionsCount !== this.state.instructions.length) {
+        if (this.instructionsCount !== 7) {
             this.instructionsCount++;
             this.setState({ instructions: this.instructions[this.instructionsCount]});
         };
@@ -66,13 +66,14 @@ class Dashboard extends Component {
     instructionsCount = 0;
 
     instructions = [
+        'Use the arrows to follow these brief instructions!',
         "1) 'Plan my day' lets you plan your future goals . Click on any calendar date of your choice to mark your future goal.",
         "2) Submit your goals and the app will track your progress.",
         "3) Click the ✓ button if your goal is complete.",
         "4) 'Review my day' allows you to plan your current day.",
         "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
         "6) You shall be notified when your goal is one day away.",
-        "Thank you! Lets get started..",
+        "Thank you! Click the red X above and lets get started..",
         ];
 
     render() {

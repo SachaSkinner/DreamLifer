@@ -15,4 +15,9 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid dimgray;
+    overflow-wrap: break-word;
+}
+
+.todoMessage {
+    overflow-wrap: break-word;
 }

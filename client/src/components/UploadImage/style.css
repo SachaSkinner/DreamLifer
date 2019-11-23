@@ -32,9 +32,13 @@
   border-radius: 1%;
   box-shadow: 1px 1px 10px black;
 }
+.header {
+  background: white;
+  color: navy;
+}
 
 .close {
-  color: white;
+  color: red;
   float: right;
   cursor: pointer;
 }
@@ -46,6 +50,7 @@
 .chooseFile {
   position: relative;
   left: 9px;
+  color: white;
 }
 
 

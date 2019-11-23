@@ -25,10 +25,14 @@ class Todo extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        API.submitTodo(this.state.message, this.props.User.id, this.props.calendarDate).then(res => {
-            this.refreshState();
-            this.setState({ headerMessage: res.data });
-        }).catch(err => console.log(err));
+        if (this.state.message !== '') {
+            API.submitTodo(this.state.message, this.props.User.id, this.props.calendarDate).then(res => {
+                this.refreshState();
+                this.setState({ headerMessage: res.data });
+            }).catch(err => console.log(err));
+        } else {
+            return null;
+        }
     };
 
     render() {

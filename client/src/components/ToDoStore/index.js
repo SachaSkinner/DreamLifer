@@ -67,7 +67,6 @@ class TodoStore extends Component {
         <div className='signupWrapper'>
             <h3>Your goals on this date</h3>
             <div>
-            <ul>
                 {this.state.allTodos ?
                 this.state.allTodos
                 .sort(this.sortTodos)
@@ -77,11 +76,11 @@ class TodoStore extends Component {
 
                     {element.completed ? (
                         <>
-                    <li key={element._id}> 
+                    <p className='todoMessage' key={element._id}> 
                         <span style={{textDecoration: 'line-through'}}>{element.message}</span> 
                         <br></br>
                         Completed! 
-                    </li>
+                    </p>
 
                     <div className='buttons'>
                         <span className='remove' dataid={element._id} onClick={this.handleRemove}>X</span>
@@ -89,9 +88,9 @@ class TodoStore extends Component {
                         </>
                     ) : (
                         <>
-                    <li key={element._id}> 
+                    <p className='todoMessage' key={element._id}> 
                         {element.message} <br></br>
-                    </li>
+                    </p>
 
                     <div className='buttons'>
                         <span className='remove' dataid={element._id} onClick={this.handleRemove}>X</span>
@@ -103,7 +102,6 @@ class TodoStore extends Component {
                 </div>
                 )) : null
                 }
-            </ul>
             </div>
         </div>
         );
