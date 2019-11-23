@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 class Todos extends Component {
 
 
+
+
   render() {
     return this.props.todos.map(arrList => (
       <TodoItem
@@ -16,6 +18,8 @@ class Todos extends Component {
     ));
   }
 }
+
+
 
 // Prop types
 Todos.propTypes = {
