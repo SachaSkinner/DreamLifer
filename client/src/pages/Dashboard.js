@@ -18,6 +18,7 @@ import gif2 from '../../src/assets/images/review.gif';
 
 class Dashboard extends Component {
     state = {
+        now: '',
         instructions: 'Use the arrows to follow these brief instructions!',
         calendarDate: '',
         todos: [],
@@ -37,6 +38,15 @@ class Dashboard extends Component {
         this.setState({
             tab: tabSwitch
         });
+    };
+
+    getNowDate = () => {
+        let Mnow = moment(new Date()).format('ddd MMM DD YYYY');
+        this.setState({ now: Mnow });
+    };
+
+    componentDidMount = () => {
+        this.getNowDate();
     };
 
     displayModal = () => {
@@ -70,9 +80,9 @@ class Dashboard extends Component {
         "1) 'Plan my day' lets you plan your future goals . Click on any calendar date of your choice to mark your future goal.",
         "2) Submit your goals and the app will track your progress.",
         "3) Click the ✓ button if your goal is complete.",
-        "4) 'Review my day' allows you to plan your current day.",
-        "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
-        "6) You shall be notified when your goal is one day away.",
+        "4) You shall be notified when your goal is one day away.",
+        "5) 'Review my day' allows you to plan your current day.",
+        "6) You can review your past notes or write a new one for each category to save your memory for the current day.",
         "Thank you! Click the red X above and lets get started..",
         ];
 
@@ -112,7 +122,7 @@ class Dashboard extends Component {
                                 <h1 className="introText" style={style}>{this.props.User.firstName.length >= 1 ? `Welcome back, ${this.props.User.firstName[0].toUpperCase() + this.props.User.firstName.slice(1)}!` :
                                     'Welcome!'}</h1>
                                 <br></br>
-                                <h2 className="introText" style={style}>{this.state.calendarDate}</h2>
+                                <h2 className="introText" style={style}>{this.state.now}</h2>
                             </Col>
                             <Col size='md-3'>
                                 <button className="btn btn-primary active tutorialButton" onClick={this.displayModal}>Click here for Tutorial</button>
@@ -181,8 +191,9 @@ class Dashboard extends Component {
                         <div className='instructionsButtons'>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr;</p>
                                  <div>
-                                    <img src={gif1} width="400" height="210" alt="instruction Gifs"></img><br></br><hr></hr>
-                                    <img src={gif2} width="400" height="210" alt="instruction Gifs"></img>
+                                 {this.instructionsCount > 0 && this.instructionsCount < 7 ? (
+                                    <img src={this.instructionsCount < 5 ? gif1 : gif2} width="400" height="210" alt="instruction Gifs"></img>
+                                 ) : null}
                                  </div>
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.nextInstructions}> &rarr; </p>
                         </div>                   
