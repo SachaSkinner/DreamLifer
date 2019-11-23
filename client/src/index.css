@@ -4,9 +4,6 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
 }
-div {
-  overflow-wrap: break-word;
-}
 .conty{
   display: flex;
   justify-content: space-evenly;
