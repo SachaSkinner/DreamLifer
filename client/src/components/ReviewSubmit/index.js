@@ -72,7 +72,7 @@ class Review extends Component {
         }
 
         return (
-            <div>
+            <div className='reviewWrap'>
                  {this.state.now === moment(this.props.calendarDate).format('YYYY-MM-DD') ? (
                      <>
                 <h3>{this.state.headerMessage}</h3>
