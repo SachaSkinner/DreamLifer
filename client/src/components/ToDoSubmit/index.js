@@ -51,16 +51,16 @@ class Todo extends Component {
 
         return (
         <div className='signupWrapper'>
-         {this.state.now === moment(this.props.calendarDate).format('YYYY-MM-DD') ? (
+         {this.state.now <= moment(this.props.calendarDate).format('YYYY-MM-DD') ? (
             <>
             <h3>
                 <p>{this.props.calendarDate}</p>
                 {this.state.headerMessage}
             </h3>
-            <form>
+            <div className='buttonsWrap'>
                 <input className="todoInput" value={this.state.message} name='message' onChange={this.handleInputChange} placeholder='What do you need to accomplish?'></input>
                 <button onClick={this.handleSubmit} className='btn btn-outline-dark submitTodo'>submit</button>
-            </form>
+            </div>
             </> ) : 
             (
                 <h3>You can't set a goal for the past! Sorry!</h3>
