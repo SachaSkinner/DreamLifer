@@ -26,7 +26,13 @@ class ImageUpload extends Component {
     handleChange = e => {
         if (e.target.files[0]) {
             const image = e.target.files[0]
-            this.setState(() => ({ image: image }));
+
+            if (image.type.slice(0, 5) !== 'image') {
+                document.getElementById('addPic').disabled = true;
+            } else {
+                this.setState(() => ({ image: image }));
+                document.getElementById('addPic').disabled = false;
+            };
         };
     };
 
@@ -54,6 +60,7 @@ class ImageUpload extends Component {
     };
 
     handleUpload = () => {
+        if (this.state.image !== null) {
         const { image } = this.state;
 
         const uploadTask = storage.ref('images/' + image.name + '').put(image);
@@ -82,6 +89,9 @@ class ImageUpload extends Component {
                 });
 
             });
+        } else {
+            return null;
+        };
     };
 
     render() {
@@ -108,10 +118,14 @@ class ImageUpload extends Component {
                 <div className='modal' id='modal'>
                     <div className="uploadInputs">
                         <span id='close' className='close' onClick={this.closeModal}>X</span>
+                        <div className='header'>
+                            <h4>Update your profile picture</h4>
+                            <p>Valid image files only</p>
+                        </div>
                         <progress className="add-picture" value={this.state.progress} max="100" />
                         <br></br>
                         <input className="add-picture chooseFile" style={input} type='file' onChange={this.handleChange} />                    
-                        <button className="add-picture" onClick={this.handleUpload}>Upload photo</button>
+                        <button id='addPic' className="add-picture" onClick={this.handleUpload}>Upload photo</button>
                     </div>
                 </div>
             </div>
@@ -119,4 +133,4 @@ class ImageUpload extends Component {
     }
 }
 
-export default ImageUpload
+export default ImageUpload;
