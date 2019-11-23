@@ -80,9 +80,9 @@ class Dashboard extends Component {
         "1) 'Plan my day' lets you plan your future goals . Click on any calendar date of your choice to mark your future goal.",
         "2) Submit your goals and the app will track your progress.",
         "3) Click the ✓ button if your goal is complete.",
-        "4) You shall be notified when your goal is one day away.",
-        "5) 'Review my day' allows you to plan your current day.",
-        "6) You can review your past notes or write a new one for each category to save your memory for the current day.",
+        "4) 'Review my day' allows you to plan your current day.",
+        "5) You can review your past notes or write a new one for each category to save your memory for the current day.",
+        "6) You shall be notified when your goal is one day away.",
         "Thank you! Click the red X above and lets get started..",
         ];
 
@@ -189,13 +189,17 @@ class Dashboard extends Component {
                         <p className='modalHead'><b>Welcome to the tutorial point.</b></p>
                         <p children={this.state.instructions}></p>
                         <div className='instructionsButtons'>
+                        {this.instructionsCount !== 0 ? (
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.prevInstructions}> &larr;</p>
+                        ) : null}
                                  <div>
                                  {this.instructionsCount > 0 && this.instructionsCount < 7 ? (
-                                    <img src={this.instructionsCount < 5 ? gif1 : gif2} width="400" height="210" alt="instruction Gifs"></img>
+                                    <img src={this.instructionsCount < 4 ? gif1 : gif2} width="400" height="210" alt="instruction Gifs"></img>
                                  ) : null}
                                  </div>
+                            {this.instructionsCount !== 7 ? (     
                             <p style={{fontSize: '24px', cursor: 'pointer'}} onClick={this.nextInstructions}> &rarr; </p>
+                            ) : null}
                         </div>                   
                     </div>
             </div>
